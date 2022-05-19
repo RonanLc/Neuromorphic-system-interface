@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>392</width>
-    <height>262</height>
+    <width>481</width>
+    <height>258</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -106,7 +106,7 @@
     <rect>
      <x>50</x>
      <y>190</y>
-     <width>321</width>
+     <width>411</width>
      <height>21</height>
     </rect>
    </property>
@@ -134,7 +134,7 @@
     <string>...</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton">
+  <widget class="QPushButton" name="AD_sendButton">
    <property name="geometry">
     <rect>
      <x>140</x>
@@ -147,12 +147,12 @@
     <string>Send</string>
    </property>
   </widget>
-  <widget class="QLabel" name="SR_labelData_2">
+  <widget class="QLabel" name="AD_labelData">
    <property name="geometry">
     <rect>
      <x>200</x>
      <y>220</y>
-     <width>181</width>
+     <width>261</width>
      <height>16</height>
     </rect>
    </property>
@@ -160,7 +160,7 @@
     <string notr="true">color:rgb(0, 200, 0)</string>
    </property>
    <property name="text">
-    <string>Data sent successfull</string>
+    <string>Please enter a correct time information</string>
    </property>
   </widget>
  </widget>

@@ -6,8 +6,6 @@
       <change beforePath="$PROJECT_DIR$/Graphic/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/Graphic/main.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Graphic/main.ui" beforeDir="false" afterPath="$PROJECT_DIR$/Graphic/main.ui" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Graphic/tampon.py" beforeDir="false" afterPath="$PROJECT_DIR$/Graphic/tampon.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Graphic/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/Graphic/test.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Graphic/test.ui" beforeDir="false" afterPath="$PROJECT_DIR$/Graphic/test.ui" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -67,7 +65,7 @@
       <updated>1652941526887</updated>
       <workItem from="1652941529553" duration="15000" />
       <workItem from="1652941625803" duration="50000" />
-      <workItem from="1652941696099" duration="9898000" />
+      <workItem from="1652941696099" duration="14961000" />
     </task>
     <servers />
   </component>

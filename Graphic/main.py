@@ -5,7 +5,7 @@ from PyQt5.QtWidgets import QFileDialog
 class Ui_Interface(object):
     def setupUi(self, Interface):
         Interface.setObjectName("Interface")
-        Interface.resize(392, 262)
+        Interface.resize(481, 262)
         Interface.setStyleSheet("background-color: rgb(255, 255, 255);")
         self.SR_title = QtWidgets.QLabel(Interface)
         self.SR_title.setGeometry(QtCore.QRect(20, 10, 191, 51))
@@ -40,7 +40,7 @@ class Ui_Interface(object):
         self.SR_labelData.setStyleSheet("color:rgb(0, 200, 0)")
         self.SR_labelData.setObjectName("SR_labelData")
         self.AD_enterFileLine = QtWidgets.QLineEdit(Interface)
-        self.AD_enterFileLine.setGeometry(QtCore.QRect(50, 190, 321, 21))
+        self.AD_enterFileLine.setGeometry(QtCore.QRect(50, 190, 411, 21))
         self.AD_enterFileLine.setObjectName("AD_enterFileLine")
         self.AD_enterTimeLine = QtWidgets.QLineEdit(Interface)
         self.AD_enterTimeLine.setGeometry(QtCore.QRect(20, 220, 113, 21))
@@ -48,12 +48,21 @@ class Ui_Interface(object):
         self.AD_fileButton = QtWidgets.QPushButton(Interface)
         self.AD_fileButton.setGeometry(QtCore.QRect(20, 190, 21, 21))
         self.AD_fileButton.setObjectName("pushButton")
+        self.AD_sendButton = QtWidgets.QPushButton(Interface)
+        self.AD_sendButton.setGeometry(QtCore.QRect(140, 220, 51, 21))
+        self.AD_sendButton.setObjectName("AD_sendButton")
+        self.AD_labelData = QtWidgets.QLabel(Interface)
+        self.AD_labelData.setGeometry(QtCore.QRect(200, 220, 261, 16))
+        self.AD_labelData.setStyleSheet("color:rgb(0, 200, 0)")
+        self.AD_labelData.setObjectName("AD_labelData")
 
         self.retranslateUi(Interface)
         QtCore.QMetaObject.connectSlotsByName(Interface)
 
         self.SR_sendButton.clicked.connect(self.SR_sendData)
         self.AD_fileButton.clicked.connect(self.AD_openFile)
+        self.AD_sendButton.clicked.connect(self.AD_sendData)
+
 
     def retranslateUi(self, Interface):
         _translate = QtCore.QCoreApplication.translate
@@ -63,9 +72,11 @@ class Ui_Interface(object):
         self.SR_sendButton.setText(_translate("Interface", "Send"))
         self.SR_labelData.setText(_translate("Interface", ""))
         self.AD_fileButton.setText(_translate("Interface", "..."))
+        self.AD_sendButton.setText(_translate("Interface", "Send"))
+        self.AD_labelData.setText(_translate("Interface", ""))
+
 
     def SR_verifyData(self, data):
-        print(len(data))
         if len(data) != 0:
             for i in range(len(data)):
                 if data[i] != '0' and data[i] != '1':
@@ -73,17 +84,47 @@ class Ui_Interface(object):
             return True
         return False
 
+    def AD_verifyData(self, file, time):            # si le temps, analyser tout le fichier .csv
+        result = 0
+        test = 'B'
+
+        if len(file) == 0:
+            result += 1
+            print("csv pas bon")
+
+        if len(time) == 0:
+            result += 2
+            print("time vide")
+        else:
+            for i in range(len(time)):
+                if time[i].isdigit() == False:
+                    result += 2
+                    print("time pas bon")
+                    print(result)
+                    return result
+
+        print(result)
+        return result
+
+
+
+
+
     def SR_sendData(self):
         self.SR_labelData.setText("")
-        if self.SR_verifyData(self.SR_enterLine.text()) == True:
-            SR_data = self.SR_enterLine.text()
-            self.SR_labelData.setText("Data sent successfull")
-            self.SR_labelData.setStyleSheet('color:rgb(0,200,0)')
-            print("Data found", SR_data)
-        else:
+        if self.SR_verifyData(self.SR_enterLine.text()) == False:
             self.SR_labelData.setText("Please enter a valid data")
             self.SR_labelData.setStyleSheet('color:rgb(255,0,0)')
-            print("empty")
+
+        else:
+            SR_data = self.SR_enterLine.text()
+            self.SR_labelData.setStyleSheet('color:rgb(0,200,0)')
+            self.SR_labelData.setText("Information is correct")
+
+            # envoyer les informations pour le SR
+
+            self.SR_labelData.setText("Data sent successfull")
+
 
     def AD_openFile(self):
         fileLocation, _ = QFileDialog.getOpenFileName(None, 'Open File', 'D:\\etude\\Stage\\Work\\Neuromorphic-system-interface\\Data', 'CSV Files (*.csv);;All Files (*)')
@@ -92,7 +133,31 @@ class Ui_Interface(object):
             self.AD_enterFileLine.insert(fileLocation)
 
     def AD_sendData(self):
-        self.SR_labelData.setText("")
+        print("AD send data")
+        self.AD_labelData.setText("")
+
+        result = self.AD_verifyData(self.AD_enterFileLine.text(), self.AD_enterTimeLine.text())
+
+        if result == 1:
+            self.AD_labelData.setText("Please recheck the file location")
+            self.AD_labelData.setStyleSheet('color:rgb(255,0,0)')
+
+        elif result == 2:
+            self.AD_labelData.setText("Please enter a correct time information")
+            self.AD_labelData.setStyleSheet('color:rgb(255,0,0)')
+
+        elif result == 3:
+            self.AD_labelData.setText("Please recheck all your informations")
+            self.AD_labelData.setStyleSheet('color:rgb(255,0,0)')
+
+        elif result == 0:
+            self.AD_labelData.setText("Information is correct")
+            self.AD_labelData.setStyleSheet('color:rgb(0,200,0)')
+
+            #envoyer les informations pour l'AD
+
+            self.AD_labelData.setText("Data sent successfull")
+
 
 if __name__ == "__main__":
     import sys
