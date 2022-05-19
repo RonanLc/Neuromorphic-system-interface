@@ -1,0 +1,1204 @@
+#-----------------------------------------------------------
+# Vivado v2018.3 (64-bit)
+# SW Build 2405991 on Thu Dec  6 23:38:27 MST 2018
+# IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
+# Start of session at: Tue Aug  3 16:22:10 2021
+# Process ID: 12256
+# Current directory: C:/Users/sophi/Documents/SiliconNeuronMeasSuit/fpga/vivado_project/SNN/SNN.runs/synth_1
+# Command line: vivado.exe -log Top.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source Top.tcl
+# Log file: C:/Users/sophi/Documents/SiliconNeuronMeasSuit/fpga/vivado_project/SNN/SNN.runs/synth_1/Top.vds
+# Journal file: C:/Users/sophi/Documents/SiliconNeuronMeasSuit/fpga/vivado_project/SNN/SNN.runs/synth_1\vivado.jou
+#-----------------------------------------------------------
+source Top.tcl -notrace
+Command: synth_design -top Top -part xc7a35tcpg236-1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7a35t'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a35t'
+INFO: Launching helper process for spawning children vivado processes
+INFO: Helper process launched with PID 8136 
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 368.332 ; gain = 100.625
+---------------------------------------------------------------------------------
+INFO: [Synth 8-638] synthesizing module 'Top' [C:/Users/sophi/Documents/SiliconNeuronMeasSuit/fpga/hdl/Top.vhd:36]
+	Parameter TARGET_AMOUNT bound to: 10 - type: integer 
+INFO: [Synth 8-638] synthesizing module 'Command_processor' [C:/Users/sophi/Documents/SiliconNeuronMeasSuit/fpga/hdl/Command_processor_state_machine.vhd:36]
+	Parameter MODULE_NAME_LENGTH bound to: 5 - type: integer 
+	Parameter MODULE_BEHAVIOUR_LENGTH bound to: 5 - type: integer 
+	Parameter NUMBER_OF_TARGETS bound to: 10 - type: integer 
+INFO: [Synth 8-3491] module 'clk_wiz_1' declared at 'C:/Users/sophi/Documents/SiliconNeuronMeasSuit/fpga/vivado_project/SNN/SNN.runs/synth_1/.Xil/Vivado-12256-LAPTOP-MKJCL2UU/realtime/clk_wiz_1_stub.vhdl:5' bound to instance 'IP_clock' of component 'clk_wiz_1' [C:/Users/sophi/Documents/SiliconNeuronMeasSuit/fpga/hdl/Command_processor_state_machine.vhd:886]
+INFO: [Synth 8-638] synthesizing module 'clk_wiz_1' [C:/Users/sophi/Documents/SiliconNeuronMeasSuit/fpga/vivado_project/SNN/SNN.runs/synth_1/.Xil/Vivado-12256-LAPTOP-MKJCL2UU/realtime/clk_wiz_1_stub.vhdl:15]
+INFO: [Synth 8-638] synthesizing module 'UART_tr' [C:/Users/sophi/Documents/SiliconNeuronMeasSuit/fpga/hdl/UART_tr.vhd:41]
+	Parameter CLOCK_F bound to: 100 - type: integer 
+	Parameter BAUD_RATE bound to: 3000000 - type: integer 
+	Parameter EN_PARITY bound to: 1'b0 
+INFO: [Synth 8-256] done synthesizing module 'UART_tr' (1#1) [C:/Users/sophi/Documents/SiliconNeuronMeasSuit/fpga/hdl/UART_tr.vhd:41]
+INFO: [Synth 8-638] synthesizing module 'UART_recv_V1' [C:/Users/sophi/Documents/SiliconNeuronMeasSuit/fpga/hdl/UART_recv_V1_1.vhd:50]
+	Parameter clk100M bound to: 1 - type: integer 
+	Parameter SLOW_VALUES bound to: 0 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'UART_recv_V1' (2#1) [C:/Users/sophi/Documents/SiliconNeuronMeasSuit/fpga/hdl/UART_recv_V1_1.vhd:50]
+INFO: [Synth 8-638] synthesizing module 'STD_FIFO' [C:/Users/sophi/Documents/SiliconNeuronMeasSuit/fpga/hdl/STD_FIFO.vhd:24]
+	Parameter DATA_WIDTH bound to: 8 - type: integer 
+	Parameter MAX_FIFO_DEPTH bound to: 60 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'STD_FIFO' (3#1) [C:/Users/sophi/Documents/SiliconNeuronMeasSuit/fpga/hdl/STD_FIFO.vhd:24]
+INFO: [Synth 8-638] synthesizing module 'STD_FIFO__parameterized0' [C:/Users/sophi/Documents/SiliconNeuronMeasSuit/fpga/hdl/STD_FIFO.vhd:24]
+	Parameter DATA_WIDTH bound to: 8 - type: integer 
+	Parameter MAX_FIFO_DEPTH bound to: 20 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'STD_FIFO__parameterized0' (3#1) [C:/Users/sophi/Documents/SiliconNeuronMeasSuit/fpga/hdl/STD_FIFO.vhd:24]
+WARNING: [Synth 8-6014] Unused sequential element retrieved_status_register_reg was removed.  [C:/Users/sophi/Documents/SiliconNeuronMeasSuit/fpga/hdl/Command_processor_state_machine.vhd:185]
+WARNING: [Synth 8-6014] Unused sequential element send_data_streem_reg was removed.  [C:/Users/sophi/Documents/SiliconNeuronMeasSuit/fpga/hdl/Command_processor_state_machine.vhd:188]
+WARNING: [Synth 8-6014] Unused sequential element module_name_buff_reg[4] was removed.  [C:/Users/sophi/Documents/SiliconNeuronMeasSuit/fpga/hdl/Command_processor_state_machine.vhd:190]
+WARNING: [Synth 8-6014] Unused sequential element module_behaviour_buff_reg[3] was removed.  [C:/Users/sophi/Documents/SiliconNeuronMeasSuit/fpga/hdl/Command_processor_state_machine.vhd:231]
+WARNING: [Synth 8-6014] Unused sequential element module_behaviour_buff_reg[4] was removed.  [C:/Users/sophi/Documents/SiliconNeuronMeasSuit/fpga/hdl/Command_processor_state_machine.vhd:231]
+WARNING: [Synth 8-6014] Unused sequential element counter_target_configuration_reg was removed.  [C:/Users/sophi/Documents/SiliconNeuronMeasSuit/fpga/hdl/Command_processor_state_machine.vhd:633]
+WARNING: [Synth 8-6014] Unused sequential element test2_reg was removed.  [C:/Users/sophi/Documents/SiliconNeuronMeasSuit/fpga/hdl/Command_processor_state_machine.vhd:638]
+WARNING: [Synth 8-6014] Unused sequential element debug2_reg was removed.  [C:/Users/sophi/Documents/SiliconNeuronMeasSuit/fpga/hdl/Command_processor_state_machine.vhd:735]
+WARNING: [Synth 8-6014] Unused sequential element UART_fifo_full_reg was removed.  [C:/Users/sophi/Documents/SiliconNeuronMeasSuit/fpga/hdl/Command_processor_state_machine.vhd:741]
+INFO: [Synth 8-256] done synthesizing module 'Command_processor' (4#1) [C:/Users/sophi/Documents/SiliconNeuronMeasSuit/fpga/hdl/Command_processor_state_machine.vhd:36]
+INFO: [Synth 8-638] synthesizing module 'SPIx_state_machine' [C:/Users/sophi/Documents/SiliconNeuronMeasSuit/fpga/hdl/SPIx_state_machine.vhd:39]
+	Parameter CLOCK_FREQUENCY bound to: 1 - type: integer 
+	Parameter DELAY_SPI_COM bound to: 300 - type: integer 
+WARNING: [Synth 8-613] shared variable will be implemented as local to architecture [C:/Users/sophi/Documents/SiliconNeuronMeasSuit/fpga/hdl/SPIx_state_machine.vhd:80]
+INFO: [Synth 8-638] synthesizing module 'SPI' [C:/Users/sophi/Documents/SiliconNeuronMeasSuit/fpga/hdl/SPI .vhd:38]
+	Parameter DATA_LENGTH bound to: 8 - type: integer 
+	Parameter DELAY_SPI bound to: 300 - type: integer 
+WARNING: [Synth 8-6014] Unused sequential element clk_period_reg was removed.  [C:/Users/sophi/Documents/SiliconNeuronMeasSuit/fpga/hdl/SPI .vhd:137]
+WARNING: [Synth 8-6014] Unused sequential element delay_reg was removed.  [C:/Users/sophi/Documents/SiliconNeuronMeasSuit/fpga/hdl/SPI .vhd:138]
+INFO: [Synth 8-256] done synthesizing module 'SPI' (5#1) [C:/Users/sophi/Documents/SiliconNeuronMeasSuit/fpga/hdl/SPI .vhd:38]
+WARNING: [Synth 8-6014] Unused sequential element number_data_read_buffer_reg was removed.  [C:/Users/sophi/Documents/SiliconNeuronMeasSuit/fpga/hdl/SPIx_state_machine.vhd:185]
+WARNING: [Synth 8-6014] Unused sequential element debug2_reg was removed.  [C:/Users/sophi/Documents/SiliconNeuronMeasSuit/fpga/hdl/SPIx_state_machine.vhd:205]
+WARNING: [Synth 8-6014] Unused sequential element debug1_reg was removed.  [C:/Users/sophi/Documents/SiliconNeuronMeasSuit/fpga/hdl/SPIx_state_machine.vhd:223]
+WARNING: [Synth 8-6014] Unused sequential element number_data_read_reg was removed.  [C:/Users/sophi/Documents/SiliconNeuronMeasSuit/fpga/hdl/SPIx_state_machine.vhd:185]
+WARNING: [Synth 8-6014] Unused sequential element clock_coefficient_reg was removed.  [C:/Users/sophi/Documents/SiliconNeuronMeasSuit/fpga/hdl/SPIx_state_machine.vhd:322]
+INFO: [Synth 8-256] done synthesizing module 'SPIx_state_machine' (6#1) [C:/Users/sophi/Documents/SiliconNeuronMeasSuit/fpga/hdl/SPIx_state_machine.vhd:39]
+INFO: [Synth 8-638] synthesizing module 'Strl' [C:/Users/sophi/Documents/SiliconNeuronMeasSuit/fpga/hdl/Strl_module.vhd:35]
+	Parameter N bound to: 12 - type: integer 
+	Parameter M bound to: 4 - type: integer 
+	Parameter MAX_SYNAPSES bound to: 2 - type: integer 
+	Parameter MAX_FRAMES bound to: 4 - type: integer 
+WARNING: [Synth 8-614] signal 'reset' is read in the process but is not in the sensitivity list [C:/Users/sophi/Documents/SiliconNeuronMeasSuit/fpga/hdl/Strl_module.vhd:115]
+WARNING: [Synth 8-614] signal 'reset' is read in the process but is not in the sensitivity list [C:/Users/sophi/Documents/SiliconNeuronMeasSuit/fpga/hdl/Strl_module.vhd:317]
+INFO: [Synth 8-638] synthesizing module 'STD_FIFO__parameterized1' [C:/Users/sophi/Documents/SiliconNeuronMeasSuit/fpga/hdl/STD_FIFO.vhd:24]
+	Parameter DATA_WIDTH bound to: 8 - type: integer 
+	Parameter MAX_FIFO_DEPTH bound to: 2000000 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'STD_FIFO__parameterized1' (6#1) [C:/Users/sophi/Documents/SiliconNeuronMeasSuit/fpga/hdl/STD_FIFO.vhd:24]
+WARNING: [Synth 8-5856] 3D RAM SPIKES_IDS_reg  for this pattern/configuration is not supported. This will most likely be implemented in registers
+WARNING: [Synth 8-6014] Unused sequential element FIFO_counter_empty_reg was removed.  [C:/Users/sophi/Documents/SiliconNeuronMeasSuit/fpga/hdl/Strl_module.vhd:133]
+WARNING: [Synth 8-6014] Unused sequential element Number_of_spikes_reg was removed.  [C:/Users/sophi/Documents/SiliconNeuronMeasSuit/fpga/hdl/Strl_module.vhd:197]
+WARNING: [Synth 8-6014] Unused sequential element synaps_id_variable_reg was removed.  [C:/Users/sophi/Documents/SiliconNeuronMeasSuit/fpga/hdl/Strl_module.vhd:199]
+WARNING: [Synth 8-6014] Unused sequential element loop_counter_reg was removed.  [C:/Users/sophi/Documents/SiliconNeuronMeasSuit/fpga/hdl/Strl_module.vhd:209]
+WARNING: [Synth 8-6014] Unused sequential element SPIKES_IDS_reg[0][0] was removed.  [C:/Users/sophi/Documents/SiliconNeuronMeasSuit/fpga/hdl/Strl_module.vhd:215]
+WARNING: [Synth 8-6014] Unused sequential element SPIKES_IDS_reg[0][1] was removed.  [C:/Users/sophi/Documents/SiliconNeuronMeasSuit/fpga/hdl/Strl_module.vhd:215]
+WARNING: [Synth 8-6014] Unused sequential element SPIKES_IDS_reg[0][2] was removed.  [C:/Users/sophi/Documents/SiliconNeuronMeasSuit/fpga/hdl/Strl_module.vhd:215]
+WARNING: [Synth 8-6014] Unused sequential element SPIKES_IDS_reg[1][0] was removed.  [C:/Users/sophi/Documents/SiliconNeuronMeasSuit/fpga/hdl/Strl_module.vhd:215]
+WARNING: [Synth 8-6014] Unused sequential element SPIKES_IDS_reg[1][1] was removed.  [C:/Users/sophi/Documents/SiliconNeuronMeasSuit/fpga/hdl/Strl_module.vhd:215]
+WARNING: [Synth 8-6014] Unused sequential element SPIKES_IDS_reg[1][2] was removed.  [C:/Users/sophi/Documents/SiliconNeuronMeasSuit/fpga/hdl/Strl_module.vhd:215]
+WARNING: [Synth 8-6014] Unused sequential element SPIKES_IDS_reg[2][0] was removed.  [C:/Users/sophi/Documents/SiliconNeuronMeasSuit/fpga/hdl/Strl_module.vhd:215]
+WARNING: [Synth 8-6014] Unused sequential element SPIKES_IDS_reg[2][1] was removed.  [C:/Users/sophi/Documents/SiliconNeuronMeasSuit/fpga/hdl/Strl_module.vhd:215]
+WARNING: [Synth 8-6014] Unused sequential element SPIKES_IDS_reg[2][2] was removed.  [C:/Users/sophi/Documents/SiliconNeuronMeasSuit/fpga/hdl/Strl_module.vhd:215]
+WARNING: [Synth 8-6014] Unused sequential element SPIKES_IDS_reg[3][0] was removed.  [C:/Users/sophi/Documents/SiliconNeuronMeasSuit/fpga/hdl/Strl_module.vhd:215]
+WARNING: [Synth 8-6014] Unused sequential element SPIKES_IDS_reg[3][1] was removed.  [C:/Users/sophi/Documents/SiliconNeuronMeasSuit/fpga/hdl/Strl_module.vhd:215]
+WARNING: [Synth 8-6014] Unused sequential element SPIKES_IDS_reg[3][2] was removed.  [C:/Users/sophi/Documents/SiliconNeuronMeasSuit/fpga/hdl/Strl_module.vhd:215]
+WARNING: [Synth 8-6014] Unused sequential element SPIKES_IDS_reg[4][0] was removed.  [C:/Users/sophi/Documents/SiliconNeuronMeasSuit/fpga/hdl/Strl_module.vhd:215]
+WARNING: [Synth 8-6014] Unused sequential element SPIKES_IDS_reg[4][1] was removed.  [C:/Users/sophi/Documents/SiliconNeuronMeasSuit/fpga/hdl/Strl_module.vhd:215]
+WARNING: [Synth 8-6014] Unused sequential element SPIKES_IDS_reg[4][2] was removed.  [C:/Users/sophi/Documents/SiliconNeuronMeasSuit/fpga/hdl/Strl_module.vhd:215]
+WARNING: [Synth 8-6014] Unused sequential element Selection_i_reg was removed.  [C:/Users/sophi/Documents/SiliconNeuronMeasSuit/fpga/hdl/Strl_module.vhd:289]
+INFO: [Synth 8-256] done synthesizing module 'Strl' (7#1) [C:/Users/sophi/Documents/SiliconNeuronMeasSuit/fpga/hdl/Strl_module.vhd:35]
+WARNING: [Synth 8-3848] Net dread in module/entity Top does not have driver. [C:/Users/sophi/Documents/SiliconNeuronMeasSuit/fpga/hdl/Top.vhd:26]
+INFO: [Synth 8-256] done synthesizing module 'Top' (8#1) [C:/Users/sophi/Documents/SiliconNeuronMeasSuit/fpga/hdl/Top.vhd:36]
+WARNING: [Synth 8-3331] design Strl has unconnected port reg_requirements_read[7]
+WARNING: [Synth 8-3331] design Strl has unconnected port reg_requirements_read[6]
+WARNING: [Synth 8-3331] design Strl has unconnected port reg_requirements_read[5]
+WARNING: [Synth 8-3331] design Strl has unconnected port reg_requirements_read[4]
+WARNING: [Synth 8-3331] design Strl has unconnected port reg_requirements_read[3]
+WARNING: [Synth 8-3331] design SPIx_state_machine has unconnected port reg_requirements_read[7]
+WARNING: [Synth 8-3331] design SPIx_state_machine has unconnected port reg_requirements_read[6]
+WARNING: [Synth 8-3331] design SPIx_state_machine has unconnected port reg_requirements_read[5]
+WARNING: [Synth 8-3331] design SPIx_state_machine has unconnected port reg_requirements_read[4]
+WARNING: [Synth 8-3331] design SPIx_state_machine has unconnected port reg_requirements_read[3]
+WARNING: [Synth 8-3331] design Command_processor has unconnected port test[7]
+WARNING: [Synth 8-3331] design Command_processor has unconnected port test[6]
+WARNING: [Synth 8-3331] design Command_processor has unconnected port test[5]
+WARNING: [Synth 8-3331] design Command_processor has unconnected port test[4]
+WARNING: [Synth 8-3331] design Command_processor has unconnected port test[3]
+WARNING: [Synth 8-3331] design Command_processor has unconnected port test[2]
+WARNING: [Synth 8-3331] design Command_processor has unconnected port test[1]
+WARNING: [Synth 8-3331] design Command_processor has unconnected port test[0]
+WARNING: [Synth 8-3331] design Top has unconnected port dread[7]
+WARNING: [Synth 8-3331] design Top has unconnected port dread[6]
+WARNING: [Synth 8-3331] design Top has unconnected port dread[5]
+WARNING: [Synth 8-3331] design Top has unconnected port dread[4]
+WARNING: [Synth 8-3331] design Top has unconnected port dread[3]
+WARNING: [Synth 8-3331] design Top has unconnected port dread[2]
+WARNING: [Synth 8-3331] design Top has unconnected port dread[1]
+WARNING: [Synth 8-3331] design Top has unconnected port dread[0]
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 706.805 ; gain = 439.098
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:12 ; elapsed = 00:00:12 . Memory (MB): peak = 706.805 ; gain = 439.098
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:12 ; elapsed = 00:00:12 . Memory (MB): peak = 706.805 ; gain = 439.098
+---------------------------------------------------------------------------------
+INFO: [Device 21-403] Loading part xc7a35tcpg236-1
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [c:/Users/sophi/Documents/SiliconNeuronMeasSuit/fpga/vivado_project/SNN/SNN.srcs/sources_1/ip/clk_wiz_1/clk_wiz_1/clk_wiz_1_in_context.xdc] for cell 'Command_processor/IP_clock'
+Finished Parsing XDC File [c:/Users/sophi/Documents/SiliconNeuronMeasSuit/fpga/vivado_project/SNN/SNN.srcs/sources_1/ip/clk_wiz_1/clk_wiz_1/clk_wiz_1_in_context.xdc] for cell 'Command_processor/IP_clock'
+Parsing XDC File [C:/Users/sophi/Documents/SiliconNeuronMeasSuit/fpga/xdc/CMOD.xdc]
+WARNING: [Vivado 12-584] No ports matched 'register_output[0]'. [C:/Users/sophi/Documents/SiliconNeuronMeasSuit/fpga/xdc/CMOD.xdc:64]
+WARNING: [Vivado 12-584] No ports matched 'register_output[1]'. [C:/Users/sophi/Documents/SiliconNeuronMeasSuit/fpga/xdc/CMOD.xdc:65]
+WARNING: [Vivado 12-584] No ports matched 'register_output[2]'. [C:/Users/sophi/Documents/SiliconNeuronMeasSuit/fpga/xdc/CMOD.xdc:66]
+WARNING: [Vivado 12-584] No ports matched 'register_output[3]'. [C:/Users/sophi/Documents/SiliconNeuronMeasSuit/fpga/xdc/CMOD.xdc:67]
+WARNING: [Vivado 12-584] No ports matched 'register_output[4]'. [C:/Users/sophi/Documents/SiliconNeuronMeasSuit/fpga/xdc/CMOD.xdc:68]
+WARNING: [Vivado 12-584] No ports matched 'register_output[5]'. [C:/Users/sophi/Documents/SiliconNeuronMeasSuit/fpga/xdc/CMOD.xdc:69]
+WARNING: [Vivado 12-584] No ports matched 'register_output[6]'. [C:/Users/sophi/Documents/SiliconNeuronMeasSuit/fpga/xdc/CMOD.xdc:70]
+WARNING: [Vivado 12-584] No ports matched 'register_output[7]'. [C:/Users/sophi/Documents/SiliconNeuronMeasSuit/fpga/xdc/CMOD.xdc:71]
+WARNING: [Vivado 12-584] No ports matched 'dread[8]'. [C:/Users/sophi/Documents/SiliconNeuronMeasSuit/fpga/xdc/CMOD.xdc:92]
+Finished Parsing XDC File [C:/Users/sophi/Documents/SiliconNeuronMeasSuit/fpga/xdc/CMOD.xdc]
+WARNING: [Project 1-498] One or more constraints failed evaluation while reading constraint file [C:/Users/sophi/Documents/SiliconNeuronMeasSuit/fpga/xdc/CMOD.xdc] and the design contains unresolved black boxes. These constraints will be read post-synthesis (as long as their source constraint file is marked as used_in_implementation) and should be applied correctly then. You should review the constraints listed in the file [.Xil/Top_propImpl.xdc] and check the run log file to verify that these constraints were correctly applied.
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [C:/Users/sophi/Documents/SiliconNeuronMeasSuit/fpga/xdc/CMOD.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/Top_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/Top_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.003 . Memory (MB): peak = 807.387 ; gain = 0.000
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 807.387 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 807.387 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.012 . Memory (MB): peak = 807.387 ; gain = 0.000
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:22 ; elapsed = 00:00:23 . Memory (MB): peak = 807.387 ; gain = 539.680
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7a35tcpg236-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:22 ; elapsed = 00:00:23 . Memory (MB): peak = 807.387 ; gain = 539.680
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+Applied set_property IO_BUFFER_TYPE = NONE for clk. (constraint file  c:/Users/sophi/Documents/SiliconNeuronMeasSuit/fpga/vivado_project/SNN/SNN.srcs/sources_1/ip/clk_wiz_1/clk_wiz_1/clk_wiz_1_in_context.xdc, line 3).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for clk. (constraint file  c:/Users/sophi/Documents/SiliconNeuronMeasSuit/fpga/vivado_project/SNN/SNN.srcs/sources_1/ip/clk_wiz_1/clk_wiz_1/clk_wiz_1_in_context.xdc, line 4).
+Applied set_property DONT_TOUCH = true for Command_processor/IP_clock. (constraint file  auto generated constraint, line ).
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:22 ; elapsed = 00:00:23 . Memory (MB): peak = 807.387 ; gain = 539.680
+---------------------------------------------------------------------------------
+INFO: [Synth 8-802] inferred FSM for state register 'tx_fsm_reg' in module 'UART_tr'
+INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'UART_recv_V1'
+INFO: [Synth 8-5546] ROM "state" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5544] ROM "nbbits" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "nbbits" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5545] ROM "state_machine" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "memory_needed_i" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "four_letters_reg[0]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "four_letters_reg[1]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "four_letters_reg[2]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "four_letters_reg[3]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "four_letters_reg[4]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "module_name_buff_reg[0]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "module_name_buff_reg[1]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "module_name_buff_reg[2]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "module_name_buff_reg[3]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "module_behaviour_buff_reg[0]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "module_behaviour_buff_reg[1]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "module_behaviour_buff_reg[2]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "register_write" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "reg_requirements_read" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "data_counter" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5544] ROM "wait_for_finish" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5545] ROM "target_select" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "target_select" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "target_select" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "target_select" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "target_select" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "target_select" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "target_select" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "target_select" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "target_select" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "target_select" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "state_machine" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "memory_needed_i" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "four_letters_reg[0]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "four_letters_reg[1]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "four_letters_reg[2]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "four_letters_reg[3]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "four_letters_reg[4]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "module_name_buff_reg[0]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "module_name_buff_reg[1]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "module_name_buff_reg[2]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "module_name_buff_reg[3]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "module_behaviour_buff_reg[0]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "module_behaviour_buff_reg[1]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "module_behaviour_buff_reg[2]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "register_write" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "reg_requirements_read" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "data_counter" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5544] ROM "wait_for_finish" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5545] ROM "target_select" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "target_select" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "target_select" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "target_select" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "target_select" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "target_select" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "target_select" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "target_select" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "target_select" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "target_select" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5544] ROM "state_machine" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "state_machine" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "state_machine" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "state_machine" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "state_machine" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "state_machine" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-802] inferred FSM for state register 'acknoledge_state_machine_reg' in module 'Command_processor'
+INFO: [Synth 8-802] inferred FSM for state register 'stri_clr_state_machine_reg' in module 'Command_processor'
+INFO: [Synth 8-802] inferred FSM for state register 'read_state_machine_reg' in module 'Command_processor'
+INFO: [Synth 8-802] inferred FSM for state register 'write_state_machine_reg' in module 'Command_processor'
+INFO: [Synth 8-802] inferred FSM for state register 'UART_tr_state_machine_reg' in module 'Command_processor'
+INFO: [Synth 8-802] inferred FSM for state register 'SPI_fsm_reg' in module 'SPI'
+INFO: [Synth 8-5544] ROM "acq" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "led2" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5545] ROM "register_map_reg[1]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "register_map_reg[2]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "register_map_reg[3]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "register_map_reg[4]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "register_map[4]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "register_map[4]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "register_map_reg[5]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "FIFO_counter" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "FIFO_time_ID" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "UART_counter" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "synaps_id_index" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5544] ROM "Sel0" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "id_index0" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5545] ROM "register_map_reg[2]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "register_map_reg[3]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "register_map[3]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "register_map[3]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "register_map_reg[4]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "register_map_reg[5]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5546] ROM "Sel" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "Sel" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "Sel" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "Sel" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-802] inferred FSM for state register 'FIFO_state_machine_reg' in module 'Strl'
+INFO: [Synth 8-802] inferred FSM for state register 'settings_state_machine_reg' in module 'Strl'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                    idle |                             0001 |                              000
+                    data |                             0010 |                              001
+                  stop_1 |                             0100 |                              011
+                  stop_2 |                             1000 |                              100
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'tx_fsm_reg' using encoding 'one-hot' in module 'UART_tr'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                    idle |                              001 |                              000
+           zero_as_input |                              110 |                              001
+           wait_next_bit |                              100 |                              010
+              bit_sample |                              101 |                              011
+            bit_received |                              011 |                              100
+           wait_stop_bit |                              010 |                              101
+        last_bit_is_zero |                              000 |                              110
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'sequential' in module 'UART_recv_V1'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+              write_idle |                              000 |                              000
+      write_memory_lower |                              001 |                              001
+      write_memory_upper |                              010 |                              010
+        write_uart_write |                              011 |                              100
+          write_transfer |                              100 |                              011
+         write_to_target |                              101 |                              101
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'write_state_machine_reg' using encoding 'sequential' in module 'Command_processor'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+               read_idle |                              000 |                              000
+       read_memory_lower |                              001 |                              001
+       read_memory_upper |                              010 |                              010
+           read_transfer |                              011 |                              011
+              uart_write |                              100 |                              100
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'read_state_machine_reg' using encoding 'sequential' in module 'Command_processor'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                ack_idle |                              001 |                               00
+               ack_write |                              010 |                               01
+                ack_read |                              100 |                               10
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'acknoledge_state_machine_reg' using encoding 'one-hot' in module 'Command_processor'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                clr_idle |                               00 |                               00
+                 clr_set |                               01 |                               01
+               clr_reset |                               10 |                               10
+                  iSTATE |                               11 |                               11
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'stri_clr_state_machine_reg' using encoding 'sequential' in module 'Command_processor'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+               uart_idle |                              001 |                               00
+               uart_full |                              010 |                               01
+          uart_last_word |                              100 |                               10
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'UART_tr_state_machine_reg' using encoding 'one-hot' in module 'Command_processor'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                    idle |                              001 |                               00
+                     tx1 |                              010 |                               01
+                   acq_s |                              100 |                               10
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'SPI_fsm_reg' using encoding 'one-hot' in module 'SPI'
+WARNING: [Synth 8-327] inferring latch for variable 'led2_reg' [C:/Users/sophi/Documents/SiliconNeuronMeasSuit/fpga/hdl/SPIx_state_machine.vhd:123]
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+               fifo_idle |                              001 |                               00
+               fifo_fill |                              010 |                               01
+              fifo_empty |                              100 |                               10
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'FIFO_state_machine_reg' using encoding 'one-hot' in module 'Strl'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+           settings_idle |                              001 |                               00
+            set_settings |                              010 |                               01
+             state_three |                              100 |                               11
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'settings_state_machine_reg' using encoding 'one-hot' in module 'Strl'
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:26 ; elapsed = 00:00:27 . Memory (MB): peak = 807.387 ; gain = 539.680
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   3 Input     33 Bit       Adders := 1     
+	   2 Input     32 Bit       Adders := 38    
+	   3 Input     32 Bit       Adders := 1     
+	   5 Input     32 Bit       Adders := 1     
+	   7 Input     32 Bit       Adders := 1     
+	   2 Input     21 Bit       Adders := 1     
+	   2 Input     11 Bit       Adders := 1     
+	   2 Input      8 Bit       Adders := 2     
+	   2 Input      6 Bit       Adders := 3     
+	   2 Input      5 Bit       Adders := 12    
+	   2 Input      4 Bit       Adders := 2     
+	   2 Input      3 Bit       Adders := 1     
+	   2 Input      2 Bit       Adders := 1     
++---Registers : 
+	               32 Bit    Registers := 20    
+	               20 Bit    Registers := 2     
+	               16 Bit    Registers := 2     
+	               11 Bit    Registers := 1     
+	               10 Bit    Registers := 3     
+	                9 Bit    Registers := 1     
+	                8 Bit    Registers := 50    
+	                7 Bit    Registers := 1     
+	                6 Bit    Registers := 2     
+	                5 Bit    Registers := 8     
+	                4 Bit    Registers := 6     
+	                3 Bit    Registers := 6     
+	                2 Bit    Registers := 3     
+	                1 Bit    Registers := 59    
++---Multipliers : 
+	                 5x32  Multipliers := 4     
++---RAMs : 
+	           15625K Bit         RAMs := 1     
+	              480 Bit         RAMs := 1     
+	              160 Bit         RAMs := 6     
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 35    
+	  12 Input     32 Bit        Muxes := 4     
+	   7 Input     32 Bit        Muxes := 3     
+	   6 Input     32 Bit        Muxes := 1     
+	   3 Input     32 Bit        Muxes := 3     
+	   4 Input     20 Bit        Muxes := 1     
+	   3 Input     20 Bit        Muxes := 1     
+	   2 Input     20 Bit        Muxes := 1     
+	  12 Input     16 Bit        Muxes := 1     
+	   2 Input     11 Bit        Muxes := 7     
+	   7 Input     11 Bit        Muxes := 1     
+	   4 Input     10 Bit        Muxes := 2     
+	   4 Input      9 Bit        Muxes := 1     
+	   2 Input      8 Bit        Muxes := 66    
+	   4 Input      8 Bit        Muxes := 4     
+	   8 Input      8 Bit        Muxes := 1     
+	   6 Input      8 Bit        Muxes := 6     
+	   7 Input      8 Bit        Muxes := 1     
+	   5 Input      8 Bit        Muxes := 1     
+	  12 Input      8 Bit        Muxes := 4     
+	   3 Input      8 Bit        Muxes := 7     
+	   2 Input      6 Bit        Muxes := 1     
+	  12 Input      4 Bit        Muxes := 2     
+	   2 Input      4 Bit        Muxes := 11    
+	   4 Input      4 Bit        Muxes := 1     
+	   6 Input      4 Bit        Muxes := 1     
+	   2 Input      3 Bit        Muxes := 27    
+	   7 Input      3 Bit        Muxes := 1     
+	   6 Input      3 Bit        Muxes := 5     
+	   5 Input      3 Bit        Muxes := 2     
+	   3 Input      3 Bit        Muxes := 3     
+	   9 Input      3 Bit        Muxes := 2     
+	   3 Input      2 Bit        Muxes := 4     
+	   2 Input      2 Bit        Muxes := 2     
+	   4 Input      2 Bit        Muxes := 2     
+	   4 Input      1 Bit        Muxes := 8     
+	   2 Input      1 Bit        Muxes := 161   
+	   7 Input      1 Bit        Muxes := 29    
+	  12 Input      1 Bit        Muxes := 54    
+	   8 Input      1 Bit        Muxes := 1     
+	   6 Input      1 Bit        Muxes := 24    
+	   5 Input      1 Bit        Muxes := 11    
+	   3 Input      1 Bit        Muxes := 34    
+	  14 Input      1 Bit        Muxes := 1     
+	   9 Input      1 Bit        Muxes := 1     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Hierarchical Component Statistics 
+---------------------------------------------------------------------------------
+Hierarchical RTL Component report 
+Module UART_tr 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      3 Bit       Adders := 1     
++---Registers : 
+	                8 Bit    Registers := 1     
+	                3 Bit    Registers := 1     
+	                1 Bit    Registers := 3     
++---Muxes : 
+	   2 Input      8 Bit        Muxes := 2     
+	   4 Input      8 Bit        Muxes := 1     
+	   2 Input      3 Bit        Muxes := 1     
+	   4 Input      1 Bit        Muxes := 3     
+Module UART_recv_V1 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     11 Bit       Adders := 1     
+	   2 Input      4 Bit       Adders := 1     
++---Registers : 
+	               11 Bit    Registers := 1     
+	               10 Bit    Registers := 2     
+	                9 Bit    Registers := 1     
+	                8 Bit    Registers := 3     
+	                4 Bit    Registers := 1     
+	                1 Bit    Registers := 3     
++---Muxes : 
+	   2 Input     11 Bit        Muxes := 7     
+	   7 Input     11 Bit        Muxes := 1     
+	   4 Input     10 Bit        Muxes := 2     
+	   4 Input      9 Bit        Muxes := 1     
+	   4 Input      8 Bit        Muxes := 1     
+	   7 Input      3 Bit        Muxes := 1     
+	   2 Input      3 Bit        Muxes := 4     
+	   2 Input      1 Bit        Muxes := 5     
+	   7 Input      1 Bit        Muxes := 1     
+Module STD_FIFO 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     32 Bit       Adders := 1     
+	   2 Input      6 Bit       Adders := 3     
++---Registers : 
+	                8 Bit    Registers := 1     
+	                6 Bit    Registers := 2     
+	                1 Bit    Registers := 3     
++---RAMs : 
+	              480 Bit         RAMs := 1     
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 4     
+Module STD_FIFO__parameterized0 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     32 Bit       Adders := 1     
+	   2 Input      5 Bit       Adders := 3     
++---Registers : 
+	                8 Bit    Registers := 1     
+	                5 Bit    Registers := 2     
+	                1 Bit    Registers := 3     
++---RAMs : 
+	              160 Bit         RAMs := 1     
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 4     
+Module Command_processor 
+Detailed RTL Component Info : 
++---Adders : 
+	   3 Input     33 Bit       Adders := 1     
+	   2 Input     32 Bit       Adders := 9     
+	   3 Input     32 Bit       Adders := 1     
+	   2 Input      2 Bit       Adders := 1     
++---Registers : 
+	               32 Bit    Registers := 10    
+	               16 Bit    Registers := 2     
+	               10 Bit    Registers := 1     
+	                8 Bit    Registers := 17    
+	                4 Bit    Registers := 3     
+	                3 Bit    Registers := 2     
+	                2 Bit    Registers := 2     
+	                1 Bit    Registers := 17    
++---Multipliers : 
+	                 5x32  Multipliers := 4     
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 23    
+	  12 Input     32 Bit        Muxes := 4     
+	  12 Input     16 Bit        Muxes := 1     
+	   2 Input      8 Bit        Muxes := 10    
+	   8 Input      8 Bit        Muxes := 1     
+	   6 Input      8 Bit        Muxes := 5     
+	   7 Input      8 Bit        Muxes := 1     
+	   5 Input      8 Bit        Muxes := 1     
+	   4 Input      8 Bit        Muxes := 1     
+	  12 Input      8 Bit        Muxes := 4     
+	   3 Input      8 Bit        Muxes := 2     
+	  12 Input      4 Bit        Muxes := 2     
+	   2 Input      4 Bit        Muxes := 9     
+	   4 Input      4 Bit        Muxes := 1     
+	   6 Input      4 Bit        Muxes := 1     
+	   6 Input      3 Bit        Muxes := 4     
+	   5 Input      3 Bit        Muxes := 2     
+	   3 Input      3 Bit        Muxes := 1     
+	   2 Input      3 Bit        Muxes := 1     
+	   3 Input      2 Bit        Muxes := 3     
+	   2 Input      2 Bit        Muxes := 2     
+	   2 Input      1 Bit        Muxes := 99    
+	  12 Input      1 Bit        Muxes := 54    
+	   8 Input      1 Bit        Muxes := 1     
+	   6 Input      1 Bit        Muxes := 17    
+	   7 Input      1 Bit        Muxes := 2     
+	   5 Input      1 Bit        Muxes := 9     
+	   3 Input      1 Bit        Muxes := 16    
+	   4 Input      1 Bit        Muxes := 5     
+	  14 Input      1 Bit        Muxes := 1     
+Module SPI 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     32 Bit       Adders := 1     
+	   2 Input      4 Bit       Adders := 1     
++---Registers : 
+	                8 Bit    Registers := 3     
+	                4 Bit    Registers := 1     
+	                1 Bit    Registers := 3     
++---Muxes : 
+	   2 Input      8 Bit        Muxes := 3     
+	   3 Input      8 Bit        Muxes := 3     
+	   2 Input      4 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 4     
+	   3 Input      1 Bit        Muxes := 6     
+Module SPIx_state_machine 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     32 Bit       Adders := 4     
++---Registers : 
+	               32 Bit    Registers := 5     
+	                8 Bit    Registers := 10    
+	                7 Bit    Registers := 1     
+	                3 Bit    Registers := 1     
+	                1 Bit    Registers := 11    
++---Muxes : 
+	   7 Input     32 Bit        Muxes := 3     
+	   2 Input      8 Bit        Muxes := 26    
+	   4 Input      8 Bit        Muxes := 1     
+	   3 Input      8 Bit        Muxes := 1     
+	   2 Input      6 Bit        Muxes := 1     
+	   9 Input      3 Bit        Muxes := 1     
+	   7 Input      1 Bit        Muxes := 26    
+	   2 Input      1 Bit        Muxes := 10    
+Module STD_FIFO__parameterized1 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     32 Bit       Adders := 1     
+	   2 Input     21 Bit       Adders := 1     
++---Registers : 
+	                8 Bit    Registers := 1     
+	                1 Bit    Registers := 3     
++---RAMs : 
+	           15625K Bit         RAMs := 1     
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 4     
+Module Strl 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     32 Bit       Adders := 18    
+	   5 Input     32 Bit       Adders := 1     
+	   7 Input     32 Bit       Adders := 1     
+	   2 Input      8 Bit       Adders := 2     
++---Registers : 
+	               32 Bit    Registers := 5     
+	               20 Bit    Registers := 2     
+	                8 Bit    Registers := 10    
+	                4 Bit    Registers := 1     
+	                3 Bit    Registers := 2     
+	                2 Bit    Registers := 1     
+	                1 Bit    Registers := 4     
++---RAMs : 
+	              160 Bit         RAMs := 2     
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 12    
+	   6 Input     32 Bit        Muxes := 1     
+	   3 Input     32 Bit        Muxes := 3     
+	   4 Input     20 Bit        Muxes := 1     
+	   3 Input     20 Bit        Muxes := 1     
+	   2 Input     20 Bit        Muxes := 1     
+	   2 Input      8 Bit        Muxes := 25    
+	   3 Input      8 Bit        Muxes := 1     
+	   6 Input      8 Bit        Muxes := 1     
+	   2 Input      4 Bit        Muxes := 1     
+	   2 Input      3 Bit        Muxes := 21    
+	   6 Input      3 Bit        Muxes := 1     
+	   3 Input      3 Bit        Muxes := 2     
+	   9 Input      3 Bit        Muxes := 1     
+	   4 Input      2 Bit        Muxes := 2     
+	   3 Input      2 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 19    
+	   5 Input      1 Bit        Muxes := 2     
+	   6 Input      1 Bit        Muxes := 7     
+	   3 Input      1 Bit        Muxes := 12    
+	   9 Input      1 Bit        Muxes := 1     
+---------------------------------------------------------------------------------
+Finished RTL Hierarchical Component Statistics
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 90 (col length:60)
+BRAMs: 100 (col length: RAMB18 60 RAMB36 30)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+Warning: Parallel synthesis criteria is not met 
+INFO: [Synth 8-5546] ROM "state" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5545] ROM "module_behaviour_buff_reg[1]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "module_behaviour_buff_reg[0]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "module_name_buff_reg[3]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "module_name_buff_reg[2]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "module_name_buff_reg[0]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "memory_needed_i" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "reg_requirements_read" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "module_behaviour_buff_reg[2]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "four_letters_reg[0]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "four_letters_reg[4]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "four_letters_reg[3]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "four_letters_reg[2]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "four_letters_reg[1]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "state_machine" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "module_name_buff_reg[1]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "target_select" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "target_select" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "target_select" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "target_select" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "target_select" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "target_select" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "target_select" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "target_select" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "target_select" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "target_select" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "register_write" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+WARNING: [Synth 8-3936] Found unconnected internal register 'clock_speed_reg' and it is trimmed from '7' to '6' bits. [C:/Users/sophi/Documents/SiliconNeuronMeasSuit/fpga/hdl/SPIx_state_machine.vhd:331]
+INFO: [Synth 8-5545] ROM "register_map_reg[1]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "register_map_reg[2]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "register_map_reg[3]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Common 17-14] Message 'Synth 8-5545' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+INFO: [Synth 8-5546] ROM "Sel" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "Sel" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "Sel" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "Sel" won't be mapped to RAM because it is too sparse
+WARNING: [Synth 8-3331] design Strl has unconnected port reg_requirements_read[7]
+WARNING: [Synth 8-3331] design Strl has unconnected port reg_requirements_read[6]
+WARNING: [Synth 8-3331] design Strl has unconnected port reg_requirements_read[5]
+WARNING: [Synth 8-3331] design Strl has unconnected port reg_requirements_read[4]
+WARNING: [Synth 8-3331] design Strl has unconnected port reg_requirements_read[3]
+WARNING: [Synth 8-3331] design SPIx_state_machine has unconnected port reg_requirements_read[7]
+WARNING: [Synth 8-3331] design SPIx_state_machine has unconnected port reg_requirements_read[6]
+WARNING: [Synth 8-3331] design SPIx_state_machine has unconnected port reg_requirements_read[5]
+WARNING: [Synth 8-3331] design SPIx_state_machine has unconnected port reg_requirements_read[4]
+WARNING: [Synth 8-3331] design SPIx_state_machine has unconnected port reg_requirements_read[3]
+WARNING: [Synth 8-3331] design Command_processor has unconnected port test[7]
+WARNING: [Synth 8-3331] design Command_processor has unconnected port test[6]
+WARNING: [Synth 8-3331] design Command_processor has unconnected port test[5]
+WARNING: [Synth 8-3331] design Command_processor has unconnected port test[4]
+WARNING: [Synth 8-3331] design Command_processor has unconnected port test[3]
+WARNING: [Synth 8-3331] design Command_processor has unconnected port test[2]
+WARNING: [Synth 8-3331] design Command_processor has unconnected port test[1]
+WARNING: [Synth 8-3331] design Command_processor has unconnected port test[0]
+WARNING: [Synth 8-3331] design Top has unconnected port dread[7]
+WARNING: [Synth 8-3331] design Top has unconnected port dread[6]
+WARNING: [Synth 8-3331] design Top has unconnected port dread[5]
+WARNING: [Synth 8-3331] design Top has unconnected port dread[4]
+WARNING: [Synth 8-3331] design Top has unconnected port dread[3]
+WARNING: [Synth 8-3331] design Top has unconnected port dread[2]
+WARNING: [Synth 8-3331] design Top has unconnected port dread[1]
+WARNING: [Synth 8-3331] design Top has unconnected port dread[0]
+INFO: [Synth 8-3886] merging instance 'Command_processor/UART_tr_tx_data_reg__0i_229' (FDE) to 'Command_processor/UART_tr_tx_data_reg__0i_231'
+INFO: [Synth 8-3886] merging instance 'Command_processor/UART_tr_tx_data_reg__0i_230' (FDE) to 'Command_processor/UART_tr_tx_data_reg__0i_231'
+INFO: [Synth 8-3886] merging instance 'Command_processor/UART_tr_tx_data_reg__0i_231' (FDE) to 'Command_processor/UART_tr_tx_data_reg__0i_233'
+INFO: [Synth 8-3886] merging instance 'Command_processor/UART_tr_tx_data_reg__0i_232' (FDE) to 'Command_processor/UART_tr_tx_data_reg__0i_233'
+INFO: [Synth 8-3886] merging instance 'Command_processor/UART_tr_tx_data_reg__0i_233' (FDE) to 'Command_processor/UART_tr_tx_data_reg__0i_235'
+INFO: [Synth 8-3886] merging instance 'Command_processor/UART_rece/half_reg[6]' (FD) to 'Command_processor/UART_rece/full_reg[9]'
+INFO: [Synth 8-3886] merging instance 'Command_processor/UART_rece/full_reg[6]' (FD) to 'Command_processor/UART_rece/full_reg[9]'
+INFO: [Synth 8-3886] merging instance 'Command_processor/UART_rece/three_quarters_reg[6]' (FD) to 'Command_processor/UART_rece/full_reg[9]'
+INFO: [Synth 8-3886] merging instance 'Command_processor/UART_rece/quarter_reg[6]' (FD) to 'Command_processor/UART_rece/full_reg[9]'
+INFO: [Synth 8-3886] merging instance 'Command_processor/UART_rece/half_reg[7]' (FD) to 'Command_processor/UART_rece/full_reg[9]'
+INFO: [Synth 8-3886] merging instance 'Command_processor/UART_rece/full_reg[7]' (FD) to 'Command_processor/UART_rece/full_reg[9]'
+INFO: [Synth 8-3886] merging instance 'Command_processor/UART_rece/three_quarters_reg[7]' (FD) to 'Command_processor/UART_rece/full_reg[9]'
+INFO: [Synth 8-3886] merging instance 'Command_processor/UART_rece/quarter_reg[7]' (FD) to 'Command_processor/UART_rece/full_reg[9]'
+INFO: [Synth 8-3886] merging instance 'Command_processor/UART_rece/half_reg[8]' (FD) to 'Command_processor/UART_rece/full_reg[9]'
+INFO: [Synth 8-3886] merging instance 'Command_processor/UART_rece/full_reg[8]' (FD) to 'Command_processor/UART_rece/full_reg[9]'
+INFO: [Synth 8-3886] merging instance 'Command_processor/UART_rece/three_quarters_reg[8]' (FD) to 'Command_processor/UART_rece/full_reg[9]'
+INFO: [Synth 8-3886] merging instance 'Command_processor/UART_rece/full_reg[9]' (FD) to 'Command_processor/UART_rece/full_reg[4]'
+INFO: [Synth 8-3886] merging instance 'Command_processor/UART_rece/three_quarters_reg[9]' (FD) to 'Command_processor/UART_rece/full_reg[4]'
+INFO: [Synth 8-3886] merging instance 'Command_processor/UART_rece/half_reg[0]' (FD) to 'Command_processor/UART_rece/full_reg[5]'
+INFO: [Synth 8-3886] merging instance 'Command_processor/UART_rece/full_reg[0]' (FD) to 'Command_processor/UART_rece/full_reg[4]'
+INFO: [Synth 8-3886] merging instance 'Command_processor/UART_rece/three_quarters_reg[0]' (FD) to 'Command_processor/UART_rece/full_reg[5]'
+INFO: [Synth 8-3886] merging instance 'Command_processor/UART_rece/quarter_reg[0]' (FD) to 'Command_processor/UART_rece/full_reg[5]'
+INFO: [Synth 8-3886] merging instance 'Command_processor/UART_rece/half_reg[1]' (FD) to 'Command_processor/UART_rece/full_reg[5]'
+INFO: [Synth 8-3886] merging instance 'Command_processor/UART_rece/full_reg[1]' (FD) to 'Command_processor/UART_rece/full_reg[4]'
+INFO: [Synth 8-3886] merging instance 'Command_processor/UART_rece/three_quarters_reg[1]' (FD) to 'Command_processor/UART_rece/full_reg[5]'
+INFO: [Synth 8-3886] merging instance 'Command_processor/UART_rece/quarter_reg[1]' (FD) to 'Command_processor/UART_rece/full_reg[5]'
+INFO: [Synth 8-3886] merging instance 'Command_processor/UART_rece/half_reg[2]' (FD) to 'Command_processor/UART_rece/full_reg[5]'
+INFO: [Synth 8-3886] merging instance 'Command_processor/UART_rece/full_reg[2]' (FD) to 'Command_processor/UART_rece/full_reg[4]'
+INFO: [Synth 8-3886] merging instance 'Command_processor/UART_rece/three_quarters_reg[2]' (FD) to 'Command_processor/UART_rece/full_reg[5]'
+INFO: [Synth 8-3886] merging instance 'Command_processor/UART_rece/quarter_reg[2]' (FD) to 'Command_processor/UART_rece/full_reg[5]'
+INFO: [Synth 8-3886] merging instance 'Command_processor/UART_rece/half_reg[3]' (FD) to 'Command_processor/UART_rece/full_reg[5]'
+INFO: [Synth 8-3886] merging instance 'Command_processor/UART_rece/full_reg[3]' (FD) to 'Command_processor/UART_rece/full_reg[4]'
+INFO: [Synth 8-3886] merging instance 'Command_processor/UART_rece/three_quarters_reg[3]' (FD) to 'Command_processor/UART_rece/full_reg[4]'
+INFO: [Synth 8-3886] merging instance 'Command_processor/UART_rece/quarter_reg[3]' (FD) to 'Command_processor/UART_rece/full_reg[4]'
+INFO: [Synth 8-3886] merging instance 'Command_processor/UART_rece/half_reg[4]' (FD) to 'Command_processor/UART_rece/full_reg[4]'
+INFO: [Synth 8-3886] merging instance 'Command_processor/UART_rece/full_reg[4]' (FD) to 'Command_processor/UART_rece/half_reg[5]'
+INFO: [Synth 8-3886] merging instance 'Command_processor/UART_rece/three_quarters_reg[4]' (FD) to 'Command_processor/UART_rece/full_reg[5]'
+INFO: [Synth 8-3886] merging instance 'Command_processor/UART_rece/quarter_reg[4]' (FD) to 'Command_processor/UART_rece/half_reg[5]'
+INFO: [Synth 8-3886] merging instance 'Command_processor/UART_rece/half_reg[5]' (FD) to 'Command_processor/UART_rece/three_quarters_reg[5]'
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (Command_processor/\UART_rece/full_reg[5] )
+INFO: [Synth 8-3886] merging instance 'Command_processor/UART_rece/three_quarters_reg[5]' (FD) to 'Command_processor/UART_rece/quarter_reg[5]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (Command_processor/\UART_rece/quarter_reg[5] )
+INFO: [Synth 8-3886] merging instance 'Command_processor/UART_tr_tx_data_reg__0i_234' (FDE) to 'Command_processor/UART_tr_tx_data_reg__0i_235'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (Command_processor/\STrI_FIFO/Head0_inferred /\STrI_FIFO/Head_reg[3] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (Command_processor/\STrI_FIFO/Head0_inferred /\STrI_FIFO/Head_reg[4] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (Command_processor/\STrI_FIFO/Head0_inferred /\STrI_FIFO/Head_reg[0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (Command_processor/\STrI_FIFO/Head0_inferred /\STrI_FIFO/Head_reg[1] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (Command_processor/\STrI_FIFO/Head0_inferred /\STrI_FIFO/Head_reg[2] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (Command_processor/\STrI_FIFO/Looped_reg )
+INFO: [Synth 8-3886] merging instance 'Command_processor/UART_tr_tx_data_reg__0i_235' (FDE) to 'Command_processor/UART_tr_tx_data_reg__0i_236'
+INFO: [Synth 8-3886] merging instance 'SPIx_0/buffer_length_reg[16]' (FDE) to 'SPIx_0/buffer_length_reg[31]'
+INFO: [Synth 8-3886] merging instance 'SPIx_0/buffer_length_reg[17]' (FDE) to 'SPIx_0/buffer_length_reg[31]'
+INFO: [Synth 8-3886] merging instance 'SPIx_0/buffer_length_reg[18]' (FDE) to 'SPIx_0/buffer_length_reg[31]'
+INFO: [Synth 8-3886] merging instance 'SPIx_0/buffer_length_reg[19]' (FDE) to 'SPIx_0/buffer_length_reg[31]'
+INFO: [Synth 8-3886] merging instance 'SPIx_0/buffer_length_reg[20]' (FDE) to 'SPIx_0/buffer_length_reg[31]'
+INFO: [Synth 8-3886] merging instance 'SPIx_0/buffer_length_reg[21]' (FDE) to 'SPIx_0/buffer_length_reg[31]'
+INFO: [Synth 8-3886] merging instance 'SPIx_0/buffer_length_reg[22]' (FDE) to 'SPIx_0/buffer_length_reg[31]'
+INFO: [Synth 8-3886] merging instance 'SPIx_0/buffer_length_reg[23]' (FDE) to 'SPIx_0/buffer_length_reg[31]'
+INFO: [Synth 8-3886] merging instance 'SPIx_0/buffer_length_reg[24]' (FDE) to 'SPIx_0/buffer_length_reg[31]'
+INFO: [Synth 8-3886] merging instance 'SPIx_0/buffer_length_reg[25]' (FDE) to 'SPIx_0/buffer_length_reg[31]'
+INFO: [Synth 8-3886] merging instance 'SPIx_0/buffer_length_reg[26]' (FDE) to 'SPIx_0/buffer_length_reg[31]'
+INFO: [Synth 8-3886] merging instance 'SPIx_0/buffer_length_reg[27]' (FDE) to 'SPIx_0/buffer_length_reg[31]'
+INFO: [Synth 8-3886] merging instance 'SPIx_0/buffer_length_reg[28]' (FDE) to 'SPIx_0/buffer_length_reg[31]'
+INFO: [Synth 8-3886] merging instance 'SPIx_0/buffer_length_reg[29]' (FDE) to 'SPIx_0/buffer_length_reg[31]'
+INFO: [Synth 8-3886] merging instance 'SPIx_0/buffer_length_reg[30]' (FDE) to 'SPIx_0/buffer_length_reg[31]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (SPIx_0/\buffer_length_reg[31] )
+INFO: [Synth 8-3886] merging instance 'SPIx_0/iWr_counter_i_reg[7]' (FDE) to 'SPIx_0/iWr_counter_i_reg[31]'
+INFO: [Synth 8-3886] merging instance 'SPIx_0/iWr_counter_i_reg[8]' (FDE) to 'SPIx_0/iWr_counter_i_reg[31]'
+INFO: [Synth 8-3886] merging instance 'SPIx_0/iWr_counter_i_reg[9]' (FDE) to 'SPIx_0/iWr_counter_i_reg[31]'
+INFO: [Synth 8-3886] merging instance 'SPIx_0/iWr_counter_i_reg[10]' (FDE) to 'SPIx_0/iWr_counter_i_reg[31]'
+INFO: [Synth 8-3886] merging instance 'SPIx_0/iWr_counter_i_reg[11]' (FDE) to 'SPIx_0/iWr_counter_i_reg[31]'
+INFO: [Synth 8-3886] merging instance 'SPIx_0/iWr_counter_i_reg[12]' (FDE) to 'SPIx_0/iWr_counter_i_reg[31]'
+INFO: [Synth 8-3886] merging instance 'SPIx_0/iWr_counter_i_reg[13]' (FDE) to 'SPIx_0/iWr_counter_i_reg[31]'
+INFO: [Synth 8-3886] merging instance 'SPIx_0/iWr_counter_i_reg[14]' (FDE) to 'SPIx_0/iWr_counter_i_reg[31]'
+INFO: [Synth 8-3886] merging instance 'SPIx_0/iWr_counter_i_reg[15]' (FDE) to 'SPIx_0/iWr_counter_i_reg[31]'
+INFO: [Synth 8-3886] merging instance 'SPIx_0/iWr_counter_i_reg[16]' (FDE) to 'SPIx_0/iWr_counter_i_reg[31]'
+INFO: [Synth 8-3886] merging instance 'SPIx_0/iWr_counter_i_reg[17]' (FDE) to 'SPIx_0/iWr_counter_i_reg[31]'
+INFO: [Synth 8-3886] merging instance 'SPIx_0/iWr_counter_i_reg[18]' (FDE) to 'SPIx_0/iWr_counter_i_reg[31]'
+INFO: [Synth 8-3886] merging instance 'SPIx_0/iWr_counter_i_reg[19]' (FDE) to 'SPIx_0/iWr_counter_i_reg[31]'
+INFO: [Synth 8-3886] merging instance 'SPIx_0/iWr_counter_i_reg[20]' (FDE) to 'SPIx_0/iWr_counter_i_reg[31]'
+INFO: [Synth 8-3886] merging instance 'SPIx_0/iWr_counter_i_reg[21]' (FDE) to 'SPIx_0/iWr_counter_i_reg[31]'
+INFO: [Synth 8-3886] merging instance 'SPIx_0/iWr_counter_i_reg[22]' (FDE) to 'SPIx_0/iWr_counter_i_reg[31]'
+INFO: [Synth 8-3886] merging instance 'SPIx_0/iWr_counter_i_reg[23]' (FDE) to 'SPIx_0/iWr_counter_i_reg[31]'
+INFO: [Synth 8-3886] merging instance 'SPIx_0/iWr_counter_i_reg[24]' (FDE) to 'SPIx_0/iWr_counter_i_reg[31]'
+INFO: [Synth 8-3886] merging instance 'SPIx_0/iWr_counter_i_reg[25]' (FDE) to 'SPIx_0/iWr_counter_i_reg[31]'
+INFO: [Synth 8-3886] merging instance 'SPIx_0/iWr_counter_i_reg[26]' (FDE) to 'SPIx_0/iWr_counter_i_reg[31]'
+INFO: [Synth 8-3886] merging instance 'SPIx_0/iWr_counter_i_reg[27]' (FDE) to 'SPIx_0/iWr_counter_i_reg[31]'
+INFO: [Synth 8-3886] merging instance 'SPIx_0/iWr_counter_i_reg[28]' (FDE) to 'SPIx_0/iWr_counter_i_reg[31]'
+INFO: [Synth 8-3886] merging instance 'SPIx_0/iWr_counter_i_reg[29]' (FDE) to 'SPIx_0/iWr_counter_i_reg[31]'
+INFO: [Synth 8-3886] merging instance 'SPIx_0/iWr_counter_i_reg[30]' (FDE) to 'SPIx_0/iWr_counter_i_reg[31]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (SPIx_0/\iWr_counter_i_reg[31] )
+INFO: [Synth 8-3886] merging instance 'Strl_inst/adress_out_reg__0i_105' (FDE) to 'Strl_inst/adress_out_reg__0i_94'
+INFO: [Synth 8-3886] merging instance 'Strl_inst/adress_out_reg__0i_104' (FDE) to 'Strl_inst/adress_out_reg__0i_94'
+INFO: [Synth 8-3886] merging instance 'Strl_inst/adress_out_reg__0i_103' (FDE) to 'Strl_inst/adress_out_reg__0i_94'
+INFO: [Synth 8-3886] merging instance 'Strl_inst/adress_out_reg__0i_102' (FDE) to 'Strl_inst/adress_out_reg__0i_94'
+INFO: [Synth 8-3886] merging instance 'Strl_inst/adress_out_reg__0i_101' (FDE) to 'Strl_inst/adress_out_reg__0i_94'
+INFO: [Synth 8-3886] merging instance 'Strl_inst/adress_out_reg__0i_100' (FDE) to 'Strl_inst/adress_out_reg__0i_94'
+INFO: [Synth 8-3886] merging instance 'Strl_inst/adress_out_reg__0i_99' (FDE) to 'Strl_inst/adress_out_reg__0i_94'
+INFO: [Synth 8-3886] merging instance 'Strl_inst/adress_out_reg__0i_98' (FDE) to 'Strl_inst/adress_out_reg__0i_94'
+INFO: [Synth 8-3886] merging instance 'Strl_inst/adress_out_reg__0i_97' (FDE) to 'Strl_inst/adress_out_reg__0i_94'
+INFO: [Synth 8-3886] merging instance 'Strl_inst/adress_out_reg__0i_96' (FDE) to 'Strl_inst/adress_out_reg__0i_94'
+INFO: [Synth 8-3886] merging instance 'Strl_inst/adress_out_reg__0i_95' (FDE) to 'Strl_inst/adress_out_reg__0i_94'
+INFO: [Synth 8-3886] merging instance 'Command_processor/i_55/STrI_FIFO/DataOut_reg[6]' (FDE) to 'Command_processor/i_55/STrI_FIFO/DataOut_reg[0]'
+INFO: [Synth 8-3886] merging instance 'Command_processor/i_55/STrI_FIFO/DataOut_reg[7]' (FDE) to 'Command_processor/i_55/STrI_FIFO/DataOut_reg[1]'
+WARNING: [Synth 8-3332] Sequential element (STrI_FIFO/Memory_reg_mux_sel) is unused and will be removed from module Strl.
+WARNING: [Synth 8-3332] Sequential element (STrI_FIFO/Memory_reg_mux_sel__0) is unused and will be removed from module Strl.
+WARNING: [Synth 8-3332] Sequential element (STrI_FIFO/Memory_reg_mux_sel__1) is unused and will be removed from module Strl.
+WARNING: [Synth 8-3332] Sequential element (STrI_FIFO/Memory_reg_mux_sel__2) is unused and will be removed from module Strl.
+WARNING: [Synth 8-3332] Sequential element (STrI_FIFO/Memory_reg_mux_sel__3) is unused and will be removed from module Strl.
+WARNING: [Synth 8-3332] Sequential element (STrI_FIFO/Memory_reg_mux_sel__4) is unused and will be removed from module Strl.
+WARNING: [Synth 8-3332] Sequential element (STrI_FIFO/Memory_reg_mux_sel__5) is unused and will be removed from module Strl.
+WARNING: [Synth 8-3332] Sequential element (STrI_FIFO/Memory_reg_mux_sel__6) is unused and will be removed from module Strl.
+WARNING: [Synth 8-3332] Sequential element (STrI_FIFO/Memory_reg_mux_sel__7) is unused and will be removed from module Strl.
+WARNING: [Synth 8-3332] Sequential element (STrI_FIFO/Memory_reg_mux_sel__8) is unused and will be removed from module Strl.
+WARNING: [Synth 8-3332] Sequential element (STrI_FIFO/Memory_reg_mux_sel__9) is unused and will be removed from module Strl.
+WARNING: [Synth 8-3332] Sequential element (STrI_FIFO/Memory_reg_mux_sel__10) is unused and will be removed from module Strl.
+WARNING: [Synth 8-3332] Sequential element (STrI_FIFO/Memory_reg_mux_sel__11) is unused and will be removed from module Strl.
+WARNING: [Synth 8-3332] Sequential element (STrI_FIFO/Memory_reg_mux_sel__12) is unused and will be removed from module Strl.
+WARNING: [Synth 8-3332] Sequential element (STrI_FIFO/Memory_reg_mux_sel__13) is unused and will be removed from module Strl.
+WARNING: [Synth 8-3332] Sequential element (STrI_FIFO/Memory_reg_mux_sel__14) is unused and will be removed from module Strl.
+WARNING: [Synth 8-3332] Sequential element (STrI_FIFO/Memory_reg_mux_sel__15) is unused and will be removed from module Strl.
+WARNING: [Synth 8-3332] Sequential element (STrI_FIFO/Memory_reg_mux_sel__16) is unused and will be removed from module Strl.
+WARNING: [Synth 8-3332] Sequential element (STrI_FIFO/Memory_reg_mux_sel__17) is unused and will be removed from module Strl.
+WARNING: [Synth 8-3332] Sequential element (STrI_FIFO/Memory_reg_mux_sel__18) is unused and will be removed from module Strl.
+WARNING: [Synth 8-3332] Sequential element (STrI_FIFO/Memory_reg_mux_sel__19) is unused and will be removed from module Strl.
+WARNING: [Synth 8-3332] Sequential element (STrI_FIFO/Memory_reg_mux_sel__20) is unused and will be removed from module Strl.
+WARNING: [Synth 8-3332] Sequential element (STrI_FIFO/Memory_reg_mux_sel__21) is unused and will be removed from module Strl.
+WARNING: [Synth 8-3332] Sequential element (STrI_FIFO/Memory_reg_mux_sel__22) is unused and will be removed from module Strl.
+WARNING: [Synth 8-3332] Sequential element (STrI_FIFO/Memory_reg_mux_sel__23) is unused and will be removed from module Strl.
+WARNING: [Synth 8-3332] Sequential element (STrI_FIFO/Memory_reg_mux_sel__24) is unused and will be removed from module Strl.
+WARNING: [Synth 8-3332] Sequential element (STrI_FIFO/Memory_reg_mux_sel__25) is unused and will be removed from module Strl.
+WARNING: [Synth 8-3332] Sequential element (STrI_FIFO/Memory_reg_mux_sel__26) is unused and will be removed from module Strl.
+WARNING: [Synth 8-3332] Sequential element (STrI_FIFO/Memory_reg_mux_sel__27) is unused and will be removed from module Strl.
+WARNING: [Synth 8-3332] Sequential element (STrI_FIFO/Memory_reg_mux_sel__28) is unused and will be removed from module Strl.
+WARNING: [Synth 8-3332] Sequential element (STrI_FIFO/Memory_reg_mux_sel__29) is unused and will be removed from module Strl.
+WARNING: [Synth 8-3332] Sequential element (STrI_FIFO/Memory_reg_mux_sel__30) is unused and will be removed from module Strl.
+WARNING: [Synth 8-3332] Sequential element (STrI_FIFO/Memory_reg_mux_sel__31) is unused and will be removed from module Strl.
+WARNING: [Synth 8-3332] Sequential element (STrI_FIFO/Memory_reg_mux_sel__32) is unused and will be removed from module Strl.
+WARNING: [Synth 8-3332] Sequential element (STrI_FIFO/Memory_reg_mux_sel__33) is unused and will be removed from module Strl.
+WARNING: [Synth 8-3332] Sequential element (STrI_FIFO/Memory_reg_mux_sel__34) is unused and will be removed from module Strl.
+WARNING: [Synth 8-3332] Sequential element (STrI_FIFO/Memory_reg_mux_sel__35) is unused and will be removed from module Strl.
+WARNING: [Synth 8-3332] Sequential element (STrI_FIFO/Memory_reg_mux_sel__36) is unused and will be removed from module Strl.
+WARNING: [Synth 8-3332] Sequential element (STrI_FIFO/Memory_reg_mux_sel__37) is unused and will be removed from module Strl.
+WARNING: [Synth 8-3332] Sequential element (STrI_FIFO/Memory_reg_mux_sel__38) is unused and will be removed from module Strl.
+WARNING: [Synth 8-3332] Sequential element (STrI_FIFO/Memory_reg_mux_sel__39) is unused and will be removed from module Strl.
+WARNING: [Synth 8-3332] Sequential element (STrI_FIFO/Memory_reg_mux_sel__40) is unused and will be removed from module Strl.
+WARNING: [Synth 8-3332] Sequential element (STrI_FIFO/Memory_reg_mux_sel__41) is unused and will be removed from module Strl.
+WARNING: [Synth 8-3332] Sequential element (STrI_FIFO/Memory_reg_mux_sel__42) is unused and will be removed from module Strl.
+WARNING: [Synth 8-3332] Sequential element (STrI_FIFO/Memory_reg_mux_sel__43) is unused and will be removed from module Strl.
+WARNING: [Synth 8-3332] Sequential element (STrI_FIFO/Memory_reg_mux_sel__44) is unused and will be removed from module Strl.
+WARNING: [Synth 8-3332] Sequential element (STrI_FIFO/Memory_reg_mux_sel__45) is unused and will be removed from module Strl.
+WARNING: [Synth 8-3332] Sequential element (STrI_FIFO/Memory_reg_mux_sel__46) is unused and will be removed from module Strl.
+WARNING: [Synth 8-3332] Sequential element (STrI_FIFO/Memory_reg_mux_sel__47) is unused and will be removed from module Strl.
+WARNING: [Synth 8-3332] Sequential element (STrI_FIFO/Memory_reg_mux_sel__48) is unused and will be removed from module Strl.
+WARNING: [Synth 8-3332] Sequential element (STrI_FIFO/Memory_reg_mux_sel__49) is unused and will be removed from module Strl.
+WARNING: [Synth 8-3332] Sequential element (STrI_FIFO/Memory_reg_mux_sel__50) is unused and will be removed from module Strl.
+WARNING: [Synth 8-3332] Sequential element (STrI_FIFO/Memory_reg_mux_sel__51) is unused and will be removed from module Strl.
+WARNING: [Synth 8-3332] Sequential element (STrI_FIFO/Memory_reg_mux_sel__52) is unused and will be removed from module Strl.
+WARNING: [Synth 8-3332] Sequential element (STrI_FIFO/Memory_reg_mux_sel__53) is unused and will be removed from module Strl.
+WARNING: [Synth 8-3332] Sequential element (STrI_FIFO/Memory_reg_mux_sel__54) is unused and will be removed from module Strl.
+WARNING: [Synth 8-3332] Sequential element (STrI_FIFO/Memory_reg_mux_sel__55) is unused and will be removed from module Strl.
+WARNING: [Synth 8-3332] Sequential element (STrI_FIFO/Memory_reg_mux_sel__56) is unused and will be removed from module Strl.
+WARNING: [Synth 8-3332] Sequential element (STrI_FIFO/Memory_reg_mux_sel__57) is unused and will be removed from module Strl.
+WARNING: [Synth 8-3332] Sequential element (STrI_FIFO/Memory_reg_mux_sel__58) is unused and will be removed from module Strl.
+WARNING: [Synth 8-3332] Sequential element (STrI_FIFO/Memory_reg_mux_sel__59) is unused and will be removed from module Strl.
+WARNING: [Synth 8-3332] Sequential element (STrI_FIFO/Memory_reg_mux_sel__60) is unused and will be removed from module Strl.
+WARNING: [Synth 8-3332] Sequential element (STrI_FIFO/Memory_reg_mux_sel__61) is unused and will be removed from module Strl.
+WARNING: [Synth 8-3332] Sequential element (STrI_FIFO/Memory_reg_mux_sel__62) is unused and will be removed from module Strl.
+WARNING: [Synth 8-3332] Sequential element (STrI_FIFO/Memory_reg_mux_sel__63) is unused and will be removed from module Strl.
+WARNING: [Synth 8-3332] Sequential element (STrI_FIFO/Memory_reg_mux_sel__64) is unused and will be removed from module Strl.
+WARNING: [Synth 8-3332] Sequential element (STrI_FIFO/Memory_reg_mux_sel__65) is unused and will be removed from module Strl.
+WARNING: [Synth 8-3332] Sequential element (STrI_FIFO/Memory_reg_mux_sel__66) is unused and will be removed from module Strl.
+WARNING: [Synth 8-3332] Sequential element (STrI_FIFO/Memory_reg_mux_sel__67) is unused and will be removed from module Strl.
+WARNING: [Synth 8-3332] Sequential element (STrI_FIFO/Memory_reg_mux_sel__68) is unused and will be removed from module Strl.
+WARNING: [Synth 8-3332] Sequential element (STrI_FIFO/Memory_reg_mux_sel__69) is unused and will be removed from module Strl.
+WARNING: [Synth 8-3332] Sequential element (STrI_FIFO/Memory_reg_mux_sel__70) is unused and will be removed from module Strl.
+WARNING: [Synth 8-3332] Sequential element (STrI_FIFO/Memory_reg_mux_sel__71) is unused and will be removed from module Strl.
+WARNING: [Synth 8-3332] Sequential element (STrI_FIFO/Memory_reg_mux_sel__72) is unused and will be removed from module Strl.
+WARNING: [Synth 8-3332] Sequential element (STrI_FIFO/Memory_reg_mux_sel__73) is unused and will be removed from module Strl.
+WARNING: [Synth 8-3332] Sequential element (STrI_FIFO/Memory_reg_mux_sel__74) is unused and will be removed from module Strl.
+WARNING: [Synth 8-3332] Sequential element (STrI_FIFO/Memory_reg_mux_sel__75) is unused and will be removed from module Strl.
+WARNING: [Synth 8-3332] Sequential element (STrI_FIFO/Memory_reg_mux_sel__76) is unused and will be removed from module Strl.
+WARNING: [Synth 8-3332] Sequential element (STrI_FIFO/Memory_reg_mux_sel__77) is unused and will be removed from module Strl.
+WARNING: [Synth 8-3332] Sequential element (STrI_FIFO/Memory_reg_mux_sel__78) is unused and will be removed from module Strl.
+WARNING: [Synth 8-3332] Sequential element (STrI_FIFO/Memory_reg_mux_sel__79) is unused and will be removed from module Strl.
+WARNING: [Synth 8-3332] Sequential element (STrI_FIFO/Memory_reg_mux_sel__80) is unused and will be removed from module Strl.
+WARNING: [Synth 8-3332] Sequential element (STrI_FIFO/Memory_reg_mux_sel__81) is unused and will be removed from module Strl.
+WARNING: [Synth 8-3332] Sequential element (STrI_FIFO/Memory_reg_mux_sel__82) is unused and will be removed from module Strl.
+WARNING: [Synth 8-3332] Sequential element (STrI_FIFO/Memory_reg_mux_sel__83) is unused and will be removed from module Strl.
+WARNING: [Synth 8-3332] Sequential element (STrI_FIFO/Memory_reg_mux_sel__84) is unused and will be removed from module Strl.
+WARNING: [Synth 8-3332] Sequential element (STrI_FIFO/Memory_reg_mux_sel__85) is unused and will be removed from module Strl.
+WARNING: [Synth 8-3332] Sequential element (STrI_FIFO/Memory_reg_mux_sel__86) is unused and will be removed from module Strl.
+WARNING: [Synth 8-3332] Sequential element (STrI_FIFO/Memory_reg_mux_sel__87) is unused and will be removed from module Strl.
+WARNING: [Synth 8-3332] Sequential element (STrI_FIFO/Memory_reg_mux_sel__88) is unused and will be removed from module Strl.
+WARNING: [Synth 8-3332] Sequential element (STrI_FIFO/Memory_reg_mux_sel__89) is unused and will be removed from module Strl.
+WARNING: [Synth 8-3332] Sequential element (STrI_FIFO/Memory_reg_mux_sel__90) is unused and will be removed from module Strl.
+WARNING: [Synth 8-3332] Sequential element (STrI_FIFO/Memory_reg_mux_sel__91) is unused and will be removed from module Strl.
+WARNING: [Synth 8-3332] Sequential element (STrI_FIFO/Memory_reg_mux_sel__92) is unused and will be removed from module Strl.
+WARNING: [Synth 8-3332] Sequential element (STrI_FIFO/Memory_reg_mux_sel__93) is unused and will be removed from module Strl.
+WARNING: [Synth 8-3332] Sequential element (STrI_FIFO/Memory_reg_mux_sel__94) is unused and will be removed from module Strl.
+WARNING: [Synth 8-3332] Sequential element (STrI_FIFO/Memory_reg_mux_sel__95) is unused and will be removed from module Strl.
+WARNING: [Synth 8-3332] Sequential element (STrI_FIFO/Memory_reg_mux_sel__96) is unused and will be removed from module Strl.
+WARNING: [Synth 8-3332] Sequential element (STrI_FIFO/Memory_reg_mux_sel__97) is unused and will be removed from module Strl.
+WARNING: [Synth 8-3332] Sequential element (STrI_FIFO/Memory_reg_mux_sel__98) is unused and will be removed from module Strl.
+INFO: [Common 17-14] Message 'Synth 8-3332' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+INFO: [Synth 8-3886] merging instance 'Strl_inst/i_113' (FDE) to 'Strl_inst/i_94'
+INFO: [Synth 8-3886] merging instance 'Strl_inst/register_map_reg[1][4]' (FD) to 'Strl_inst/register_map_reg[3][7]'
+INFO: [Synth 8-3886] merging instance 'Strl_inst/register_map_reg[3][4]' (FD) to 'Strl_inst/register_map_reg[3][7]'
+INFO: [Synth 8-3886] merging instance 'Strl_inst/register_map_reg[3][3]' (FD) to 'Strl_inst/register_map_reg[3][7]'
+INFO: [Synth 8-3886] merging instance 'Strl_inst/register_map_reg[1][5]' (FD) to 'Strl_inst/register_map_reg[3][7]'
+INFO: [Synth 8-3886] merging instance 'Strl_inst/register_map_reg[3][5]' (FD) to 'Strl_inst/register_map_reg[3][7]'
+INFO: [Common 17-14] Message 'Synth 8-3886' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (Strl_inst/\register_map_reg[3][6] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (SPIx_0/\register_map_reg[4][6] )
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:41 ; elapsed = 00:00:42 . Memory (MB): peak = 807.387 ; gain = 539.680
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+Distributed RAM: Preliminary Mapping  Report (see note below)
++------------------+-----------------------------------+-----------+----------------------+--------------+
+|Module Name       | RTL Object                        | Inference | Size (Depth x Width) | Primitives   | 
++------------------+-----------------------------------+-----------+----------------------+--------------+
+|Command_processor | UART_transmission_FIFO/Memory_reg | Implied   | 64 x 8               | RAM64M x 3   | 
+|Command_processor | UART_reception_FIFO/Memory_reg    | Implied   | 32 x 8               | RAM32M x 2   | 
+|Command_processor | STrI_FIFO/Memory_reg              | Implied   | 32 x 8               | RAM32M x 2   | 
+|SPIx_0            | INSA_FIFO_1/Memory_reg            | Implied   | 32 x 8               | RAM32M x 2   | 
+|SPIx_0            | INSA_FIFO_2/Memory_reg            | Implied   | 32 x 8               | RAM32M x 2   | 
++------------------+-----------------------------------+-----------+----------------------+--------------+
+
+Note: The table above is a preliminary report that shows the Distributed RAMs at the current stage of the synthesis flow. Some Distributed RAMs may be reimplemented as non Distributed RAM primitives later in the synthesis flow. Multiple instantiated RAMs are reported only once.
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+INFO: [Synth 8-5578] Moved timing constraint from pin 'Command_processor/IP_clock/clk_out1' to pin 'Command_processor/IP_clock/bbstub_clk_out1/O'
+INFO: [Synth 8-5819] Moved 1 constraints on hierarchical pins to their respective driving/loading pins
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:50 ; elapsed = 00:00:52 . Memory (MB): peak = 807.387 ; gain = 539.680
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:52 ; elapsed = 00:00:54 . Memory (MB): peak = 821.746 ; gain = 554.039
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+Distributed RAM: Final Mapping  Report
++------------------+-----------------------------------+-----------+----------------------+--------------+
+|Module Name       | RTL Object                        | Inference | Size (Depth x Width) | Primitives   | 
++------------------+-----------------------------------+-----------+----------------------+--------------+
+|Command_processor | UART_transmission_FIFO/Memory_reg | Implied   | 64 x 8               | RAM64M x 3   | 
+|Command_processor | UART_reception_FIFO/Memory_reg    | Implied   | 32 x 8               | RAM32M x 2   | 
+|Command_processor | STrI_FIFO/Memory_reg              | Implied   | 32 x 8               | RAM32M x 2   | 
+|SPIx_0            | INSA_FIFO_1/Memory_reg            | Implied   | 32 x 8               | RAM32M x 2   | 
+|SPIx_0            | INSA_FIFO_2/Memory_reg            | Implied   | 32 x 8               | RAM32M x 2   | 
++------------------+-----------------------------------+-----------+----------------------+--------------+
+
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:54 ; elapsed = 00:00:56 . Memory (MB): peak = 844.457 ; gain = 576.750
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:56 ; elapsed = 00:00:58 . Memory (MB): peak = 844.457 ; gain = 576.750
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:56 ; elapsed = 00:00:58 . Memory (MB): peak = 844.457 ; gain = 576.750
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:56 ; elapsed = 00:00:58 . Memory (MB): peak = 844.457 ; gain = 576.750
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:56 ; elapsed = 00:00:58 . Memory (MB): peak = 844.457 ; gain = 576.750
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:56 ; elapsed = 00:00:58 . Memory (MB): peak = 844.457 ; gain = 576.750
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:56 ; elapsed = 00:00:58 . Memory (MB): peak = 844.457 ; gain = 576.750
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++------+--------------+----------+
+|      |BlackBox name |Instances |
++------+--------------+----------+
+|1     |clk_wiz_1     |         1|
++------+--------------+----------+
+
+Report Cell Usage: 
++------+-----------------+------+
+|      |Cell             |Count |
++------+-----------------+------+
+|1     |clk_wiz_1_bbox_0 |     1|
+|2     |BUFG             |     2|
+|3     |CARRY4           |   343|
+|4     |LUT1             |   116|
+|5     |LUT2             |   584|
+|6     |LUT3             |   395|
+|7     |LUT4             |   338|
+|8     |LUT5             |   230|
+|9     |LUT6             |   405|
+|10    |RAM32M           |     7|
+|11    |RAM64M           |     3|
+|12    |FDCE             |    45|
+|13    |FDPE             |     1|
+|14    |FDRE             |  1079|
+|15    |FDSE             |     2|
+|16    |LD               |     1|
+|17    |IBUF             |     3|
+|18    |OBUF             |    13|
+|19    |OBUFT            |    21|
++------+-----------------+------+
+
+Report Instance Areas: 
++------+---------------------------+---------------------------+------+
+|      |Instance                   |Module                     |Cells |
++------+---------------------------+---------------------------+------+
+|1     |top                        |                           |  3590|
+|2     |  Command_processor        |Command_processor          |  2004|
+|3     |    STrI_FIFO              |STD_FIFO__parameterized0_1 |    31|
+|4     |    UART_rece              |UART_recv_V1               |   309|
+|5     |    UART_reception_FIFO    |STD_FIFO__parameterized0_2 |   163|
+|6     |    UART_transmission_FIFO |STD_FIFO                   |    85|
+|7     |    UART_transmsission     |UART_tr                    |   168|
+|8     |  SPIx_0                   |SPIx_state_machine         |  1358|
+|9     |    INSA_FIFO_1            |STD_FIFO__parameterized0   |   100|
+|10    |    INSA_FIFO_2            |STD_FIFO__parameterized0_0 |   100|
+|11    |    SPI                    |SPI                        |   670|
+|12    |  Strl_inst                |Strl                       |   187|
++------+---------------------------+---------------------------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:56 ; elapsed = 00:00:58 . Memory (MB): peak = 844.457 ; gain = 576.750
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 540 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:37 ; elapsed = 00:00:51 . Memory (MB): peak = 844.457 ; gain = 476.168
+Synthesis Optimization Complete : Time (s): cpu = 00:00:56 ; elapsed = 00:00:58 . Memory (MB): peak = 844.457 ; gain = 576.750
+INFO: [Project 1-571] Translating synthesized netlist
+INFO: [Netlist 29-17] Analyzing 354 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 844.457 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 11 instances were transformed.
+  LD => LDCE: 1 instances
+  RAM32M => RAM32M (RAMD32, RAMD32, RAMD32, RAMD32, RAMD32, RAMD32, RAMS32, RAMS32): 7 instances
+  RAM64M => RAM64M (RAMD64E, RAMD64E, RAMD64E, RAMD64E): 3 instances
+
+INFO: [Common 17-83] Releasing license: Synthesis
+298 Infos, 205 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:59 ; elapsed = 00:01:02 . Memory (MB): peak = 844.457 ; gain = 584.613
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 844.457 ; gain = 0.000
+WARNING: [Constraints 18-5210] No constraints selected for write.
+Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
+INFO: [Common 17-1381] The checkpoint 'C:/Users/sophi/Documents/SiliconNeuronMeasSuit/fpga/vivado_project/SNN/SNN.runs/synth_1/Top.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file Top_utilization_synth.rpt -pb Top_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Tue Aug  3 16:23:17 2021...

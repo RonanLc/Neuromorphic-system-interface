@@ -1,0 +1,42 @@
+Vivado Simulator 2018.3
+Copyright 1986-1999, 2001-2018 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2018.3/bin/unwrapped/win64.o/xelab.exe -wto a6065b1d2bfa44b6b013d4eb7b1e8ec7 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot Top_tb_behav xil_defaultlib.Top_tb xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+WARNING: [VRFC 10-3813] value in initialization depends on signal 'iwr_counter' [C:/Users/sophi/Documents/SiliconNeuronMeasSuit/fpga/hdl/SPIx_state_machine.vhd:104]
+WARNING: [VRFC 10-3813] value in initialization depends on signal 'spix_to_command' [C:/Users/sophi/Documents/SiliconNeuronMeasSuit/fpga/hdl/SPIx_state_machine.vhd:105]
+WARNING: [VRFC 10-3813] value in initialization depends on signal 'clock_divider' [C:/Users/sophi/Documents/SiliconNeuronMeasSuit/fpga/hdl/SPIx_state_machine.vhd:106]
+WARNING: [VRFC 10-3813] value in initialization depends on signal 'data_to_read' [C:/Users/sophi/Documents/SiliconNeuronMeasSuit/fpga/hdl/SPIx_state_machine.vhd:110]
+WARNING: [VRFC 10-3813] value in initialization depends on signal 'adress_in' [C:/Users/sophi/Documents/SiliconNeuronMeasSuit/fpga/hdl/Strl_module.vhd:41]
+WARNING: [VRFC 10-3813] value in initialization depends on signal 'command_completed' [C:/Users/sophi/Documents/SiliconNeuronMeasSuit/fpga/hdl/Strl_module.vhd:42]
+WARNING: [VRFC 10-3813] value in initialization depends on signal 'adress_in' [C:/Users/sophi/Documents/SiliconNeuronMeasSuit/fpga/hdl/Strl_module.vhd:96]
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package std.textio
+Compiling package ieee.std_logic_1164
+Compiling package ieee.numeric_std
+Compiling package ieee.std_logic_arith
+Compiling package ieee.std_logic_unsigned
+Compiling package ieee.math_real
+Compiling package vl.vl_types
+Compiling module xil_defaultlib.glbl
+Compiling module unisims_ver.IBUF
+Compiling module unisims_ver.MMCME2_ADV(CLKFBOUT_MULT_F=62.5,...
+Compiling module unisims_ver.BUFG
+Compiling module xil_defaultlib.clk_wiz_1_clk_wiz
+Compiling module xil_defaultlib.clk_wiz_1
+Compiling architecture behavioral of entity xil_defaultlib.UART_tr [\UART_tr(clock_f=100,baud_rate=3...]
+Compiling architecture behavioral of entity xil_defaultlib.UART_recv_V1 [\UART_recv_V1(clk100m=1)\]
+Compiling architecture behavioral of entity xil_defaultlib.STD_FIFO [\STD_FIFO(data_width=8,max_fifo_...]
+Compiling architecture behavioral of entity xil_defaultlib.STD_FIFO [\STD_FIFO(data_width=8,max_fifo_...]
+Compiling architecture behavioral of entity xil_defaultlib.Command_processor [\Command_processor(module_name_l...]
+Compiling architecture behavioral of entity xil_defaultlib.SPI [\SPI(data_length=8,delay_spi=300...]
+Compiling architecture behavioral of entity xil_defaultlib.SPIx_state_machine [\SPIx_state_machine(clock_freque...]
+Compiling architecture behavioral of entity xil_defaultlib.STD_FIFO [\STD_FIFO(data_width=8,max_fifo_...]
+Compiling architecture behavioral of entity xil_defaultlib.Strl [\Strl(n=12,m=4,max_synapses=2,ma...]
+Compiling architecture behavioral of entity xil_defaultlib.Top [\Top(target_amount=15)\]
+Compiling architecture bench of entity xil_defaultlib.top_tb
+Built simulation snapshot Top_tb_behav

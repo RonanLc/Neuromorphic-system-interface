@@ -1,0 +1,7 @@
+Vivado Simulator 2018.3
+Time resolution is 1 ps
+ERROR: Index 5 out of bound 0 to 4
+Time: 214515160 ps  Iteration: 2  Process: /Top_tb/Top_inst/Command_processor/state_machine_process
+  File: C:/Users/sophi/Documents/SiliconNeuronMeasSuit/fpga/hdl/Command_processor_state_machine.vhd
+
+HDL Line: C:/Users/sophi/Documents/SiliconNeuronMeasSuit/fpga/hdl/Command_processor_state_machine.vhd:206

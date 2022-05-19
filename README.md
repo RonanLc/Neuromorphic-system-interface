@@ -1,1 +1,1 @@
-# Neuromorphic-system-interface
+# SiliconNeuronMeasSuit

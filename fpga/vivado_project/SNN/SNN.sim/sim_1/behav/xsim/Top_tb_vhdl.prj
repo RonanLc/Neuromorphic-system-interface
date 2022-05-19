@@ -1,0 +1,14 @@
+# compile vhdl design source files
+vhdl xil_defaultlib  \
+"../../../../../../hdl/UART_tr.vhd" \
+"../../../../../../hdl/UART_recv_V1_1.vhd" \
+"../../../../../../hdl/STD_FIFO.vhd" \
+"../../../../../../hdl/Command_processor_state_machine.vhd" \
+"../../../../../../hdl/SPI .vhd" \
+"../../../../../../hdl/SPIx_state_machine.vhd" \
+"../../../../../../hdl/Strl_module.vhd" \
+"../../../../../../hdl/Top.vhd" \
+"../../../../../../tb/Module_testbench.vhd" \
+
+# Do not sort compile order
+nosort

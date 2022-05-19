@@ -1,0 +1,18 @@
+0.6
+2018.3
+Dec  7 2018
+00:33:28
+C:/Users/sophi/Documents/SiliconNeuronMeasSuit/fpga/hdl/Command_processor_state_machine.vhd,1634582150,vhdl,C:/Users/sophi/Documents/SiliconNeuronMeasSuit/fpga/hdl/Top.vhd,,,command_processor,,,,,,,,
+C:/Users/sophi/Documents/SiliconNeuronMeasSuit/fpga/hdl/SPI .vhd,1624116510,vhdl,C:/Users/sophi/Documents/SiliconNeuronMeasSuit/fpga/hdl/SPIx_state_machine.vhd,,,spi,,,,,,,,
+C:/Users/sophi/Documents/SiliconNeuronMeasSuit/fpga/hdl/SPIx_state_machine.vhd,1634582214,vhdl,C:/Users/sophi/Documents/SiliconNeuronMeasSuit/fpga/hdl/Top.vhd,,,spix_state_machine,,,,,,,,
+C:/Users/sophi/Documents/SiliconNeuronMeasSuit/fpga/hdl/STD_FIFO.vhd,1623761558,vhdl,C:/Users/sophi/Documents/SiliconNeuronMeasSuit/fpga/hdl/Command_processor_state_machine.vhd;C:/Users/sophi/Documents/SiliconNeuronMeasSuit/fpga/hdl/SPIx_state_machine.vhd;C:/Users/sophi/Documents/SiliconNeuronMeasSuit/fpga/hdl/Strl_module.vhd,,,std_fifo,,,,,,,,
+C:/Users/sophi/Documents/SiliconNeuronMeasSuit/fpga/hdl/Strl_module.vhd,1628000524,vhdl,C:/Users/sophi/Documents/SiliconNeuronMeasSuit/fpga/hdl/Top.vhd,,,strl,,,,,,,,
+C:/Users/sophi/Documents/SiliconNeuronMeasSuit/fpga/hdl/Top.vhd,1634582335,vhdl,,,,top,,,,,,,,
+C:/Users/sophi/Documents/SiliconNeuronMeasSuit/fpga/hdl/UART_recv_V1_1.vhd,1614863714,vhdl,C:/Users/sophi/Documents/SiliconNeuronMeasSuit/fpga/hdl/Command_processor_state_machine.vhd,,,uart_recv_v1,,,,,,,,
+C:/Users/sophi/Documents/SiliconNeuronMeasSuit/fpga/hdl/UART_tr.vhd,1620388446,vhdl,C:/Users/sophi/Documents/SiliconNeuronMeasSuit/fpga/hdl/Command_processor_state_machine.vhd,,,uart_tr,,,,,,,,
+C:/Users/sophi/Documents/SiliconNeuronMeasSuit/fpga/tb/Module_testbench.vhd,1629551870,vhdl,,,,top_tb,,,,,,,,
+C:/Users/sophi/Documents/SiliconNeuronMeasSuit/fpga/vivado_project/SNN/SNN.sim/sim_1/behav/xsim/glbl.v,1544155481,verilog,,,,glbl,,,,,,,,
+C:/Users/sophi/Documents/SiliconNeuronMeasSuit/fpga/vivado_project/SNN/SNN.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0.v,1625058761,verilog,,,,clk_wiz_0,,,../../../../SNN.srcs/sources_1/ip/clk_wiz_0,,,,,
+C:/Users/sophi/Documents/SiliconNeuronMeasSuit/fpga/vivado_project/SNN/SNN.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0_clk_wiz.v,1625058761,verilog,,C:/Users/sophi/Documents/SiliconNeuronMeasSuit/fpga/vivado_project/SNN/SNN.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0.v,,clk_wiz_0_clk_wiz,,,../../../../SNN.srcs/sources_1/ip/clk_wiz_0,,,,,
+C:/Users/sophi/Documents/SiliconNeuronMeasSuit/fpga/vivado_project/SNN/SNN.srcs/sources_1/ip/clk_wiz_1/clk_wiz_1.v,1626076610,verilog,,,,clk_wiz_1,,,../../../../SNN.srcs/sources_1/ip/clk_wiz_0;../../../../SNN.srcs/sources_1/ip/clk_wiz_1,,,,,
+C:/Users/sophi/Documents/SiliconNeuronMeasSuit/fpga/vivado_project/SNN/SNN.srcs/sources_1/ip/clk_wiz_1/clk_wiz_1_clk_wiz.v,1634583067,verilog,,C:/Users/sophi/Documents/SiliconNeuronMeasSuit/fpga/vivado_project/SNN/SNN.srcs/sources_1/ip/clk_wiz_1/clk_wiz_1.v,,clk_wiz_1_clk_wiz,,,../../../../SNN.srcs/sources_1/ip/clk_wiz_0;../../../../SNN.srcs/sources_1/ip/clk_wiz_1,,,,,
