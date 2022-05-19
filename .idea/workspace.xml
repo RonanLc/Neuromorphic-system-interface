@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="da831501-0ef4-4b0e-afe4-8bc8c33113a8" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/Graphic/tampon.py" beforeDir="false" afterPath="$PROJECT_DIR$/Graphic/tampon.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Graphic/test.ui" beforeDir="false" afterPath="$PROJECT_DIR$/Graphic/test.ui" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,7 +63,7 @@
       <updated>1652941526887</updated>
       <workItem from="1652941529553" duration="15000" />
       <workItem from="1652941625803" duration="50000" />
-      <workItem from="1652941696099" duration="1712000" />
+      <workItem from="1652941696099" duration="2694000" />
     </task>
     <servers />
   </component>
