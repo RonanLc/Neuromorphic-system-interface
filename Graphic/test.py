@@ -11,66 +11,45 @@
 from PyQt5 import QtCore, QtGui, QtWidgets
 
 
-class Ui_Interface(object):
-    def setupUi(self, Interface):
-        Interface.setObjectName("Interface")
-        Interface.resize(529, 329)
-        Interface.setStyleSheet("background-color: rgb(255, 255, 255);")
-        self.SR_title = QtWidgets.QLabel(Interface)
-        self.SR_title.setGeometry(QtCore.QRect(20, 20, 151, 41))
-        font = QtGui.QFont()
-        font.setFamily("Yu Gothic UI")
-        font.setPointSize(20)
-        font.setBold(False)
-        font.setItalic(False)
-        font.setWeight(50)
-        font.setKerning(True)
-        self.SR_title.setFont(font)
-        self.SR_title.setObjectName("SR_title")
-        self.AD_title = QtWidgets.QLabel(Interface)
-        self.AD_title.setGeometry(QtCore.QRect(20, 150, 191, 41))
-        font = QtGui.QFont()
-        font.setFamily("Yu Gothic UI")
-        font.setPointSize(20)
-        font.setBold(False)
-        font.setItalic(False)
-        font.setWeight(50)
-        font.setKerning(True)
-        self.AD_title.setFont(font)
-        self.AD_title.setObjectName("AD_title")
-        self.SR_enterLine = QtWidgets.QLineEdit(Interface)
-        self.SR_enterLine.setGeometry(QtCore.QRect(20, 70, 291, 20))
-        self.SR_enterLine.setObjectName("SR_enterLine")
-        self.SR_sendButton = QtWidgets.QPushButton(Interface)
-        self.SR_sendButton.setGeometry(QtCore.QRect(320, 70, 51, 20))
-        self.SR_sendButton.setObjectName("SR_sendButton")
-        self.SR_errorData = QtWidgets.QLabel(Interface)
-        self.SR_errorData.setGeometry(QtCore.QRect(20, 90, 121, 16))
-        self.SR_errorData.setStyleSheet("color: rgb(255, 0, 0);")
-        self.SR_errorData.setObjectName("SR_errorData")
-        self.SR_correctData = QtWidgets.QLabel(Interface)
-        self.SR_correctData.setGeometry(QtCore.QRect(20, 90, 121, 16))
-        self.SR_correctData.setStyleSheet("color:rgb(0, 200, 0)")
-        self.SR_correctData.setObjectName("SR_correctData")
+class Ui_Dialog(object):
+    def setupUi(self, Dialog):
+        Dialog.setObjectName("Dialog")
+        Dialog.resize(400, 169)
+        self.leftButton = QtWidgets.QPushButton(Dialog)
+        self.leftButton.setGeometry(QtCore.QRect(20, 30, 161, 51))
+        self.leftButton.setObjectName("leftButton")
+        self.rightButton = QtWidgets.QPushButton(Dialog)
+        self.rightButton.setGeometry(QtCore.QRect(200, 30, 161, 51))
+        self.rightButton.setObjectName("rightButton")
+        self.label = QtWidgets.QLabel(Dialog)
+        self.label.setGeometry(QtCore.QRect(80, 110, 211, 31))
+        self.label.setText("")
+        self.label.setObjectName("label")
 
-        self.retranslateUi(Interface)
-        QtCore.QMetaObject.connectSlotsByName(Interface)
+        self.retranslateUi(Dialog)
+        QtCore.QMetaObject.connectSlotsByName(Dialog)
 
-    def retranslateUi(self, Interface):
+        self.leftButton.clicked.connect(self.leftButtonClicked)
+        self.rightButton.clicked.connect(self.rightButtonClicked)
+
+    def retranslateUi(self, Dialog):
         _translate = QtCore.QCoreApplication.translate
-        Interface.setWindowTitle(_translate("Interface", "Dialog"))
-        self.SR_title.setText(_translate("Interface", "Shift register"))
-        self.AD_title.setText(_translate("Interface", "Adress decoder"))
-        self.SR_sendButton.setText(_translate("Interface", "Send"))
-        self.SR_errorData.setText(_translate("Interface", "Please enter a valid data"))
-        self.SR_correctData.setText(_translate("Interface", "Data sent successfull"))
+        Dialog.setWindowTitle(_translate("Dialog", "Dialog"))
+        self.leftButton.setText(_translate("Dialog", "PushButton"))
+        self.rightButton.setText(_translate("Dialog", "PushButton"))
 
+    def leftButtonClicked(self):
+        self.label.setText("left button clicked")
+        self.label.setStyleSheet('color:rgb(255,0,0)')
+    def rightButtonClicked(self):
+        self.label.setText("right button clicked")
+        self.label.setStyleSheet('color:rgb(0,200,0)')
 
 if __name__ == "__main__":
     import sys
     app = QtWidgets.QApplication(sys.argv)
-    Interface = QtWidgets.QDialog()
-    ui = Ui_Interface()
-    ui.setupUi(Interface)
-    Interface.show()
+    Dialog = QtWidgets.QDialog()
+    ui = Ui_Dialog()
+    ui.setupUi(Dialog)
+    Dialog.show()
     sys.exit(app.exec_())

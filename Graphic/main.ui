@@ -85,28 +85,12 @@
     <string>Send</string>
    </property>
   </widget>
-  <widget class="QLabel" name="SR_errorData">
+  <widget class="QLabel" name="SR_labelData">
    <property name="geometry">
     <rect>
      <x>20</x>
      <y>90</y>
-     <width>121</width>
-     <height>16</height>
-    </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">color: rgb(255, 0, 0);</string>
-   </property>
-   <property name="text">
-    <string>Please enter a valid data</string>
-   </property>
-  </widget>
-  <widget class="QLabel" name="SR_correctData">
-   <property name="geometry">
-    <rect>
-     <x>20</x>
-     <y>90</y>
-     <width>121</width>
+     <width>291</width>
      <height>16</height>
     </rect>
    </property>
@@ -137,7 +121,7 @@
     </rect>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton">
+  <widget class="QPushButton" name="AD_fileButton">
    <property name="geometry">
     <rect>
      <x>20</x>
@@ -148,6 +132,35 @@
    </property>
    <property name="text">
     <string>...</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton">
+   <property name="geometry">
+    <rect>
+     <x>140</x>
+     <y>220</y>
+     <width>51</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Send</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="SR_labelData_2">
+   <property name="geometry">
+    <rect>
+     <x>200</x>
+     <y>220</y>
+     <width>181</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color:rgb(0, 200, 0)</string>
+   </property>
+   <property name="text">
+    <string>Data sent successfull</string>
    </property>
   </widget>
  </widget>
