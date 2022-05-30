@@ -10,7 +10,7 @@
 
 from PyQt5 import QtCore, QtGui, QtWidgets
 
-class Ui_Interface(object):
+class init(object):
     def setupUi(self, Interface):
         Interface.setObjectName("Interface")
         Interface.resize(700, 350)

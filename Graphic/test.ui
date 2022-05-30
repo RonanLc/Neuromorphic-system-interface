@@ -1,57 +1,125 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>Dialog</class>
- <widget class="QDialog" name="Dialog">
+ <class>Interface</class>
+ <widget class="QDialog" name="Interface">
   <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>400</width>
-    <height>169</height>
+    <width>700</width>
+    <height>350</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Dialog</string>
   </property>
-  <widget class="QPushButton" name="leftButton">
+  <property name="styleSheet">
+   <string notr="true">background-color:#FFFFFF;</string>
+  </property>
+  <widget class="QTabWidget" name="tabWidget">
    <property name="geometry">
     <rect>
-     <x>20</x>
-     <y>30</y>
-     <width>161</width>
-     <height>51</height>
+     <x>0</x>
+     <y>0</y>
+     <width>700</width>
+     <height>350</height>
     </rect>
    </property>
-   <property name="text">
-    <string>PushButton</string>
+   <property name="currentIndex">
+    <number>0</number>
    </property>
-  </widget>
-  <widget class="QPushButton" name="rightButton">
-   <property name="geometry">
-    <rect>
-     <x>200</x>
-     <y>30</y>
-     <width>161</width>
-     <height>51</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>PushButton</string>
-   </property>
+   <widget class="QWidget" name="St_page">
+    <attribute name="title">
+     <string>Static</string>
+    </attribute>
+    <widget class="QLineEdit" name="St_dataLine">
+     <property name="geometry">
+      <rect>
+       <x>30</x>
+       <y>30</y>
+       <width>401</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Set the data...</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="St_sendButton">
+     <property name="geometry">
+      <rect>
+       <x>500</x>
+       <y>80</y>
+       <width>151</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>13</pointsize>
+      </font>
+     </property>
+     <property name="text">
+      <string>Send</string>
+     </property>
+    </widget>
+    <widget class="QComboBox" name="St_portSelect">
+     <property name="geometry">
+      <rect>
+       <x>450</x>
+       <y>30</y>
+       <width>211</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <item>
+      <property name="text">
+       <string>Port A</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Port B</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Port C</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Port D</string>
+      </property>
+     </item>
+    </widget>
+   </widget>
+   <widget class="QWidget" name="AD_page">
+    <attribute name="title">
+     <string>Address decoder</string>
+    </attribute>
+   </widget>
+   <widget class="QWidget" name="RD_page">
+    <attribute name="title">
+     <string>Shift register</string>
+    </attribute>
+   </widget>
   </widget>
   <widget class="QLabel" name="label">
    <property name="geometry">
     <rect>
-     <x>80</x>
-     <y>110</y>
-     <width>211</width>
-     <height>31</height>
+     <x>0</x>
+     <y>0</y>
+     <width>701</width>
+     <height>21</height>
     </rect>
    </property>
    <property name="text">
     <string/>
    </property>
   </widget>
+  <zorder>label</zorder>
+  <zorder>tabWidget</zorder>
  </widget>
  <resources/>
  <connections/>

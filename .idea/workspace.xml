@@ -3,9 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="da831501-0ef4-4b0e-afe4-8bc8c33113a8" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Graphic/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/Graphic/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Graphic/main.ui" beforeDir="false" afterPath="$PROJECT_DIR$/Graphic/main.ui" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Graphic/tampon.py" beforeDir="false" afterPath="$PROJECT_DIR$/Graphic/tampon.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Graphic/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/Graphic/test.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Graphic/test.ui" beforeDir="false" afterPath="$PROJECT_DIR$/Graphic/test.ui" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -19,18 +18,26 @@
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="29N7844R4KS91JKKmizHYrlc9jz" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/etude/Stage/Work/Neuromorphic-system-interface&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "D:/etude/Stage/Work/Neuromorphic-system-interface/Graphic/code"
   }
-}</component>
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\etude\Stage\Work\Neuromorphic-system-interface\Graphic\code" />
+    </key>
+  </component>
   <component name="RunManager">
     <configuration name="Unnamed" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
       <module name="Neuromorphic-system-interface" />
@@ -65,7 +72,8 @@
       <updated>1652941526887</updated>
       <workItem from="1652941529553" duration="15000" />
       <workItem from="1652941625803" duration="50000" />
-      <workItem from="1652941696099" duration="14961000" />
+      <workItem from="1652941696099" duration="15733000" />
+      <workItem from="1653882931416" duration="14519000" />
     </task>
     <servers />
   </component>
