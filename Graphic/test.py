@@ -10,6 +10,7 @@
 
 from PyQt5 import QtCore, QtGui, QtWidgets
 
+
 class Ui_Interface(object):
     def setupUi(self, Interface):
         Interface.setObjectName("Interface")
@@ -21,7 +22,7 @@ class Ui_Interface(object):
         self.St_page = QtWidgets.QWidget()
         self.St_page.setObjectName("St_page")
         self.St_dataLine = QtWidgets.QLineEdit(self.St_page)
-        self.St_dataLine.setGeometry(QtCore.QRect(30, 30, 401, 31))
+        self.St_dataLine.setGeometry(QtCore.QRect(20, 30, 401, 31))
         self.St_dataLine.setObjectName("St_dataLine")
         self.St_sendButton = QtWidgets.QPushButton(self.St_page)
         self.St_sendButton.setGeometry(QtCore.QRect(500, 80, 151, 41))
@@ -66,3 +67,13 @@ class Ui_Interface(object):
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.St_page), _translate("Interface", "Static"))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.AD_page), _translate("Interface", "Address decoder"))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.RD_page), _translate("Interface", "Shift register"))
+
+
+if __name__ == "__main__":
+    import sys
+    app = QtWidgets.QApplication(sys.argv)
+    Interface = QtWidgets.QDialog()
+    ui = Ui_Interface()
+    ui.setupUi(Interface)
+    Interface.show()
+    sys.exit(app.exec_())

@@ -35,7 +35,7 @@
     <widget class="QLineEdit" name="St_dataLine">
      <property name="geometry">
       <rect>
-       <x>30</x>
+       <x>20</x>
        <y>30</y>
        <width>401</width>
        <height>31</height>
