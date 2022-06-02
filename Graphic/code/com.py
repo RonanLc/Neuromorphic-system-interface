@@ -1,6 +1,7 @@
+import serial
 
-with Serial(port="/dev/ttyUSB1", baudrate=800000, timeout=1, writeTimeout=1) as serial_port:
-    if serial_port.isOpen():
-        def dataSend(data):
-            serialPort.write(data)
+#serialPort = serial.Serial(port = "/dev/ttyUSB1", baudrate=800000, bytesize=8, timeout=2, stopbits=serial.STOPBITS_ONE)
 
+def dataSend(data):
+    #serialPort.write(data)
+    print(data)

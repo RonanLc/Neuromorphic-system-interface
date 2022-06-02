@@ -1,5 +1,5 @@
 
-#import com
+from com import dataSend
 import time
 
 def sendData(data, address):
@@ -18,9 +18,7 @@ def sendData(data, address):
     address = bin(int(address, 16))
     data = bin(int(data, 16))
 
-    #com.dataSend(address)
-    print(address)
+    dataSend(address)
     time.sleep(.01)
-    #com.dataSend(data)
-    print(data)
+    dataSend(data)
     time.sleep(.01)
