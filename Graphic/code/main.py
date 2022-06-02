@@ -69,14 +69,14 @@ class Ui_Interface(object):
         # Photo 1
         self.Home_photo1 = QtWidgets.QLabel(self.Home_page)
         self.Home_photo1.setGeometry(QtCore.QRect(60, 210, 221, 101))
-        self.Home_photo1.setPixmap(QtGui.QPixmap("../data/iisUTokyo.png"))
+        self.Home_photo1.setPixmap(QtGui.QPixmap("../../Data/iisUTokyo.png"))
         self.Home_photo1.setScaledContents(True)
         self.Home_photo1.setObjectName("Home_photo1")
 
         # Photo 2
         self.Home_photo2 = QtWidgets.QLabel(self.Home_page)
         self.Home_photo2.setGeometry(QtCore.QRect(410, 215, 221, 81))
-        self.Home_photo2.setPixmap(QtGui.QPixmap("../data/UBordeaux.png"))
+        self.Home_photo2.setPixmap(QtGui.QPixmap("../../Data/UBordeaux.png"))
         self.Home_photo2.setScaledContents(True)
         self.Home_photo2.setObjectName("Home_photo2")
 
@@ -277,8 +277,12 @@ if __name__ == "__main__":
 
 """
 
-Finir la page du static, avec des titres, des explications, des couleurs, des securites et verifications de data
+Next :
 
-regler probleme code com.py et l'incrementer dans static.py pour finir cette partie
+- Regler le probleme de com.py pour une communication fonctionnelle
+
+- Si possible faire un test avec Ashish sur le static pour valider le fonctionnement
+
+- Faire l'adresse decoder
 
 """
