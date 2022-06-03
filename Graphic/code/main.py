@@ -3,10 +3,12 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 from PyQt5.QtWidgets import QFileDialog
 from static import sendData
 from addressDecoder import AD
+ad = AD()
+
+AD_validate = 0
 
 
 class Ui_Interface(object):
-
 
     ### DECLARATION DES DIFFERENTS ELEMENTS DU SYSTEME ###
     def setupUi(self, Interface):
@@ -274,14 +276,17 @@ class Ui_Interface(object):
 
         self.AD_stimLine1 = QtWidgets.QLineEdit(self.AD_page)
         self.AD_stimLine1.setGeometry(QtCore.QRect(40, 205, 181, 21))
+        self.AD_stimLine1.setValidator(QtGui.QRegExpValidator(QtCore.QRegExp('[0-9]*')))
         self.AD_stimLine1.setObjectName("AD_stimLine1")
 
         self.AD_stimLine2 = QtWidgets.QLineEdit(self.AD_page)
         self.AD_stimLine2.setGeometry(QtCore.QRect(40, 235, 181, 21))
+        self.AD_stimLine2.setValidator(QtGui.QRegExpValidator(QtCore.QRegExp('[0-9]*')))
         self.AD_stimLine2.setObjectName("AD_stimLine2")
 
         self.AD_stimLine3 = QtWidgets.QLineEdit(self.AD_page)
         self.AD_stimLine3.setGeometry(QtCore.QRect(40, 265, 181, 21))
+        self.AD_stimLine3.setValidator(QtGui.QRegExpValidator(QtCore.QRegExp('[0-9]*')))
         self.AD_stimLine3.setObjectName("AD_stimLine3")
 
         self.AD_stimButton1 = QtWidgets.QPushButton(self.AD_page)
@@ -325,6 +330,9 @@ class Ui_Interface(object):
         self.AD_stimButton3.clicked.connect(lambda:self.AD(self.AD_stimButton3.text()))
         self.AD_stimButton4.clicked.connect(lambda:self.AD(self.AD_stimButton4.text()))
 
+        if AD_validate == 1:
+            self.AD_validated()
+
 
     ## PAGE SHIFT REGISTER
 
@@ -357,7 +365,7 @@ class Ui_Interface(object):
 
         self.Home_title.setText(_translate("Interface", "Pc - Neuromorphic ship Interface"))
         self.Home_subtitle1.setText(_translate("Interface", "Ronan Le Corronc\'s 2022 internship project"))
-        self.Home_subtitle3.setText(_translate("Interface", "Supervised by Timothée Levi and Takashi Kohno"))
+        self.Home_subtitle3.setText(_translate("Interface", "Supervised by Takashi Kohno and Timothée Levi"))
         self.Home_subtitle2.setText(_translate("Interface", "In cooperation with Ashish Gautam"))
 
     ## PARAMETRAGE DU STATIC
@@ -462,6 +470,30 @@ class Ui_Interface(object):
 
 
 ### ACTIONS DE L'ADDRESS DECODER ###
+
+    def AD_verify(self, data):
+        if len(self.AD_stimTimeLine.text()) != 0 and data != 0:
+            self.AD_informationLabel2.setStyleSheet('color:rgb(0, 200, 0)')
+            self.AD_informationLabel2.setText("Launching the stimulation correctly !")
+            return True
+        elif len(self.AD_stimTimeLine.text()) != 0 and data == 0:
+            self.AD_informationLabel2.setStyleSheet('color:rgb(230, 0, 0)')
+            self.AD_informationLabel2.setText("Please select the synapse\'s number.")
+            return False
+        elif len(self.AD_stimTimeLine.text()) == 0 and data != 0:
+            self.AD_informationLabel2.setStyleSheet('color:rgb(230, 0, 0)')
+            self.AD_informationLabel2.setText("Please select a stimulation time.")
+            return False
+        elif len(self.AD_stimTimeLine.text()) == 0 and data == 0:
+            self.AD_informationLabel2.setStyleSheet('color:rgb(230, 0, 0)')
+            self.AD_informationLabel2.setText("Please select the synapse\'s number and a stimulation time.")
+            return False
+
+    def AD_validated(self):
+        ad.autoLaunch(self.AD_enterFileLine.text(), self.AD_stimTimeLine.text())
+        self.AD_informationLabel1.setText("Stimulation success !")
+        AD_validate = 0
+
     def AD(self, button):
         if button == '...':
             fileLocation, _ = QFileDialog.getOpenFileName(None, 'Open File', 'D:\\etude\\Stage\\Work\\Neuromorphic-system-interface\\Data', 'CSV Files (*.csv);;All Files (*)')
@@ -471,21 +503,49 @@ class Ui_Interface(object):
 
         elif button == 'Launch':
             if len(self.AD_stimTimeLine.text()) != 0 and len(self.AD_enterFileLine.text()) != 0:
-                AD.autoLaunch(self.AD_enterFileLine.text(), self.AD_stimTimeLine.text())
-            else:
-                print("Error")
+                ad.autoLaunch(self.AD_enterFileLine.text(), self.AD_stimTimeLine.text())
+                self.AD_informationLabel1.setStyleSheet('color:rgb(0, 200, 0)')
+                self.AD_informationLabel1.setText("Stimulation success !")
+            elif len(self.AD_stimTimeLine.text()) != 0 and len(self.AD_enterFileLine.text()) == 0:
+                self.AD_informationLabel1.setStyleSheet('color:rgb(230, 0, 0)')
+                self.AD_informationLabel1.setText("Please select a .csv file.")
+            elif len(self.AD_stimTimeLine.text()) == 0 and len(self.AD_enterFileLine.text()) != 0:
+                self.AD_informationLabel1.setStyleSheet('color:rgb(230, 0, 0)')
+                self.AD_informationLabel1.setText("Please select a stimulation time.")
+            elif len(self.AD_stimTimeLine.text()) == 0 and len(self.AD_enterFileLine.text()) == 0:
+                self.AD_informationLabel1.setStyleSheet('color:rgb(230, 0, 0)')
+                self.AD_informationLabel1.setText("Please select a .csv file and a stimulation time.")
+
 
         elif button == 'Stimulate 1':
-            print(button)
-
+            if self.AD_verify(len(self.AD_stimLine1.text())):
+                ad.stimulate(self.AD_stimLine1.text(), self.AD_stimTimeLine.text())
         elif button == 'Stimulate 2':
-            print(button)
-
+            if self.AD_verify(len(self.AD_stimLine2.text())):
+                ad.stimulate(self.AD_stimLine2.text(), self.AD_stimTimeLine.text())
         elif button == 'Stimulate 3':
-            print(button)
+            if self.AD_verify(len(self.AD_stimLine3.text())):
+                ad.stimulate(self.AD_stimLine3.text(), self.AD_stimTimeLine.text())
 
         elif button == 'Stimulate':
-            print(button)
+            state = 0
+            if not self.AD_checkBox1.checkState() and not self.AD_checkBox2.checkState() and not self.AD_checkBox2.checkState():
+                state = 1
+                self.AD_informationLabel2.setStyleSheet('color:rgb(230, 0, 0)')
+                self.AD_informationLabel2.setText("Please check at least one box.")
+            if self.AD_checkBox1.checkState() and state == 0:
+                if not self.AD_verify(len(self.AD_stimLine1.text())):
+                    state = 1
+            if self.AD_checkBox2.checkState() and state == 0:
+                if not self.AD_verify(len(self.AD_stimLine2.text())):
+                    state = 1
+            if self.AD_checkBox3.checkState() and state == 0:
+                if not self.AD_verify(len(self.AD_stimLine3.text())):
+                    state = 1
+            if state == 0:
+                ad.syncro(self.AD_stimLine1.text(), self.AD_stimLine2.text(), self.AD_stimLine3.text(),
+                          self.AD_checkBox1.checkState(), self.AD_checkBox2.checkState(), self.AD_checkBox3.checkState(),
+                          self.AD_stimTimeLine.text())
 
 
 if __name__ == "__main__":
@@ -505,8 +565,6 @@ if __name__ == "__main__":
 Next :
 
 - Faire un test avec Ashish sur le static pour valider le fonctionnement des que possible
-
-- Programmer le lineInformation1 pour le launch auto
 
 - Programmer l'activation de la stimulation manuelle
 
