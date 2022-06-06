@@ -3,9 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="da831501-0ef4-4b0e-afe4-8bc8c33113a8" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data/empty.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Graphic/code/addressDecoder.py" beforeDir="false" afterPath="$PROJECT_DIR$/Graphic/code/addressDecoder.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Graphic/code/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/Graphic/code/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Graphic/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/Graphic/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Graphic/main.ui" beforeDir="false" afterPath="$PROJECT_DIR$/Graphic/main.ui" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Graphic/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/Graphic/test.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Graphic/test.ui" beforeDir="false" afterPath="$PROJECT_DIR$/Graphic/test.ui" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -79,7 +81,8 @@
       <workItem from="1654083565882" duration="4462000" />
       <workItem from="1654154851791" duration="12190000" />
       <workItem from="1654167809393" duration="688000" />
-      <workItem from="1654212399871" duration="28841000" />
+      <workItem from="1654212399871" duration="29311000" />
+      <workItem from="1654510187524" duration="11853000" />
     </task>
     <servers />
   </component>
@@ -96,17 +99,6 @@
         </entry>
       </map>
     </option>
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/Graphic/main.py</url>
-          <line>39</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Neuromorphic_system_interface$Unnamed.coverage" NAME="Unnamed Coverage Results" MODIFIED="1652942202368" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />

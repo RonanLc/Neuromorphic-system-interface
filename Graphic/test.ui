@@ -29,7 +29,7 @@
     </rect>
    </property>
    <property name="currentIndex">
-    <number>2</number>
+    <number>3</number>
    </property>
    <widget class="QWidget" name="Home_page">
     <attribute name="title">
@@ -86,7 +86,7 @@
       </font>
      </property>
      <property name="text">
-      <string>Supervised by Timothée Levi and Takashi Kohno</string>
+      <string>Supervised by Takashi Kohno and Timothée Levi</string>
      </property>
     </widget>
     <widget class="QLabel" name="Home_subtitle2">
@@ -797,6 +797,277 @@
     <attribute name="title">
      <string>Shift register</string>
     </attribute>
+    <widget class="QScrollArea" name="scrollArea">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>110</y>
+       <width>681</width>
+       <height>181</height>
+      </rect>
+     </property>
+     <property name="widgetResizable">
+      <bool>true</bool>
+     </property>
+     <widget class="QWidget" name="scrollAreaGrid">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>0</y>
+        <width>679</width>
+        <height>179</height>
+       </rect>
+      </property>
+      <layout class="QGridLayout" name="grid">
+       <item row="2" column="2">
+        <widget class="QPushButton" name="RD_sendButton3">
+         <property name="text">
+          <string>Send</string>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="1">
+        <widget class="QLineEdit" name="RD_registerLine3"/>
+       </item>
+       <item row="2" column="0">
+        <widget class="QCheckBox" name="RD_checkBox3">
+         <property name="text">
+          <string>3</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="1">
+        <widget class="QLineEdit" name="RD_registerLine2"/>
+       </item>
+       <item row="0" column="1">
+        <widget class="QLineEdit" name="RD_registerLine1"/>
+       </item>
+       <item row="1" column="0">
+        <widget class="QCheckBox" name="RD_checkBox2">
+         <property name="text">
+          <string>2</string>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="2">
+        <widget class="QPushButton" name="RD_sendButton1">
+         <property name="text">
+          <string>Send</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="2">
+        <widget class="QPushButton" name="RD_sendButton2">
+         <property name="text">
+          <string>Send</string>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="0">
+        <widget class="QCheckBox" name="RD_checkBox1">
+         <property name="text">
+          <string>1</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </widget>
+    <widget class="QLabel" name="RD_titleLabel1">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>10</y>
+       <width>181</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>15</pointsize>
+      </font>
+     </property>
+     <property name="text">
+      <string>Set parameters :</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="RD_minLine">
+     <property name="geometry">
+      <rect>
+       <x>210</x>
+       <y>10</y>
+       <width>81</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>13</pointsize>
+      </font>
+     </property>
+     <property name="acceptDrops">
+      <bool>false</bool>
+     </property>
+     <property name="text">
+      <string>0</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="RD_maxLine">
+     <property name="geometry">
+      <rect>
+       <x>300</x>
+       <y>10</y>
+       <width>81</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>13</pointsize>
+      </font>
+     </property>
+     <property name="text">
+      <string>F</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="RD_selectButton">
+     <property name="geometry">
+      <rect>
+       <x>100</x>
+       <y>71</y>
+       <width>81</width>
+       <height>28</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Select all</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="RD_unselectButton">
+     <property name="geometry">
+      <rect>
+       <x>182</x>
+       <y>71</y>
+       <width>91</width>
+       <height>28</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Unselect all</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="RD_sendAllButton">
+     <property name="geometry">
+      <rect>
+       <x>580</x>
+       <y>70</y>
+       <width>101</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Send all</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="RD_informationLabel">
+     <property name="geometry">
+      <rect>
+       <x>260</x>
+       <y>300</y>
+       <width>421</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="layoutDirection">
+      <enum>Qt::LeftToRight</enum>
+     </property>
+     <property name="text">
+      <string>Waiting for data sending...</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="RD_randomButton">
+     <property name="geometry">
+      <rect>
+       <x>430</x>
+       <y>10</y>
+       <width>251</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>13</pointsize>
+      </font>
+     </property>
+     <property name="text">
+      <string> Set random values</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="RD_descriptionLabel">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>40</y>
+       <width>391</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Please select min en max hex values for random generation</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="RD_titleLabel2">
+     <property name="geometry">
+      <rect>
+       <x>290</x>
+       <y>71</y>
+       <width>291</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>15</pointsize>
+      </font>
+     </property>
+     <property name="text">
+      <string>Send values to flips-flops :</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="RD_addButton">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>71</y>
+       <width>81</width>
+       <height>28</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Add a line</string>
+     </property>
+    </widget>
+    <zorder>RD_descriptionLabel</zorder>
+    <zorder>scrollArea</zorder>
+    <zorder>RD_titleLabel1</zorder>
+    <zorder>RD_minLine</zorder>
+    <zorder>RD_maxLine</zorder>
+    <zorder>RD_selectButton</zorder>
+    <zorder>RD_unselectButton</zorder>
+    <zorder>RD_sendAllButton</zorder>
+    <zorder>RD_informationLabel</zorder>
+    <zorder>RD_randomButton</zorder>
+    <zorder>RD_titleLabel2</zorder>
+    <zorder>RD_addButton</zorder>
    </widget>
   </widget>
   <widget class="QLabel" name="pageColor">

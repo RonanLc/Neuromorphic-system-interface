@@ -330,15 +330,123 @@ class Ui_Interface(object):
         self.AD_stimButton3.clicked.connect(lambda:self.AD(self.AD_stimButton3.text()))
         self.AD_stimButton4.clicked.connect(lambda:self.AD(self.AD_stimButton4.text()))
 
-        if AD_validate == 1:
-            self.AD_validated()
-
 
     ## PAGE SHIFT REGISTER
 
         self.RD_page = QtWidgets.QWidget()
         self.RD_page.setObjectName("RD_page")
+
+        self.scrollArea = QtWidgets.QScrollArea(self.RD_page)
+        self.scrollArea.setGeometry(QtCore.QRect(10, 110, 681, 181))
+        self.scrollArea.setWidgetResizable(True)
+        self.scrollArea.setObjectName("scrollArea")
+
+        self.scrollAreaGrid = QtWidgets.QWidget()
+        self.scrollAreaGrid.setGeometry(QtCore.QRect(0, 0, 679, 179))
+        self.scrollAreaGrid.setObjectName("scrollAreaGrid")
+
+        self.grid = QtWidgets.QGridLayout(self.scrollAreaGrid)
+        self.grid.setObjectName("grid")
+
+        self.RD_checkBox1 = QtWidgets.QCheckBox(self.scrollAreaGrid)
+        self.RD_checkBox1.setObjectName("RD_checkBox1")
+        self.grid.addWidget(self.RD_checkBox1, 0, 0, 1, 1)
+        self.RD_registerLine1 = QtWidgets.QLineEdit(self.scrollAreaGrid)
+        self.RD_registerLine1.setObjectName("RD_registerLine1")
+        self.grid.addWidget(self.RD_registerLine1, 0, 1, 1, 1)
+        self.RD_sendButton1 = QtWidgets.QPushButton(self.scrollAreaGrid)
+        self.RD_sendButton1.setObjectName("RD_sendButton1")
+        self.grid.addWidget(self.RD_sendButton1, 0, 2, 1, 1)
+        self.RD_checkBox2 = QtWidgets.QCheckBox(self.scrollAreaGrid)
+        self.RD_checkBox2.setObjectName("RD_checkBox2")
+        self.grid.addWidget(self.RD_checkBox2, 1, 0, 1, 1)
+        self.RD_registerLine2 = QtWidgets.QLineEdit(self.scrollAreaGrid)
+        self.RD_registerLine2.setObjectName("RD_registerLine2")
+        self.grid.addWidget(self.RD_registerLine2, 1, 1, 1, 1)
+        self.RD_sendButton2 = QtWidgets.QPushButton(self.scrollAreaGrid)
+        self.RD_sendButton2.setObjectName("RD_sendButton2")
+        self.grid.addWidget(self.RD_sendButton2, 1, 2, 1, 1)
+        self.RD_checkBox3 = QtWidgets.QCheckBox(self.scrollAreaGrid)
+        self.RD_checkBox3.setObjectName("RD_checkBox3")
+        self.grid.addWidget(self.RD_checkBox3, 2, 0, 1, 1)
+        self.RD_registerLine3 = QtWidgets.QLineEdit(self.scrollAreaGrid)
+        self.RD_registerLine3.setObjectName("RD_registerLine3")
+        self.grid.addWidget(self.RD_registerLine3, 2, 1, 1, 1)
+        self.RD_sendButton3 = QtWidgets.QPushButton(self.scrollAreaGrid)
+        self.RD_sendButton3.setObjectName("RD_sendButton3")
+        self.grid.addWidget(self.RD_sendButton3, 2, 2, 1, 1)
+
+        self.scrollArea.setWidget(self.scrollAreaGrid)
+
+        self.RD_titleLabel1 = QtWidgets.QLabel(self.RD_page)
+        self.RD_titleLabel1.setGeometry(QtCore.QRect(20, 10, 181, 31))
+        font.setPointSize(15)
+        self.RD_titleLabel1.setFont(font)
+        self.RD_titleLabel1.setObjectName("RD_titleLabel1")
+
+        self.RD_titleLabel2 = QtWidgets.QLabel(self.RD_page)
+        self.RD_titleLabel2.setGeometry(QtCore.QRect(290, 71, 291, 31))
+        font.setPointSize(15)
+        self.RD_titleLabel2.setFont(font)
+        self.RD_titleLabel2.setObjectName("RD_titleLabel2")
+
+        self.RD_descriptionLabel = QtWidgets.QLabel(self.RD_page)
+        self.RD_descriptionLabel.setGeometry(QtCore.QRect(20, 40, 391, 16))
+        self.RD_descriptionLabel.setObjectName("RD_descriptionLabel")
+
+        self.RD_informationLabel = QtWidgets.QLabel(self.RD_page)
+        self.RD_informationLabel.setGeometry(QtCore.QRect(260, 300, 421, 16))
+        self.RD_informationLabel.setAlignment(QtCore.Qt.AlignRight | QtCore.Qt.AlignTrailing | QtCore.Qt.AlignVCenter)
+        self.RD_informationLabel.setObjectName("RD_informationLabel")
+
+        self.RD_minLine = QtWidgets.QLineEdit(self.RD_page)
+        self.RD_minLine.setGeometry(QtCore.QRect(210, 10, 81, 31))
+        self.RD_minLine.setValidator(QtGui.QRegExpValidator(QtCore.QRegExp('[A-Fa-f0-9]*')))
+        self.RD_minLine.setMaxLength(1)
+        font.setPointSize(13)
+        self.RD_minLine.setFont(font)
+        self.RD_minLine.setAlignment(QtCore.Qt.AlignCenter)
+        self.RD_minLine.setObjectName("RD_minLine")
+
+        self.RD_maxLine = QtWidgets.QLineEdit(self.RD_page)
+        self.RD_maxLine.setGeometry(QtCore.QRect(300, 10, 81, 31))
+        self.RD_maxLine.setValidator(QtGui.QRegExpValidator(QtCore.QRegExp('[A-Fa-f0-9]*')))
+        self.RD_maxLine.setMaxLength(1)
+        font.setPointSize(13)
+        self.RD_maxLine.setFont(font)
+        self.RD_maxLine.setAlignment(QtCore.Qt.AlignCenter)
+        self.RD_maxLine.setObjectName("RD_maxLine")
+
+        self.RD_randomButton = QtWidgets.QPushButton(self.RD_page)
+        self.RD_randomButton.setGeometry(QtCore.QRect(430, 10, 251, 41))
+        font.setPointSize(13)
+        self.RD_randomButton.setFont(font)
+        self.RD_randomButton.setObjectName("RD_randomButton")
+
+        self.RD_addButton = QtWidgets.QPushButton(self.RD_page)
+        self.RD_addButton.setGeometry(QtCore.QRect(10, 71, 81, 28))
+        self.RD_addButton.setObjectName("RD_addButton")
+
+        self.RD_selectButton = QtWidgets.QPushButton(self.RD_page)
+        self.RD_selectButton.setGeometry(QtCore.QRect(100, 71, 81, 28))
+        self.RD_selectButton.setObjectName("RD_selectButton")
+
+        self.RD_unselectButton = QtWidgets.QPushButton(self.RD_page)
+        self.RD_unselectButton.setGeometry(QtCore.QRect(182, 71, 91, 28))
+        self.RD_unselectButton.setObjectName("RD_unselectButton")
+
+        self.RD_sendAllButton = QtWidgets.QPushButton(self.RD_page)
+        self.RD_sendAllButton.setGeometry(QtCore.QRect(580, 70, 101, 31))
+        self.RD_sendAllButton.setObjectName("RD_sendAllButton")
+
         self.tabWidget.addTab(self.RD_page, "")
+
+        # Reaction a l'appuye des boutons
+        self.RD_randomButton.clicked.connect(lambda: self.RD(self.RD_randomButton.text()))
+        self.RD_addButton.clicked.connect(lambda: self.RD(self.RD_addButton.text()))
+        self.RD_selectButton.clicked.connect(lambda: self.RD(self.RD_selectButton.text()))
+        self.RD_unselectButton.clicked.connect(lambda: self.RD(self.RD_unselectButton.text()))
+        self.RD_sendAllButton.clicked.connect(lambda: self.RD(self.RD_sendAllButton.text()))
 
 
     ## DERNIER PARAMETRAGE
@@ -430,6 +538,37 @@ class Ui_Interface(object):
         self.AD_stimButton3.setStyleSheet('background-color:rgb(255, 255, 255)')
         self.AD_stimButton4.setStyleSheet('background-color:rgb(255, 255, 255)')
 
+    ## PARAMETRAGE DU SHIFT REGISTER
+
+        self.RD_checkBox1.setText(_translate("Interface", "1"))
+        self.RD_sendButton1.setText(_translate("Interface", "Send"))
+        self.RD_checkBox2.setText(_translate("Interface", "2"))
+        self.RD_sendButton2.setText(_translate("Interface", "Send"))
+        self.RD_checkBox3.setText(_translate("Interface", "3"))
+        self.RD_sendButton3.setText(_translate("Interface", "Send"))
+
+        self.RD_titleLabel1.setText(_translate("Interface", "Set parameters :"))
+        self.RD_titleLabel2.setText(_translate("Interface", "Send values to flips-flops :"))
+        self.RD_descriptionLabel.setText(_translate("Interface", "Please select min en max hex values for random generation"))
+        self.RD_informationLabel.setText(_translate("Interface", "Waiting for data sending..."))
+
+        self.RD_minLine.setText(_translate("Interface", "0"))
+        self.RD_maxLine.setText(_translate("Interface", "F"))
+        self.RD_randomButton.setText(_translate("Interface", "Set random values"))
+        self.RD_addButton.setText(_translate("Interface", "Add a line"))
+        self.RD_selectButton.setText(_translate("Interface", "Select all"))
+        self.RD_unselectButton.setText(_translate("Interface", "Unselect all"))
+        self.RD_sendAllButton.setText(_translate("Interface", "Send select"))
+
+        self.RD_minLine.setStyleSheet('background-color:rgb(255, 255, 255)')
+        self.RD_maxLine.setStyleSheet('background-color:rgb(255, 255, 255)')
+        self.RD_randomButton.setStyleSheet('background-color:rgb(255, 255, 255)')
+        self.RD_addButton.setStyleSheet('background-color:rgb(255, 255, 255)')
+        self.RD_selectButton.setStyleSheet('background-color:rgb(255, 255, 255)')
+        self.RD_unselectButton.setStyleSheet('background-color:rgb(255, 255, 255)')
+        self.RD_sendAllButton.setStyleSheet('background-color:rgb(255, 255, 255)')
+        self.scrollArea.setStyleSheet('background-color:rgb(255, 255, 255)')
+
     ## PARAMETRAGE DES DIFFERENTES PAGES
 
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.Home_page), _translate("Interface", "Home"))
@@ -489,11 +628,6 @@ class Ui_Interface(object):
             self.AD_informationLabel2.setText("Please select the synapse\'s number and a stimulation time.")
             return False
 
-    def AD_validated(self):
-        ad.autoLaunch(self.AD_enterFileLine.text(), self.AD_stimTimeLine.text())
-        self.AD_informationLabel1.setText("Stimulation success !")
-        AD_validate = 0
-
     def AD(self, button):
         if button == '...':
             fileLocation, _ = QFileDialog.getOpenFileName(None, 'Open File', 'D:\\etude\\Stage\\Work\\Neuromorphic-system-interface\\Data', 'CSV Files (*.csv);;All Files (*)')
@@ -548,6 +682,23 @@ class Ui_Interface(object):
                           self.AD_stimTimeLine.text())
 
 
+    def RD(self, button):
+        if button == 'Set random values':
+            print(button)
+
+        elif button == 'Add a line':
+            print(button)
+
+        elif button == 'Select all':
+            print(button)
+
+        elif button == 'Unselect all':
+            print(button)
+
+        elif button == 'Send select':
+            print(button)
+
+
 if __name__ == "__main__":
     import sys
     app = QtWidgets.QApplication(sys.argv)
@@ -564,16 +715,8 @@ if __name__ == "__main__":
 
 Next :
 
-- Faire un test avec Ashish sur le static pour valider le fonctionnement des que possible
+- Faire un test avec Ashish sur le static et AD pour valider le fonctionnement des que possible
 
-- Programmer l'activation de la stimulation manuelle
-
-- Programmer l'envoie des donnees en mode manuel dans le addressDecoder
-
-- Programmer l'ouverture et la lecture du csv
-
-- Programmer le systeme pour utiliser le temps de stimulation (voir avec Ashish pour comprendre comment envoyer les donnees)
-
-- Programmer l'envoie
+- Regler le probleme avec l'add de ligne
 
 """
