@@ -12,83 +12,25 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 
 
 class Ui_Interface(object):
-
-    global nbrLine
-    nbrLine = 1
-
     def setupUi(self, Interface):
         Interface.setObjectName("Interface")
         Interface.resize(704, 258)
         Interface.setStyleSheet("background-color: rgb(255, 255, 255);")
 
-        self.Button = QtWidgets.QPushButton(Interface)
-        self.Button.setGeometry(QtCore.QRect(10, 13, 60, 31))
-        self.Button.setObjectName("Button")
+        self.RD_selectBox = QtWidgets.QComboBox(Interface)
+        self.RD_selectBox.setGeometry(QtCore.QRect(580, 210, 101, 31))
+        self.RD_selectBox.setObjectName("RD_selectBox")
+        for i in range(3):
+            self.RD_selectBox.addItem("")
 
-        self.scrollArea = QtWidgets.QScrollArea(Interface)
-        self.scrollArea.setGeometry(QtCore.QRect(10, 80, 681, 151))
-        self.scrollArea.setWidgetResizable(True)
-        self.scrollArea.setObjectName("scrollArea")
-        self.scrollAreaWidgetContents = QtWidgets.QWidget()
-        self.scrollAreaWidgetContents.setGeometry(QtCore.QRect(0, 0, 658, 190))
-        self.scrollAreaWidgetContents.setObjectName("scrollAreaWidgetContents")
-        self.gridLayout = QtWidgets.QGridLayout(self.scrollAreaWidgetContents)
-        self.gridLayout.setObjectName("gridLayout")
-
-        self.checkBox_1 = QtWidgets.QCheckBox(self.scrollAreaWidgetContents)
-        self.checkBox_1.setObjectName("checkBox_1")
-        self.gridLayout.addWidget(self.checkBox_1, 0, 0, 1, 1)
-        self.lineEdit_1 = QtWidgets.QLineEdit(self.scrollAreaWidgetContents)
-        self.lineEdit_1.setObjectName("lineEdit_1")
-        self.gridLayout.addWidget(self.lineEdit_1, 0, 1, 1, 1)
-        self.pushButton_1 = QtWidgets.QPushButton(self.scrollAreaWidgetContents)
-        self.pushButton_1.setObjectName("pushButton_1")
-        self.gridLayout.addWidget(self.pushButton_1, 0, 2, 1, 1)
-
-        self.pushButton_2 = QtWidgets.QPushButton(self.scrollAreaWidgetContents)
-        self.pushButton_2.setObjectName("pushButton_2")
-        self.gridLayout.addWidget(self.pushButton_2, 1, 2, 1, 1)
-        self.lineEdit_2 = QtWidgets.QLineEdit(self.scrollAreaWidgetContents)
-        self.lineEdit_2.setObjectName("lineEdit_2")
-        self.gridLayout.addWidget(self.lineEdit_2, 1, 1, 1, 1)
-        self.checkBox_2 = QtWidgets.QCheckBox(self.scrollAreaWidgetContents)
-        self.checkBox_2.setObjectName("checkBox_2")
-        self.gridLayout.addWidget(self.checkBox_2, 1, 0, 1, 1)
-
-        self.Button.clicked.connect(self.addLine)
-
-        self.scrollArea.setWidget(self.scrollAreaWidgetContents)
         self.retranslateUi(Interface)
         QtCore.QMetaObject.connectSlotsByName(Interface)
 
     def retranslateUi(self, Interface):
         _translate = QtCore.QCoreApplication.translate
         Interface.setWindowTitle(_translate("Interface", "Dialog"))
-        self.Button.setText(_translate("Interface", "Add"))
-
-        self.checkBox_1.setText(_translate("Interface", "1"))
-        self.pushButton_1.setText(_translate("Interface", "Send"))
-        self.checkBox_2.setText(_translate("Interface", "2"))
-        self.pushButton_2.setText(_translate("Interface", "Send"))
-
-        for i in range(2):
-            self.f'checkBox_{i}'.setText(_translate("Interface", f"{nbrLine}"))
-            self.f'pushButton_{i}'.setText(_translate("Interface", "Send"))
-
-    def addLine(self):
-        global nbrLine
-        nbrLine = nbrLine + 1
-        print("Ligne " + str(nbrLine))
-        self.pushButton = QtWidgets.QPushButton(self.scrollAreaWidgetContents)
-        self.pushButton.setObjectName(f"pushButton_{nbrLine}")
-        self.gridLayout.addWidget(self.pushButton, nbrLine, 2, 1, 1)
-        self.lineEdit = QtWidgets.QLineEdit(self.scrollAreaWidgetContents)
-        self.lineEdit.setObjectName(f"lineEdit_{nbrLine}")
-        self.gridLayout.addWidget(self.lineEdit, nbrLine, 1, 1, 1)
-        self.checkBox = QtWidgets.QCheckBox(self.scrollAreaWidgetContents)
-        self.checkBox.setObjectName(f"checkBox_{nbrLine}")
-        self.gridLayout.addWidget(self.checkBox, nbrLine, 0, 1, 1)
-
+        for i in range(3):
+            self.RD_selectBox.setItemText(i, _translate("Interface", f"Line {i+1}"))
 
 
 if __name__ == "__main__":

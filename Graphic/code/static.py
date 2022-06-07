@@ -1,7 +1,4 @@
 
-from com import dataSend
-import time
-
 def sendData(data, address):
 
     port = {

@@ -4,6 +4,9 @@ from PyQt5.QtWidgets import QFileDialog
 from static import sendData
 from addressDecoder import AD
 ad = AD()
+from shiftRegister import sendRegister
+from math import floor
+import random
 
 AD_validate = 0
 
@@ -337,44 +340,30 @@ class Ui_Interface(object):
         self.RD_page.setObjectName("RD_page")
 
         self.scrollArea = QtWidgets.QScrollArea(self.RD_page)
-        self.scrollArea.setGeometry(QtCore.QRect(10, 110, 681, 181))
+        self.scrollArea.setGeometry(QtCore.QRect(10, 110, 551, 181))
         self.scrollArea.setWidgetResizable(True)
         self.scrollArea.setObjectName("scrollArea")
 
         self.scrollAreaGrid = QtWidgets.QWidget()
-        self.scrollAreaGrid.setGeometry(QtCore.QRect(0, 0, 679, 179))
+        self.scrollAreaGrid.setGeometry(QtCore.QRect(0, 0, 549, 179))
         self.scrollAreaGrid.setObjectName("scrollAreaGrid")
 
         self.grid = QtWidgets.QGridLayout(self.scrollAreaGrid)
         self.grid.setObjectName("grid")
 
-        self.RD_checkBox1 = QtWidgets.QCheckBox(self.scrollAreaGrid)
-        self.RD_checkBox1.setObjectName("RD_checkBox1")
-        self.grid.addWidget(self.RD_checkBox1, 0, 0, 1, 1)
-        self.RD_registerLine1 = QtWidgets.QLineEdit(self.scrollAreaGrid)
-        self.RD_registerLine1.setObjectName("RD_registerLine1")
-        self.grid.addWidget(self.RD_registerLine1, 0, 1, 1, 1)
-        self.RD_sendButton1 = QtWidgets.QPushButton(self.scrollAreaGrid)
-        self.RD_sendButton1.setObjectName("RD_sendButton1")
-        self.grid.addWidget(self.RD_sendButton1, 0, 2, 1, 1)
-        self.RD_checkBox2 = QtWidgets.QCheckBox(self.scrollAreaGrid)
-        self.RD_checkBox2.setObjectName("RD_checkBox2")
-        self.grid.addWidget(self.RD_checkBox2, 1, 0, 1, 1)
-        self.RD_registerLine2 = QtWidgets.QLineEdit(self.scrollAreaGrid)
-        self.RD_registerLine2.setObjectName("RD_registerLine2")
-        self.grid.addWidget(self.RD_registerLine2, 1, 1, 1, 1)
-        self.RD_sendButton2 = QtWidgets.QPushButton(self.scrollAreaGrid)
-        self.RD_sendButton2.setObjectName("RD_sendButton2")
-        self.grid.addWidget(self.RD_sendButton2, 1, 2, 1, 1)
-        self.RD_checkBox3 = QtWidgets.QCheckBox(self.scrollAreaGrid)
-        self.RD_checkBox3.setObjectName("RD_checkBox3")
-        self.grid.addWidget(self.RD_checkBox3, 2, 0, 1, 1)
-        self.RD_registerLine3 = QtWidgets.QLineEdit(self.scrollAreaGrid)
-        self.RD_registerLine3.setObjectName("RD_registerLine3")
-        self.grid.addWidget(self.RD_registerLine3, 2, 1, 1, 1)
-        self.RD_sendButton3 = QtWidgets.QPushButton(self.scrollAreaGrid)
-        self.RD_sendButton3.setObjectName("RD_sendButton3")
-        self.grid.addWidget(self.RD_sendButton3, 2, 2, 1, 1)
+        self.check_boxes = []
+        self.line_edits = []
+        self.push_buttons = []
+
+        for i in range(3):
+            self.check_boxes.append(QtWidgets.QCheckBox(self.scrollAreaGrid))
+            self.check_boxes[-1].setObjectName("RD_checkBox")
+            self.check_boxes[-1].setCheckState(2)
+            self.grid.addWidget(self.check_boxes[-1], len(self.check_boxes)-1, 0, 1, 1)
+            self.line_edits.append(QtWidgets.QLineEdit(self.scrollAreaGrid))
+            self.line_edits[-1].setValidator(QtGui.QRegExpValidator(QtCore.QRegExp('[A-Fa-f0-9]*')))
+            self.line_edits[-1].setObjectName("lineEdit")
+            self.grid.addWidget(self.line_edits[-1], len(self.line_edits)-1, 1, 1, 1)
 
         self.scrollArea.setWidget(self.scrollAreaGrid)
 
@@ -390,9 +379,20 @@ class Ui_Interface(object):
         self.RD_titleLabel2.setFont(font)
         self.RD_titleLabel2.setObjectName("RD_titleLabel2")
 
-        self.RD_descriptionLabel = QtWidgets.QLabel(self.RD_page)
-        self.RD_descriptionLabel.setGeometry(QtCore.QRect(20, 40, 391, 16))
-        self.RD_descriptionLabel.setObjectName("RD_descriptionLabel")
+        self.RD_titleLabel3 = QtWidgets.QLabel(self.RD_page)
+        self.RD_titleLabel3.setGeometry(QtCore.QRect(580, 140, 101, 61))
+        self.RD_titleLabel3.setWordWrap(True)
+        self.RD_titleLabel3.setAlignment(QtCore.Qt.AlignCenter)
+        font.setPointSize(14)
+        self.RD_titleLabel3.setFont(font)
+        self.RD_titleLabel3.setObjectName("RD_titleLabel3")
+
+        self.RD_descriptionLabel1 = QtWidgets.QLabel(self.RD_page)
+        self.RD_descriptionLabel1.setGeometry(QtCore.QRect(20, 40, 391, 16))
+        self.RD_descriptionLabel1.setObjectName("RD_descriptionLabel1")
+        self.RD_descriptionLabel2 = QtWidgets.QLabel(self.RD_page)
+        self.RD_descriptionLabel2.setGeometry(QtCore.QRect(430, 40, 151, 16))
+        self.RD_descriptionLabel2.setObjectName("RD_descriptionLabel2")
 
         self.RD_informationLabel = QtWidgets.QLabel(self.RD_page)
         self.RD_informationLabel.setGeometry(QtCore.QRect(260, 300, 421, 16))
@@ -417,10 +417,14 @@ class Ui_Interface(object):
         self.RD_maxLine.setAlignment(QtCore.Qt.AlignCenter)
         self.RD_maxLine.setObjectName("RD_maxLine")
 
+        self.RD_sizeLine = QtWidgets.QLineEdit(self.RD_page)
+        self.RD_sizeLine.setGeometry(QtCore.QRect(430, 10, 91, 31))
+        self.RD_sizeLine.setValidator(QtGui.QRegExpValidator(QtCore.QRegExp('[0-9]*')))
+        self.RD_sizeLine.setAlignment(QtCore.Qt.AlignCenter)
+        self.RD_sizeLine.setObjectName("RD_sizeLine")
+
         self.RD_randomButton = QtWidgets.QPushButton(self.RD_page)
-        self.RD_randomButton.setGeometry(QtCore.QRect(430, 10, 251, 41))
-        font.setPointSize(13)
-        self.RD_randomButton.setFont(font)
+        self.RD_randomButton.setGeometry(QtCore.QRect(540, 10, 141, 31))
         self.RD_randomButton.setObjectName("RD_randomButton")
 
         self.RD_addButton = QtWidgets.QPushButton(self.RD_page)
@@ -439,6 +443,16 @@ class Ui_Interface(object):
         self.RD_sendAllButton.setGeometry(QtCore.QRect(580, 70, 101, 31))
         self.RD_sendAllButton.setObjectName("RD_sendAllButton")
 
+        self.RD_sendButton = QtWidgets.QPushButton(self.RD_page)
+        self.RD_sendButton.setGeometry(QtCore.QRect(580, 250, 101, 31))
+        self.RD_sendButton.setObjectName("RD_sendButton")
+
+        self.RD_selectBox = QtWidgets.QComboBox(self.RD_page)
+        self.RD_selectBox.setGeometry(QtCore.QRect(580, 210, 101, 31))
+        self.RD_selectBox.setObjectName("RD_selectBox")
+        for i in range(3):
+            self.RD_selectBox.addItem("")
+
         self.tabWidget.addTab(self.RD_page, "")
 
         # Reaction a l'appuye des boutons
@@ -447,6 +461,7 @@ class Ui_Interface(object):
         self.RD_selectButton.clicked.connect(lambda: self.RD(self.RD_selectButton.text()))
         self.RD_unselectButton.clicked.connect(lambda: self.RD(self.RD_unselectButton.text()))
         self.RD_sendAllButton.clicked.connect(lambda: self.RD(self.RD_sendAllButton.text()))
+        self.RD_sendButton.clicked.connect(lambda: self.RD(self.RD_sendButton.text()))
 
 
     ## DERNIER PARAMETRAGE
@@ -540,16 +555,14 @@ class Ui_Interface(object):
 
     ## PARAMETRAGE DU SHIFT REGISTER
 
-        self.RD_checkBox1.setText(_translate("Interface", "1"))
-        self.RD_sendButton1.setText(_translate("Interface", "Send"))
-        self.RD_checkBox2.setText(_translate("Interface", "2"))
-        self.RD_sendButton2.setText(_translate("Interface", "Send"))
-        self.RD_checkBox3.setText(_translate("Interface", "3"))
-        self.RD_sendButton3.setText(_translate("Interface", "Send"))
+        for i in range(len(self.check_boxes)):
+            self.check_boxes[i].setText(_translate("Interface", f"{i + 1}"))
 
         self.RD_titleLabel1.setText(_translate("Interface", "Set parameters :"))
         self.RD_titleLabel2.setText(_translate("Interface", "Send values to flips-flops :"))
-        self.RD_descriptionLabel.setText(_translate("Interface", "Please select min en max hex values for random generation"))
+        self.RD_titleLabel3.setText(_translate("Interface", "Send only one data"))
+        self.RD_descriptionLabel1.setText(_translate("Interface", "Please select min en max hex values for random generation"))
+        self.RD_descriptionLabel2.setText(_translate("Interface", "Register size (in Bits)"))
         self.RD_informationLabel.setText(_translate("Interface", "Waiting for data sending..."))
 
         self.RD_minLine.setText(_translate("Interface", "0"))
@@ -559,14 +572,21 @@ class Ui_Interface(object):
         self.RD_selectButton.setText(_translate("Interface", "Select all"))
         self.RD_unselectButton.setText(_translate("Interface", "Unselect all"))
         self.RD_sendAllButton.setText(_translate("Interface", "Send select"))
+        self.RD_sendButton.setText(_translate("Interface", "Send one"))
+
+        for i in range(len(self.check_boxes)):
+            self.RD_selectBox.setItemText(i, _translate("Interface", f"Line {i+1}"))
 
         self.RD_minLine.setStyleSheet('background-color:rgb(255, 255, 255)')
         self.RD_maxLine.setStyleSheet('background-color:rgb(255, 255, 255)')
+        self.RD_sizeLine.setStyleSheet('background-color:rgb(255, 255, 255)')
         self.RD_randomButton.setStyleSheet('background-color:rgb(255, 255, 255)')
         self.RD_addButton.setStyleSheet('background-color:rgb(255, 255, 255)')
         self.RD_selectButton.setStyleSheet('background-color:rgb(255, 255, 255)')
         self.RD_unselectButton.setStyleSheet('background-color:rgb(255, 255, 255)')
         self.RD_sendAllButton.setStyleSheet('background-color:rgb(255, 255, 255)')
+        self.RD_sendButton.setStyleSheet('background-color:rgb(255, 255, 255)')
+        self.RD_selectBox.setStyleSheet('background-color:rgb(255, 255, 255)')
         self.scrollArea.setStyleSheet('background-color:rgb(255, 255, 255)')
 
     ## PARAMETRAGE DES DIFFERENTES PAGES
@@ -681,22 +701,108 @@ class Ui_Interface(object):
                           self.AD_checkBox1.checkState(), self.AD_checkBox2.checkState(), self.AD_checkBox3.checkState(),
                           self.AD_stimTimeLine.text())
 
+    def RD_checkBox(self):
+        self.select_lines = []
+        for i in range(len(self.check_boxes)):
+            if self.check_boxes[i].checkState() == 2:
+                self.select_lines.append(self.line_edits[i])
+        return len(self.select_lines)
+
+    def RD_verify(self, call):
+        if call == 'random':
+            if self.RD_checkBox() != 0:
+                if len(self.RD_sizeLine.text()) != 0:
+                    if (int(self.RD_sizeLine.text())/4)%1 == 0:
+                        if len(self.RD_minLine.text()) != 0:
+                            if len(self.RD_maxLine.text()) != 0:
+                                if not int(self.RD_minLine.text(), 16) > int(self.RD_maxLine.text(), 16):
+                                    self.RD_informationLabel.setText('Generation of random values')
+                                    self.RD_informationLabel.setStyleSheet('color:rgb(0, 200, 0)')
+                                    return True
+                                else:
+                                    self.RD_informationLabel.setText('The min value cannot be higher than the max.')
+                                    self.RD_informationLabel.setStyleSheet('color:rgb(230, 0, 0)')
+                                    return False
+                            else:
+                                self.RD_informationLabel.setText('Please set a max value')
+                                self.RD_informationLabel.setStyleSheet('color:rgb(230, 0, 0)')
+                                return False
+                        else:
+                            self.RD_informationLabel.setText('Please set a min value')
+                            self.RD_informationLabel.setStyleSheet('color:rgb(230, 0, 0)')
+                            return False
+                    else:
+                        self.RD_informationLabel.setText('Please set in size a multiple of 4')
+                        self.RD_informationLabel.setStyleSheet('color:rgb(230, 0, 0)')
+                        return False
+                else:
+                    self.RD_informationLabel.setText('Please set a size value')
+                    self.RD_informationLabel.setStyleSheet('color:rgb(230, 0, 0)')
+                    return False
+            else:
+                self.RD_informationLabel.setText('Please select a line')
+                self.RD_informationLabel.setStyleSheet('color:rgb(230, 0, 0)')
+                return False
+
+        if call == 'sendSelect':
+            if self.RD_checkBox() != 0:
+                for i in range(len(self.select_lines)):
+                    if len(self.select_lines[i].text()) == 0:
+                        self.RD_informationLabel.setText('Please enter data on all selected lines')
+                        self.RD_informationLabel.setStyleSheet('color:rgb(230, 0, 0)')
+                        return False
+                self.RD_informationLabel.setText('Successful sending of data')
+                self.RD_informationLabel.setStyleSheet('color:rgb(0, 200, 0)')
+                return True
+            else:
+                self.RD_informationLabel.setText('Please select a line')
+                self.RD_informationLabel.setStyleSheet('color:rgb(230, 0, 0)')
+                return False
 
     def RD(self, button):
         if button == 'Set random values':
-            print(button)
+            if self.RD_verify('random'):
+                for y in range(len(self.select_lines)):
+                    self.select_lines[y].clear()
+                    for i in range(floor(int(self.RD_sizeLine.text()) / 4)):
+                        min = int(self.RD_minLine.text(), 16)
+                        max = int(self.RD_maxLine.text(), 16)
+                        r = str(hex(random.randint(min, max)))
+                        self.select_lines[y].insert(r[2])
 
         elif button == 'Add a line':
-            print(button)
+            self.check_boxes.append(QtWidgets.QCheckBox(self.scrollAreaGrid))
+            self.check_boxes[-1].setObjectName("RD_checkBox")
+            self.grid.addWidget(self.check_boxes[-1], len(self.check_boxes) - 1, 0, 1, 1)
+            self.line_edits.append(QtWidgets.QLineEdit(self.scrollAreaGrid))
+            self.line_edits[-1].setObjectName("lineEdit")
+            self.grid.addWidget(self.line_edits[-1], len(self.line_edits) - 1, 1, 1, 1)
+            self.RD_selectBox.addItem("")
+            self.retranslateUi(Interface)
+
 
         elif button == 'Select all':
-            print(button)
+            for i in range(len(self.check_boxes)):
+                self.check_boxes[i].setCheckState(2)
 
         elif button == 'Unselect all':
-            print(button)
+            for i in range(len(self.check_boxes)):
+                self.check_boxes[i].setCheckState(0)
 
         elif button == 'Send select':
-            print(button)
+            if self.RD_verify('sendSelect'):
+                for i in range(len(self.select_lines)):
+                    sendRegister(self.select_lines[i].text())
+
+        elif button == 'Send one':
+            index = self.RD_selectBox.currentIndex()
+            if len(self.line_edits[index].text()) != 0:
+                sendRegister(self.select_lines[index].text())
+                self.RD_informationLabel.setText('Successful sending of data')
+                self.RD_informationLabel.setStyleSheet('color:rgb(0, 200, 0)')
+            else:
+                self.RD_informationLabel.setText('Please enter data on the line')
+                self.RD_informationLabel.setStyleSheet('color:rgb(230, 0, 0)')
 
 
 if __name__ == "__main__":
@@ -713,10 +819,12 @@ if __name__ == "__main__":
 
 """
 
+Main fini !
+
 Next :
 
 - Faire un test avec Ashish sur le static et AD pour valider le fonctionnement des que possible
 
-- Regler le probleme avec l'add de ligne
+- Regler le probleme de la communication (voir avec Ashish)
 
 """

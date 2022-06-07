@@ -997,22 +997,22 @@
     <widget class="QPushButton" name="RD_randomButton">
      <property name="geometry">
       <rect>
-       <x>430</x>
+       <x>540</x>
        <y>10</y>
-       <width>251</width>
-       <height>41</height>
+       <width>141</width>
+       <height>31</height>
       </rect>
      </property>
      <property name="font">
       <font>
-       <pointsize>13</pointsize>
+       <pointsize>9</pointsize>
       </font>
      </property>
      <property name="text">
-      <string> Set random values</string>
+      <string>Set random values</string>
      </property>
     </widget>
-    <widget class="QLabel" name="RD_descriptionLabel">
+    <widget class="QLabel" name="RD_descriptionLabel1">
      <property name="geometry">
       <rect>
        <x>20</x>
@@ -1056,7 +1056,41 @@
       <string>Add a line</string>
      </property>
     </widget>
-    <zorder>RD_descriptionLabel</zorder>
+    <widget class="QLineEdit" name="RD_sizeLine">
+     <property name="geometry">
+      <rect>
+       <x>430</x>
+       <y>10</y>
+       <width>91</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>9</pointsize>
+      </font>
+     </property>
+     <property name="text">
+      <string>F</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+    <widget class="QLabel" name="RD_descriptionLabel2">
+     <property name="geometry">
+      <rect>
+       <x>430</x>
+       <y>40</y>
+       <width>151</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Register size (in Bytes)</string>
+     </property>
+    </widget>
+    <zorder>RD_descriptionLabel1</zorder>
     <zorder>scrollArea</zorder>
     <zorder>RD_titleLabel1</zorder>
     <zorder>RD_minLine</zorder>
@@ -1068,6 +1102,8 @@
     <zorder>RD_randomButton</zorder>
     <zorder>RD_titleLabel2</zorder>
     <zorder>RD_addButton</zorder>
+    <zorder>RD_sizeLine</zorder>
+    <zorder>RD_descriptionLabel2</zorder>
    </widget>
   </widget>
   <widget class="QLabel" name="pageColor">
