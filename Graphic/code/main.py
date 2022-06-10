@@ -797,7 +797,7 @@ class Ui_Interface(object):
         elif button == 'Send one':
             index = self.RD_selectBox.currentIndex()
             if len(self.line_edits[index].text()) != 0:
-                sendRegister(self.select_lines[index].text())
+                sendRegister(self.line_edits[index].text())
                 self.RD_informationLabel.setText('Successful sending of data')
                 self.RD_informationLabel.setStyleSheet('color:rgb(0, 200, 0)')
             else:

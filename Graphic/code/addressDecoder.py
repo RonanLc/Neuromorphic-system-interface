@@ -15,9 +15,14 @@ class AD:
 
     def syncro(self, address1, address2, address3, check1, check2, check3, Time):
         Time = int(Time)/1000
-        address1 = bin(int(address1))
-        address2 = bin(int(address2))
-        address3 = bin(int(address3))
+
+        if check1:
+            address1 = bin(int(address1, 16))
+        if check2:
+            address2 = bin(int(address2, 16))
+        if check3:
+            address3 = bin(int(address3, 16))
+
         for state in range(2):
             print(Time)
             time.sleep(Time)

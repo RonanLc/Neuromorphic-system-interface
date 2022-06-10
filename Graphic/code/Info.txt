@@ -1,0 +1,14 @@
+Explanation
+
+(Data I/O) : SPIx *line number* RW 0 *line data*
+
+(Command/Status) : SPIx *line number* RW 1 *mode* (for example 0x40 for Writing and 0x80 for Reading)
+
+(Read buffer data number) : len of the line data separate in L and H bit.
+                            For example : 2000bits -> 0x07D0 -> SPIx *line number* RW 2 D0
+                                                                SPIx *line number* RW 3 07
+
+(Clock setting) : clock divider (just add a blanc case in the GOI) -> SPIx *line number* RW 4 *clock divider*
+
+Modifier l'interface pour ajouter tout ca + faire un backup de ce que j'ai fait jusqu'a present pour Ashish
+

@@ -35,7 +35,7 @@ Read_command.append(0x31) # 1
 Read_command.append(0x0D) # carriage return
 
 
-with Serial(port="/dev/ttyUSB1", baudrate=800000, timeout=1, writeTimeout=1) as serial_port:
+with Serial(port="/dev/ttyUSB1", baudrate=115200, timeout=1, writeTimeout=1) as serial_port:
     if serial_port.isOpen():
         # serial_port.write(packet)
         serial_port.write(Read_command)

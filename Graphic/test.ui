@@ -802,7 +802,7 @@
       <rect>
        <x>10</x>
        <y>110</y>
-       <width>681</width>
+       <width>551</width>
        <height>181</height>
       </rect>
      </property>
@@ -814,17 +814,23 @@
        <rect>
         <x>0</x>
         <y>0</y>
-        <width>679</width>
+        <width>549</width>
         <height>179</height>
        </rect>
       </property>
       <layout class="QGridLayout" name="grid">
-       <item row="2" column="2">
-        <widget class="QPushButton" name="RD_sendButton3">
+       <item row="0" column="0">
+        <widget class="QCheckBox" name="RD_checkBox1">
          <property name="text">
-          <string>Send</string>
+          <string>1</string>
          </property>
         </widget>
+       </item>
+       <item row="1" column="1">
+        <widget class="QLineEdit" name="RD_registerLine2"/>
+       </item>
+       <item row="0" column="1">
+        <widget class="QLineEdit" name="RD_registerLine1"/>
        </item>
        <item row="2" column="1">
         <widget class="QLineEdit" name="RD_registerLine3"/>
@@ -836,37 +842,10 @@
          </property>
         </widget>
        </item>
-       <item row="1" column="1">
-        <widget class="QLineEdit" name="RD_registerLine2"/>
-       </item>
-       <item row="0" column="1">
-        <widget class="QLineEdit" name="RD_registerLine1"/>
-       </item>
        <item row="1" column="0">
         <widget class="QCheckBox" name="RD_checkBox2">
          <property name="text">
           <string>2</string>
-         </property>
-        </widget>
-       </item>
-       <item row="0" column="2">
-        <widget class="QPushButton" name="RD_sendButton1">
-         <property name="text">
-          <string>Send</string>
-         </property>
-        </widget>
-       </item>
-       <item row="1" column="2">
-        <widget class="QPushButton" name="RD_sendButton2">
-         <property name="text">
-          <string>Send</string>
-         </property>
-        </widget>
-       </item>
-       <item row="0" column="0">
-        <widget class="QCheckBox" name="RD_checkBox1">
-         <property name="text">
-          <string>1</string>
          </property>
         </widget>
        </item>
@@ -1090,6 +1069,54 @@
       <string>Register size (in Bytes)</string>
      </property>
     </widget>
+    <widget class="QPushButton" name="RD_sendButton">
+     <property name="geometry">
+      <rect>
+       <x>580</x>
+       <y>250</y>
+       <width>101</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Send one</string>
+     </property>
+    </widget>
+    <widget class="QComboBox" name="RD_selectBox">
+     <property name="geometry">
+      <rect>
+       <x>580</x>
+       <y>210</y>
+       <width>101</width>
+       <height>31</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QLabel" name="RD_titleLabel3">
+     <property name="geometry">
+      <rect>
+       <x>580</x>
+       <y>140</y>
+       <width>101</width>
+       <height>61</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>14</pointsize>
+       <underline>false</underline>
+      </font>
+     </property>
+     <property name="text">
+      <string>Send only one data</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+     <property name="wordWrap">
+      <bool>true</bool>
+     </property>
+    </widget>
     <zorder>RD_descriptionLabel1</zorder>
     <zorder>scrollArea</zorder>
     <zorder>RD_titleLabel1</zorder>
@@ -1104,6 +1131,9 @@
     <zorder>RD_addButton</zorder>
     <zorder>RD_sizeLine</zorder>
     <zorder>RD_descriptionLabel2</zorder>
+    <zorder>RD_sendButton</zorder>
+    <zorder>RD_selectBox</zorder>
+    <zorder>RD_titleLabel3</zorder>
    </widget>
   </widget>
   <widget class="QLabel" name="pageColor">

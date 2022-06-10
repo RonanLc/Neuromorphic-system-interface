@@ -1,4 +1,7 @@
 
+from com import serialSend
+import time
+
 def sendData(data, address):
 
     port = {
@@ -15,7 +18,7 @@ def sendData(data, address):
     address = bin(int(address, 16))
     data = bin(int(data, 16))
 
-    dataSend(address)
+    serialSend(address)
     time.sleep(.01)
-    dataSend(data)
+    serialSend(data)
     time.sleep(.01)
