@@ -22,3 +22,6 @@ def sendData(data, address):
     time.sleep(.01)
     serialSend(data)
     time.sleep(.01)
+
+
+

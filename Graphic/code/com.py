@@ -13,3 +13,34 @@ def serialSend(data):
             while True:
                 ligne = serial_port.read()
                 print(ligne)"""
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

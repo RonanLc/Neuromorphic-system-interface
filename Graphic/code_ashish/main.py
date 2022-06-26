@@ -1,23 +1,75 @@
 
 from PyQt5 import QtCore, QtGui, QtWidgets
 from PyQt5.QtWidgets import QFileDialog
-from static import sendData
+from static import send_static
 from addressDecoder import AD
-ad = AD()
-from shiftRegister import sendRegister
+from JTAGChain import send_FTAG
 from math import floor
 import random
+
+ad = AD()
+
+############################################# SUMMARY #############################################
+
+    ##### DECLARATION OF THE ELEMENTS #####.....................................................................Line 62
+        ### Window declaration..................................................................................Line 66
+        ### Page color declaration..............................................................................Line 72
+        ### Page system declaration.............................................................................Line 81
+        ### Home page declaration...............................................................................Line 92
+        ### Static page declaration.............................................................................Line 136
+        ### Address decoder page declaration....................................................................Line 200
+        ### JTAG Chain page declaration.........................................................................Line 357
+        ### Buttons actions link................................................................................Line 479
+        ### Last declaration....................................................................................Line 501
+
+    ##### SETTINGS OF THE ELEMENTS #####........................................................................Line 513
+        ### Window settings.....................................................................................Line 517
+        ### Home page settings..................................................................................Line 522
+        ### Static page settings................................................................................Line 529
+        ### Address decoder page settings.......................................................................Line 545
+        ### JTAG Chain page settings............................................................................Line 586
+        ### Global settings.....................................................................................Line 623
+
+    ##### ADDITIONAL FUNCTIONS #####............................................................................Line 632
+        ### Page color function.................................................................................Line 634
+
+        ### Page static actions.................................................................................Line 651
+
+        ### Page address decoder actions........................................................................Line 665
+            ## Check that the data to be sent is correct........................................................Line 667
+            ## Button to select the .csv file...................................................................Line 679
+            ## Button to send data from .csv file (Desactivate).................................................Line 686
+            ## Buttons to manually stimulate the synapses.......................................................Line 703
+            ## Button to stimulate synapses simultaneously......................................................Line 714
+
+        ### Page JTAG Chain actions.............................................................................Line 736
+            ## Function to know the checked check boxes.........................................................Line 738
+            ## Function verifying all the information indicated on the software for the random generation.......Line 749
+            ## Function verifying all the information indicated on the software for send the selected lines.....Line 785
+            ## Button for random generation.....................................................................Line 804
+            ## Button for add a line............................................................................Line 815
+            ## Button for select all the lines..................................................................Line 827
+            ## Button for unselect all the lines................................................................Line 832
+            ## Button for send the selected lines...............................................................Line 837
+            ## Button for send only one line....................................................................Line 843
+
+    ##### MAIN CODE #####.......................................................................................Line 854
+
 
 
 class Ui_Interface(object):
 
-    ### DECLARATION DES DIFFERENTS ELEMENTS DU SYSTEME ###
+##### DECLARATION OF THE ELEMENTS #####
+
     def setupUi(self, Interface):
+
+    ### Window declaration ###
+
         Interface.setObjectName("Interface")
         Interface.setFixedSize(700, 350)
         font = QtGui.QFont()
 
-    ## BANDE DE COULEUR POUR LES PAGES
+    ### Page color declaration ###
 
         self.pageColor = QtWidgets.QLabel(Interface)
         self.pageColor.setGeometry(QtCore.QRect(0, 0, 700, 20))
@@ -26,7 +78,7 @@ class Ui_Interface(object):
         self.pageColor.setObjectName("pageColor")
 
 
-    ## SYSTEME DE PAGE
+    ### Page system declaration ###
 
         # Declaration du systeme de page
         self.tabWidget = QtWidgets.QTabWidget(Interface)
@@ -37,65 +89,55 @@ class Ui_Interface(object):
         self.tabWidget.currentChanged.connect(self.pageChange)
 
 
-    ## PAGE HOME
+    ### Home page declaration ###
 
-        # Creation de la page pour le Home
         self.Home_page = QtWidgets.QWidget()
         self.Home_page.setObjectName("Home_page")
 
-        # Titre du projet
         self.Home_title = QtWidgets.QLabel(self.Home_page)
         self.Home_title.setGeometry(QtCore.QRect(110, 30, 470, 41))
         font.setPointSize(20)
         self.Home_title.setFont(font)
         self.Home_title.setObjectName("Home_title")
 
-        # Sous titre "Realise par"
         self.Home_subtitle1 = QtWidgets.QLabel(self.Home_page)
         self.Home_subtitle1.setGeometry(QtCore.QRect(180, 80, 331, 20))
         font.setPointSize(11)
         self.Home_subtitle1.setFont(font)
         self.Home_subtitle1.setObjectName("Home_subtitle1")
 
-        # Sous titre "Cooperation"
         self.Home_subtitle2 = QtWidgets.QLabel(self.Home_page)
         self.Home_subtitle2.setGeometry(QtCore.QRect(190, 100, 301, 20))
         font.setPointSize(12)
         self.Home_subtitle2.setFont(font)
         self.Home_subtitle2.setObjectName("Home_subtitle2")
 
-        # Sous titre "supervise par"
         self.Home_subtitle3 = QtWidgets.QLabel(self.Home_page)
         self.Home_subtitle3.setGeometry(QtCore.QRect(140, 160, 411, 20))
         font.setPointSize(12)
         self.Home_subtitle3.setFont(font)
         self.Home_subtitle3.setObjectName("Home_subtitle3")
 
-        # Photo 1
         self.Home_photo1 = QtWidgets.QLabel(self.Home_page)
         self.Home_photo1.setGeometry(QtCore.QRect(60, 210, 221, 101))
         self.Home_photo1.setPixmap(QtGui.QPixmap("../../Data/iisUTokyo.png"))
         self.Home_photo1.setScaledContents(True)
         self.Home_photo1.setObjectName("Home_photo1")
 
-        # Photo 2
         self.Home_photo2 = QtWidgets.QLabel(self.Home_page)
         self.Home_photo2.setGeometry(QtCore.QRect(410, 215, 221, 81))
         self.Home_photo2.setPixmap(QtGui.QPixmap("../../Data/UBordeaux.png"))
         self.Home_photo2.setScaledContents(True)
         self.Home_photo2.setObjectName("Home_photo2")
 
-        # Valider la page
         self.tabWidget.addTab(self.Home_page, "")
 
 
-    ## PAGE STATIC
+    ### Static page declaration ###
 
-        # Creation de la page pour le Static
         self.St_page = QtWidgets.QWidget()
         self.St_page.setObjectName("St_page")
 
-        # Label pour recevoir les donnees a envoyer
         self.St_dataLine = QtWidgets.QLineEdit(self.St_page)
         self.St_dataLine.setGeometry(QtCore.QRect(350, 30, 60, 31))
         self.St_dataLine.setStyleSheet('background-color:rgb(255, 255, 255)')
@@ -105,7 +147,6 @@ class Ui_Interface(object):
         self.St_dataLine.setMaxLength(2)
         self.St_dataLine.setValidator(QtGui.QRegExpValidator(QtCore.QRegExp('[A-Fa-f0-9]*')))
 
-        # Bouton pour declancher l'envoie des donnees
         self.St_sendButton = QtWidgets.QPushButton(self.St_page)
         self.St_sendButton.setGeometry(QtCore.QRect(200, 240, 110, 31))
         self.St_sendButton.setStyleSheet('background-color:rgb(255, 255, 255)')
@@ -113,7 +154,6 @@ class Ui_Interface(object):
         self.St_sendButton.setFont(font)
         self.St_sendButton.setObjectName("St_sendButton")
 
-        # Selecteur du Port, pour savoir a quelle adresse envoyer les donnees
         self.St_portSelect = QtWidgets.QComboBox(self.St_page)
         self.St_portSelect.setGeometry(QtCore.QRect(330, 140, 140, 31))
         self.St_portSelect.setStyleSheet('background-color:rgb(255, 255, 255)')
@@ -123,51 +163,41 @@ class Ui_Interface(object):
         for i in range(6):
             self.St_portSelect.addItem("")
 
-        # Label Titre 1
         self.St_titleLabel1 = QtWidgets.QLabel(self.St_page)
         self.St_titleLabel1.setGeometry(QtCore.QRect(30, 30, 310, 31))
         font.setPointSize(15)
         self.St_titleLabel1.setFont(font)
         self.St_titleLabel1.setObjectName("St_titleLabel1")
 
-        # Label Titre 2
         self.St_titleLabel2 = QtWidgets.QLabel(self.St_page)
         self.St_titleLabel2.setGeometry(QtCore.QRect(30, 130, 280, 31))
         font.setPointSize(15)
         self.St_titleLabel2.setFont(font)
         self.St_titleLabel2.setObjectName("St_titleLabel2")
 
-        # Label Titre 3
         self.St_titleLabel3 = QtWidgets.QLabel(self.St_page)
         self.St_titleLabel3.setGeometry(QtCore.QRect(30, 240, 160, 31))
         font.setPointSize(15)
         self.St_titleLabel3.setFont(font)
         self.St_titleLabel3.setObjectName("St_titleLabel3")
 
-        # Label de description 1
         self.St_descriptionLabel1 = QtWidgets.QLabel(self.St_page)
         self.St_descriptionLabel1.setGeometry(QtCore.QRect(30, 60, 310, 16))
         self.St_descriptionLabel1.setObjectName("St_descriptionLabel1")
 
-        # Label de description 2
         self.St_descriptionLabel2 = QtWidgets.QLabel(self.St_page)
         self.St_descriptionLabel2.setGeometry(QtCore.QRect(30, 160, 250, 16))
         self.St_descriptionLabel2.setObjectName("St_descriptionLabel2")
 
-        # Label d'information
         self.St_informationLabel = QtWidgets.QLabel(self.St_page)
         self.St_informationLabel.setGeometry(QtCore.QRect(220, 290, 460, 16))
         self.St_informationLabel.setAlignment(QtCore.Qt.AlignRight|QtCore.Qt.AlignTrailing|QtCore.Qt.AlignVCenter)
         self.St_informationLabel.setObjectName("St_informationLabel")
 
-        # Valider la page
         self.tabWidget.addTab(self.St_page, "")
 
-        # Reaction a l'appuye du bouton d'envoi
-        self.St_sendButton.clicked.connect(self.static)
 
-
-    ## PAGE ADDRESS DECODER
+    ### Address decoder page declaration ###
 
         self.AD_page = QtWidgets.QWidget()
         self.AD_page.setObjectName("AD_page")
@@ -323,16 +353,8 @@ class Ui_Interface(object):
 
         self.tabWidget.addTab(self.AD_page, "")
 
-        # Reaction a l'appuye des boutons
-        self.AD_fileButton.clicked.connect(lambda:self.AD(self.AD_fileButton.text()))
-        self.AD_sendButton.clicked.connect(lambda:self.AD(self.AD_sendButton.text()))
-        self.AD_stimButton1.clicked.connect(lambda:self.AD(self.AD_stimButton1.text()))
-        self.AD_stimButton2.clicked.connect(lambda:self.AD(self.AD_stimButton2.text()))
-        self.AD_stimButton3.clicked.connect(lambda:self.AD(self.AD_stimButton3.text()))
-        self.AD_stimButton4.clicked.connect(lambda:self.AD(self.AD_stimButton4.text()))
 
-
-    ## PAGE SHIFT REGISTER
+    ### JTAG Chain page declaration ###
 
         self.RD_page = QtWidgets.QWidget()
         self.RD_page.setObjectName("RD_page")
@@ -453,7 +475,21 @@ class Ui_Interface(object):
 
         self.tabWidget.addTab(self.RD_page, "")
 
-        # Reaction a l'appuye des boutons
+
+    ### Buttons actions link ###
+
+        # Static buttons
+        self.St_sendButton.clicked.connect(self.static)
+
+        # Address decoder buttons
+        self.AD_fileButton.clicked.connect(lambda:self.AD(self.AD_fileButton.text()))
+        self.AD_sendButton.clicked.connect(lambda:self.AD(self.AD_sendButton.text()))
+        self.AD_stimButton1.clicked.connect(lambda:self.AD(self.AD_stimButton1.text()))
+        self.AD_stimButton2.clicked.connect(lambda:self.AD(self.AD_stimButton2.text()))
+        self.AD_stimButton3.clicked.connect(lambda:self.AD(self.AD_stimButton3.text()))
+        self.AD_stimButton4.clicked.connect(lambda:self.AD(self.AD_stimButton4.text()))
+
+        # JTAG Chain buttons
         self.RD_randomButton.clicked.connect(lambda: self.RD(self.RD_randomButton.text()))
         self.RD_addButton.clicked.connect(lambda: self.RD(self.RD_addButton.text()))
         self.RD_selectButton.clicked.connect(lambda: self.RD(self.RD_selectButton.text()))
@@ -462,7 +498,7 @@ class Ui_Interface(object):
         self.RD_sendButton.clicked.connect(lambda: self.RD(self.RD_sendButton.text()))
 
 
-    ## DERNIER PARAMETRAGE
+    ### Last declaration
 
         self.pageColor.raise_()
         self.tabWidget.raise_()
@@ -474,43 +510,39 @@ class Ui_Interface(object):
 
 
 
-### PARAMETRAGE DES DIFFERENTS ELEMENTS DU SYSTEME ###
+##### SETTINGS OF THE ELEMENTS #####
+
     def retranslateUi(self, Interface):
 
-    ## PARAMETRAGE DE LA FENETRE
+    ### Window settings
         _translate = QtCore.QCoreApplication.translate
         Interface.setWindowTitle(_translate("Interface", "PC - Neuromorphic ship Interface"))
         self.pageColor.setText(_translate("Interface", "")) #Developed by Ronan Le Corronc
 
-    ## PARAMETRAGE DU HOME
+    ### Home page settings
 
         self.Home_title.setText(_translate("Interface", "Pc - Neuromorphic ship Interface"))
         self.Home_subtitle1.setText(_translate("Interface", "Ronan Le Corronc\'s 2022 internship project"))
         self.Home_subtitle3.setText(_translate("Interface", "Supervised by Takashi Kohno and Timothée Levi"))
         self.Home_subtitle2.setText(_translate("Interface", "In cooperation with Ashish Gautam"))
 
-    ## PARAMETRAGE DU STATIC
+    ### Static page settings
 
-        # Ecriture du texte du bouton d'envoie
         self.St_sendButton.setText(_translate("Interface", "Send"))
 
-        # Nommage des differentes adresses d'envoie des donnees
         ports = ['A', 'B', 'C', 'D', 'E', 'F']
         for i, port in enumerate(ports):
             self.St_portSelect.setItemText(i, _translate('Interface', f'Port {port}'))
 
-        # Ecriture des St titres
         self.St_titleLabel1.setText(_translate("Interface", "Static data to be submitted :"))
         self.St_titleLabel2.setText(_translate("Interface", "Location of data sending :"))
         self.St_titleLabel3.setText(_translate("Interface", "Sending data :"))
-
-        # Ecriture des St description
 
         self.St_descriptionLabel1.setText(_translate("Interface", "Please select a 2-character hexadecimal value"))
         self.St_descriptionLabel2.setText(_translate("Interface", "Please select the data destination port"))
         self.St_informationLabel.setText(_translate("Interface", "Waiting for data sending..."))
 
-    ## PARAMETRAGE DE L'ADDRESS DECODER
+    ### Address decoder page settings
 
         self.AD_titleLabel1.setText(_translate("Interface", ".CSV file location :"))
         self.AD_titleLabel2.setText(_translate("Interface", "Pulsation rate (ms) :"))
@@ -551,7 +583,7 @@ class Ui_Interface(object):
         self.AD_stimButton3.setStyleSheet('background-color:rgb(255, 255, 255)')
         self.AD_stimButton4.setStyleSheet('background-color:rgb(255, 255, 255)')
 
-    ## PARAMETRAGE DU SHIFT REGISTER
+    ### JTAG Chain page settings
 
         for i in range(len(self.check_boxes)):
             self.check_boxes[i].setText(_translate("Interface", f"{i + 1}"))
@@ -565,6 +597,7 @@ class Ui_Interface(object):
 
         self.RD_minLine.setText(_translate("Interface", "0"))
         self.RD_maxLine.setText(_translate("Interface", "F"))
+        self.RD_sizeLine.setText(_translate("Interface", "8"))
         self.RD_randomButton.setText(_translate("Interface", "Set random values"))
         self.RD_addButton.setText(_translate("Interface", "Add a line"))
         self.RD_selectButton.setText(_translate("Interface", "Select all"))
@@ -587,7 +620,7 @@ class Ui_Interface(object):
         self.RD_selectBox.setStyleSheet('background-color:rgb(255, 255, 255)')
         self.scrollArea.setStyleSheet('background-color:rgb(255, 255, 255)')
 
-    ## PARAMETRAGE DES DIFFERENTES PAGES
+    ### Global settings
 
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.Home_page), _translate("Interface", "Home"))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.St_page), _translate("Interface", "Static"))
@@ -595,7 +628,10 @@ class Ui_Interface(object):
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.RD_page), _translate("Interface", "JTAG Chain"))
 
 
-### GESTION DES COULEURS EN FONCTION DE LA PAGE AFFICHEE ###
+
+##### ADDITIONAL FUNCTIONS #####
+
+### Page color function
     def pageChange(self):
         color = {
             0: 'background-color:rgb(255, 255, 255)',
@@ -612,12 +648,12 @@ class Ui_Interface(object):
 
 
 
-### ACTIONS DU STATIC ###
+### Page static actions
+
     def static(self):
 
-    ## Envoi des donnees
         if len(self.St_dataLine.text()) == 2:
-            sendData(self.St_dataLine.text(), self.St_portSelect.currentText())
+            send_static(self.St_dataLine.text(), self.St_portSelect.currentText()) # Link to the static.py code
             self.St_informationLabel.setText("The data 0x"+self.St_dataLine.text()+" has been written correctly on the "+self.St_portSelect.currentText()+" !")
             self.St_informationLabel.setStyleSheet('color:rgb(0, 200, 0)')
         else:
@@ -626,59 +662,56 @@ class Ui_Interface(object):
 
 
 
-### ACTIONS DE L'ADDRESS DECODER ###
+### Page address decoder actions
 
+    ## Check that the data to be sent is correct
     def AD_verify(self, data):
-        if len(self.AD_stimTimeLine.text()) != 0 and data != 0:
+        if data != 0:
             self.AD_informationLabel2.setStyleSheet('color:rgb(0, 200, 0)')
             self.AD_informationLabel2.setText("Launching the stimulation correctly !")
             return True
-        elif len(self.AD_stimTimeLine.text()) != 0 and data == 0:
+        elif data == 0:
             self.AD_informationLabel2.setStyleSheet('color:rgb(230, 0, 0)')
             self.AD_informationLabel2.setText("Please select the synapse\'s number.")
-            return False
-        elif len(self.AD_stimTimeLine.text()) == 0 and data != 0:
-            self.AD_informationLabel2.setStyleSheet('color:rgb(230, 0, 0)')
-            self.AD_informationLabel2.setText("Please select a stimulation time.")
-            return False
-        elif len(self.AD_stimTimeLine.text()) == 0 and data == 0:
-            self.AD_informationLabel2.setStyleSheet('color:rgb(230, 0, 0)')
-            self.AD_informationLabel2.setText("Please select the synapse\'s number and a stimulation time.")
-            return False
 
     def AD(self, button):
+
+        ## Button to select the .csv file
         if button == '...':
             fileLocation, _ = QFileDialog.getOpenFileName(None, 'Open File', 'D:\\etude\\Stage\\Work\\Neuromorphic-system-interface\\Data', 'CSV Files (*.csv);;All Files (*)')
             if fileLocation:
                 self.AD_enterFileLine.clear()
                 self.AD_enterFileLine.insert(fileLocation)
 
-        elif button == 'Launch':
-            if len(self.AD_stimTimeLine.text()) != 0 and len(self.AD_enterFileLine.text()) != 0:
-                ad.autoLaunch(self.AD_enterFileLine.text(), self.AD_stimTimeLine.text())
-                self.AD_informationLabel1.setStyleSheet('color:rgb(0, 200, 0)')
-                self.AD_informationLabel1.setText("Stimulation success !")
-            elif len(self.AD_stimTimeLine.text()) != 0 and len(self.AD_enterFileLine.text()) == 0:
-                self.AD_informationLabel1.setStyleSheet('color:rgb(230, 0, 0)')
-                self.AD_informationLabel1.setText("Please select a .csv file.")
-            elif len(self.AD_stimTimeLine.text()) == 0 and len(self.AD_enterFileLine.text()) != 0:
-                self.AD_informationLabel1.setStyleSheet('color:rgb(230, 0, 0)')
-                self.AD_informationLabel1.setText("Please select a stimulation time.")
-            elif len(self.AD_stimTimeLine.text()) == 0 and len(self.AD_enterFileLine.text()) == 0:
-                self.AD_informationLabel1.setStyleSheet('color:rgb(230, 0, 0)')
-                self.AD_informationLabel1.setText("Please select a .csv file and a stimulation time.")
+        ## Button to send data from .csv file (Desactivate)
+    #    elif button == 'Launch':
+    #        if len(self.AD_stimTimeLine.text()) != 0 and len(self.AD_enterFileLine.text()) != 0:
+    #            ad.autoLaunch(self.AD_enterFileLine.text(), self.AD_stimTimeLine.text())
+    #            self.AD_informationLabel1.setStyleSheet('color:rgb(0, 200, 0)')
+    #            self.AD_informationLabel1.setText("Stimulation success !")
+    #        elif len(self.AD_stimTimeLine.text()) != 0 and len(self.AD_enterFileLine.text()) == 0:
+    #            self.AD_informationLabel1.setStyleSheet('color:rgb(230, 0, 0)')
+    #            self.AD_informationLabel1.setText("Please select a .csv file.")
+    #        elif len(self.AD_stimTimeLine.text()) == 0 and len(self.AD_enterFileLine.text()) != 0:
+    #            self.AD_informationLabel1.setStyleSheet('color:rgb(230, 0, 0)')
+    #            self.AD_informationLabel1.setText("Please select a stimulation time.")
+    #        elif len(self.AD_stimTimeLine.text()) == 0 and len(self.AD_enterFileLine.text()) == 0:
+    #            self.AD_informationLabel1.setStyleSheet('color:rgb(230, 0, 0)')
+    #            self.AD_informationLabel1.setText("Please select a .csv file and a stimulation time.")
 
 
+        ## Buttons to manually stimulate the synapses
         elif button == 'Stimulate 1':
             if self.AD_verify(len(self.AD_stimLine1.text())):
-                ad.stimulate(self.AD_stimLine1.text(), self.AD_stimTimeLine.text())
+                ad.stimulate(self.AD_stimLine1.text())
         elif button == 'Stimulate 2':
             if self.AD_verify(len(self.AD_stimLine2.text())):
-                ad.stimulate(self.AD_stimLine2.text(), self.AD_stimTimeLine.text())
+                ad.stimulate(self.AD_stimLine2.text())
         elif button == 'Stimulate 3':
             if self.AD_verify(len(self.AD_stimLine3.text())):
-                ad.stimulate(self.AD_stimLine3.text(), self.AD_stimTimeLine.text())
+                ad.stimulate(self.AD_stimLine3.text())
 
+        ## Button to stimulate synapses simultaneously
         elif button == 'Stimulate':
             state = 0
             if not self.AD_checkBox1.checkState() and not self.AD_checkBox2.checkState() and not self.AD_checkBox2.checkState():
@@ -696,9 +729,13 @@ class Ui_Interface(object):
                     state = 1
             if state == 0:
                 ad.syncro(self.AD_stimLine1.text(), self.AD_stimLine2.text(), self.AD_stimLine3.text(),
-                          self.AD_checkBox1.checkState(), self.AD_checkBox2.checkState(), self.AD_checkBox3.checkState(),
-                          self.AD_stimTimeLine.text())
+                          self.AD_checkBox1.checkState(), self.AD_checkBox2.checkState(), self.AD_checkBox3.checkState())
 
+
+
+### Page JTAG Chain actions
+
+    ## Function to know the checked check boxes
     def RD_checkBox(self):
         self.select_lines = []
         for i in range(len(self.check_boxes)):
@@ -706,7 +743,10 @@ class Ui_Interface(object):
                 self.select_lines.append(self.line_edits[i])
         return len(self.select_lines)
 
+
     def RD_verify(self, call):
+
+        ## Function verifying all the information indicated on the software for the random generation
         if call == 'random':
             if self.RD_checkBox() != 0:
                 if len(self.RD_sizeLine.text()) != 0:
@@ -742,6 +782,7 @@ class Ui_Interface(object):
                 self.RD_informationLabel.setStyleSheet('color:rgb(230, 0, 0)')
                 return False
 
+        ## Function verifying all the information indicated on the software for send the selected lines
         if call == 'sendSelect':
             if self.RD_checkBox() != 0:
                 for i in range(len(self.select_lines)):
@@ -757,7 +798,10 @@ class Ui_Interface(object):
                 self.RD_informationLabel.setStyleSheet('color:rgb(230, 0, 0)')
                 return False
 
+
     def RD(self, button):
+
+        ## Button for random generation
         if button == 'Set random values':
             if self.RD_verify('random'):
                 for y in range(len(self.select_lines)):
@@ -768,6 +812,7 @@ class Ui_Interface(object):
                         r = str(hex(random.randint(min, max)))
                         self.select_lines[y].insert(r[2])
 
+        ## Button for add a line
         elif button == 'Add a line':
             self.check_boxes.append(QtWidgets.QCheckBox(self.scrollAreaGrid))
             self.check_boxes[-1].setObjectName("RD_checkBox")
@@ -779,31 +824,34 @@ class Ui_Interface(object):
             self.RD_selectBox.addItem("")
             self.retranslateUi(Interface)
 
-
+        ## Button for select all the lines
         elif button == 'Select all':
             for i in range(len(self.check_boxes)):
                 self.check_boxes[i].setCheckState(2)
 
+        ## Button for unselect all the lines
         elif button == 'Unselect all':
             for i in range(len(self.check_boxes)):
                 self.check_boxes[i].setCheckState(0)
 
+        ## Button for send the selected lines
         elif button == 'Send select':
             if self.RD_verify('sendSelect'):
                 for i in range(len(self.select_lines)):
-                    sendRegister(self.select_lines[i].text())
+                    send_FTAG(self.select_lines[i].text())
 
+        ## Button for send only one line
         elif button == 'Send one':
             index = self.RD_selectBox.currentIndex()
             if len(self.line_edits[index].text()) != 0:
-                sendRegister(self.line_edits[index].text())
+                send_FTAG(self.line_edits[index].text())
                 self.RD_informationLabel.setText('Successful sending of data')
                 self.RD_informationLabel.setStyleSheet('color:rgb(0, 200, 0)')
             else:
                 self.RD_informationLabel.setText('Please enter data on the line')
                 self.RD_informationLabel.setStyleSheet('color:rgb(230, 0, 0)')
 
-
+##### MAIN CODE #####
 if __name__ == "__main__":
     import sys
     app = QtWidgets.QApplication(sys.argv)
@@ -812,18 +860,3 @@ if __name__ == "__main__":
     ui.setupUi(Interface)
     Interface.show()
     sys.exit(app.exec_())
-
-
-
-
-"""
-
-Main fini !
-
-Next :
-
-- Faire un test avec Ashish sur le static et AD pour valider le fonctionnement des que possible
-
-- Regler le probleme de la communication (voir avec Ashish)
-
-"""

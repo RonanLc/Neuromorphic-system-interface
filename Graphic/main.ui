@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>704</width>
-    <height>258</height>
+    <width>408</width>
+    <height>520</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -16,30 +16,18 @@
   <property name="styleSheet">
    <string notr="true">background-color: rgb(255, 255, 255);</string>
   </property>
-  <widget class="QComboBox" name="RD_selectBox">
+  <widget class="QPushButton" name="pushButton">
    <property name="geometry">
     <rect>
-     <x>580</x>
-     <y>210</y>
-     <width>101</width>
-     <height>31</height>
+     <x>70</x>
+     <y>190</y>
+     <width>271</width>
+     <height>111</height>
     </rect>
    </property>
-   <item>
-    <property name="text">
-     <string>Line 1</string>
-    </property>
-   </item>
-   <item>
-    <property name="text">
-     <string>Line 2</string>
-    </property>
-   </item>
-   <item>
-    <property name="text">
-     <string>Line 3</string>
-    </property>
-   </item>
+   <property name="text">
+    <string>Press</string>
+   </property>
   </widget>
  </widget>
  <resources/>
